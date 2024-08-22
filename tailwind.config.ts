@@ -27,7 +27,7 @@ const config: Config = {
       fontFamily: {
         body: 'var(--font-nunito-sans)',
         heading: 'var(--font-libre-baskerville)'
-      }
+      },
     },
   },
   plugins: [],

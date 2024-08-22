@@ -29,7 +29,7 @@ const BasicButton: FC<BasicButtonProps> = ({
       className={cn(
         "rounded-[12px] px-[24px] h-[40px] leading-none",
         pill && "rounded-full",
-        outline && "border-2",
+        outline && "border-2 border-[var(--color-black)]",
         className
       )}
       aria-label={props['aria-label'] || text}

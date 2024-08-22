@@ -45,12 +45,12 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         </Overlay>
       </div>
 
-      <div 
-        className="h-[150%] w-[800px] end-0 absolute top-[0px] opacity-30"
+      {/* <div 
+        className="h-[150%] w-[800px] end-0 absolute top-[0px] z-10"
         aria-hidden="true"
       >
         <Logo />
-      </div>
+      </div> */}
 
       <div 
         className="absolute top-0 left-0 h-full flex flex-col justify-center items-start z-10 px-section w-full"
@@ -67,6 +67,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         >
           {text}
         </div>
+        
         <BasicButton
           text="contact us"
           bgColor="transparent"

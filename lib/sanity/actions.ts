@@ -5,5 +5,7 @@ import { SanityFetchHomePageOperation } from "./types"
 export const sanityFetchHomePageContent = async () => {
   const page = await sanityClient.fetch<SanityFetchHomePageOperation>(fetchHomePageQuery)
 
+  console.log(page[0])
+
   return page[0]
 }
