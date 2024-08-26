@@ -8,12 +8,25 @@ import AboutSection from "@/components/AboutSection";
 import Values from "@/components/Values";
 import ServicesSection from "@/components/ServicesSection";
 import ParallaxBanner from "@/components/ParallaxBanner";
+import GeneralProcess from "@/components/GeneralProcess";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactFormSection from "@/components/ContactFormSection";
 
 const HomePage: FC = async () => {
-  const { heroSection, aboutSection, approachSection, servicesSection, imageBanner1 } = await sanityFetchHomePageContent();
+  const {
+    heroSection,
+    aboutSection,
+    approachSection,
+    servicesSection,
+    imageBanner1,
+    generalProcess,
+    testimonialSection,
+    imageBanner2
+  } = await sanityFetchHomePageContent();
 
   return (
     <div className="flex flex-col gap-32">
+      {/* Hero */}
       <Hero
         image={heroSection.backgroundImages[0]}
         title={heroSection.title}
@@ -21,11 +34,13 @@ const HomePage: FC = async () => {
         text={heroSection.bodyText}
       />
 
+      {/* About */}
       <AboutSection
         headingWithBlockText={aboutSection.headingWithBlockText}
         image={aboutSection.image}
       />
 
+      {/* Approach & Values */}
       <div className="relative">
         <ApproachSection
           headingWithText={approachSection.sectionContent.headingWithBlockText}
@@ -38,13 +53,32 @@ const HomePage: FC = async () => {
         </div>
       </div>
 
+      {/* Services */}
       <ServicesSection
         heading={servicesSection.heading}
         services={servicesSection.services}
       />
 
+      {/* Process */}
       <div>
         <ParallaxBanner image={imageBanner1} />
+
+        <GeneralProcess
+          heading={generalProcess.heading}
+          processSteps={generalProcess.processSteps}
+        />
+      </div>
+
+      {/* Testimonials */}
+      <TestimonialsSection
+        heading={testimonialSection.heading}
+        testimonials={testimonialSection.testimonials}
+      />
+
+      <div>
+        <ParallaxBanner image={imageBanner2} />
+
+        <ContactFormSection tree = 'baobab' />
       </div>
     </div>
   );

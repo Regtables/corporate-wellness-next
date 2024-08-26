@@ -2,6 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/AvenirLTStd-Roman.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
+  font-family: 'Baskerville';
+  src: url('/fonts/baskvl.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Baskerville';
+  src: url('/fonts/Baskerville.ttc') format('truetype-collections'),
+       url('/fonts/Baskerville.ttc') format('collection');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -19,17 +46,31 @@
 body {
   background-color: var(--color-white);
   color: var(--color-black);
+  font-family: 'Avenir';
 }
 
 .heading{
+  /* font-size: 45px;
+  font-weight: 600;
+  font-family: 'Baskersville';
+  font-family: Baskerville; */
+  font-family: Baskerville;
   font-size: 45px;
-  font-weight: bold;
+  font-weight: 900;
+  line-height: 45px;
+  text-align: left;
+  
 }
 
 .bodyText{
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
+  font-family: 'Avenir';
+}
+
+input::placeholder, textarea::placeholder{
+  color: var(--color-black);
 }
 
 @layer utilities {
@@ -42,4 +83,5 @@ body {
   --color-white: #F0EFEF;
   --color-black: #1C2028;
   --color-duckEgg: #A6BEC6;
+  --color-lightDuckEgg: #c6d5da;
 }

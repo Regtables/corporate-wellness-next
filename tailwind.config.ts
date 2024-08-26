@@ -19,14 +19,22 @@ const config: Config = {
         },
         duckEgg: {
           DEFAULT: 'var(--color-duckEgg)'
+        },
+        black: {
+          DEFAULT: 'var(--color-black)'
+        },
+        lightEgg: {
+          DEFAULT: 'var(--color-lightDuckEgg)'
         }
       },
       padding: {
-        section: '195px'
+        section: '195px',
+        sectionY: '96px'
       },
       fontFamily: {
         body: 'var(--font-nunito-sans)',
         heading: 'var(--font-libre-baskerville)'
+        // heading: 'Baskerville'
       },
     },
   },

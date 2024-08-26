@@ -14,3 +14,7 @@ export const SERVICES_ICONS:IconPath = {
   'Team Coaching': '/team.png',
   'HR Consultance': '/hr.png'
 }
+
+export const TREE_ICONS:IconPath = {
+  'baobab': '/baobab-white.png'
+}

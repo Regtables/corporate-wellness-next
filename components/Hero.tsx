@@ -34,6 +34,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       className="h-screen relative"
       style={{ height: "calc(100vh - 120px)" }}
       aria-label="Hero section"
+      id = 'home'
     >
       <div
         className="absolute top-0 left-0 w-full h-full"

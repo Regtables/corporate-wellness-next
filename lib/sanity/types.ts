@@ -15,8 +15,66 @@ export type SanityFetchHomePageOperation = {
       description: string
     }[]
   },
-  imageBanner1: SanityImageType
+  imageBanner1: SanityImageType,
+  generalProcess: SanityProcessSection,
+  testimonialSection: SanityTestimonialsSection,
+  imageBanner2: SanityImageType
 }[]
+
+export type SanityFetchAllServicesOperation = {
+  name: string,
+  slug: {
+    current: string
+  },
+}[]
+
+export type SanityFetchServiceContentOperation = {
+  name: string,
+  slug: {
+    current: string
+  },
+  bannerImage: SanityImageType
+  introductionSection: SanitySection
+  imageBanner1: SanityImageType
+  imageBanner2: SanityImageType
+  objectiveSection: {
+    heading: string,
+    objectives: {
+      title: string,
+      text: string
+    }[]
+  },
+  processSection: SanityProcessSection,
+  benefitsSection: {
+    heading: string,
+    benefits: {
+
+    }[]
+  }
+}[]
+
+export type SanityTestimonialsSection = {
+  heading: string,
+  testimonials: SanityTestimonialType[]
+}
+
+export type SanityTestimonialType = {
+  name: string,
+  position?: string,
+  company?: string,
+  country?: string,
+  text: string
+}
+
+export type SanityProcessSection = {
+  heading: string,
+  processSteps: SanityProcessStepType[]
+}
+
+export type SanityProcessStepType = {
+  name: string,
+  tasks: string[]
+}
 
 export type SanityHeroSection = {
   title: string,
