@@ -18,6 +18,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', width = 0, height = 0 }) =>
         alt="Corporate Wellness Logo" 
         className="object-contain"
         priority
+        quality={100}
       />
     </div>
   )

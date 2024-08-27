@@ -4,6 +4,7 @@ import Logo from "./logos/Logo";
 import LogoWithText from "./logos/LogoWithText";
 import { Facebook, Instagram, Linkedin, Phone } from "lucide-react";
 import Link from "next/link";
+import { sanityFetchAccreditationsLogos } from "@/lib/sanity/actions";
 
 const QUICK_LINKS = [
   {
@@ -86,11 +87,13 @@ const FooterLinks = ({ heading, links } : { heading: string, links: any[] }) => 
   );
 };
 
-const Footer = () => {
+const Footer = async () => {
+  const accreditations = await sanityFetchAccreditationsLogos()
+
   return (
     <footer className="bg-black px-[195px] py-[100px] flex flex-col gap-10">
       <div>
-        <Accreditations />
+        <Accreditations accreditations={accreditations}  />
       </div>
 
       <div className="h-[1px] bg-duckEgg w-full" />

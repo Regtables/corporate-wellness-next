@@ -10,6 +10,7 @@ const LogoWithText = () => {
         alt='Corporate Wellness Logo with Text'
         width={182}
         height={60}
+        quality={100}
       />
     </Link>
   )

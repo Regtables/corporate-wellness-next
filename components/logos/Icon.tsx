@@ -19,6 +19,7 @@ const Icon: React.FC<IconProps> = ({ className = '', width = 0, height = 0, path
         alt="Corporate Wellness Logo" 
         className="object-cover"
         priority
+        quality={100}
       />
     </div>
   )

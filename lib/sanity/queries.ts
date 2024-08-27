@@ -17,3 +17,5 @@ export const fetchHomePageQuery = `
 export const fetchAllServicesQuery = `*[_type == "service"]{ _id, name, slug{ current} }`
 
 export const fetchServiceContentQuery = (service: string) => `*[_type == "service" && slug.current == "${service}"]`
+
+export const fetchAccreditationsQuery = '*[_type == "accreditation"]'

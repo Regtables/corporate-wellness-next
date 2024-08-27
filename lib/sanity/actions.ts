@@ -1,5 +1,5 @@
 import { sanityClient } from "./client"
-import { fetchAllServicesQuery, fetchHomePageQuery, fetchServiceContentQuery } from "./queries"
+import { fetchAccreditationsQuery, fetchAllServicesQuery, fetchHomePageQuery, fetchServiceContentQuery } from "./queries"
 import { SanityFetchAllServicesOperation, SanityFetchHomePageOperation, SanityFetchServiceContentOperation } from "./types"
 
 export const sanityFetchHomePageContent = async () => {
@@ -17,7 +17,11 @@ export const sanityFetchAllServices = async () => {
 export const sanityFetchServiceContent = async (service: string) => {
   const page = await sanityClient.fetch<SanityFetchServiceContentOperation>(fetchServiceContentQuery(service))
 
-  console.log(page)
-
   return page[0]
+}
+
+export const sanityFetchAccreditationsLogos = async () => {
+  const accreditations = await sanityClient.fetch(fetchAccreditationsQuery)
+  
+  return accreditations
 }
