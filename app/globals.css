@@ -49,6 +49,15 @@ body {
   font-family: 'Avenir';
 }
 
+.hide-scrollbar{
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
 .heading{
   /* font-size: 45px;
   font-weight: 600;

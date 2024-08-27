@@ -39,7 +39,7 @@ const Dropdown: FC<DropdownProps> = ({
   };
 
   return (
-    <div className="bg-lightEgg text-black py-[10px] px-[16px] rounded-xl relative">
+    <div className="bg-lightEgg text-black py-[10px] px-[16px] rounded-xl relative w-full">
       <div className="flex justify-between items-center h-full" onClick={handleOpen}>
         <div className="">{heading}</div>
 

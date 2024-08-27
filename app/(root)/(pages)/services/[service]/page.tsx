@@ -8,6 +8,11 @@ import {
 
 import PageBanner from "@/components/PageBanner";
 import ServiceIntroductionSection from "@/components/ServiceIntroductionSection";
+import ServiceObjectivesSection from "@/components/ServiceObjectivesSection";
+import ParallaxBanner from "@/components/ParallaxBanner";
+import ServiceProcessSection from "@/components/ServiceProcessSection";
+import CardsSection from "@/components/CardsSection";
+import ContactFormSection from "@/components/ContactFormSection";
 
 export const generateStaticParams = async () => {
   const services = await sanityFetchAllServices();
@@ -24,8 +29,7 @@ export const generateMetaData = async ({}) => {};
 const ServicePage = async ({ params }: { params: Params }) => {
   const { service } = params;
 
-  const { name, introductionSection, bannerImage } =
-    await sanityFetchServiceContent(service);
+  const { name, introductionSection, bannerImage, objectivesSection, imageBanner1, imageBanner2, processSection, benefitsSection } = await sanityFetchServiceContent(service);
 
   return (
     <div className="flex flex-col gap-[100px]">
@@ -40,6 +44,26 @@ const ServicePage = async ({ params }: { params: Params }) => {
         headingWithBlockText={introductionSection.headingWithBlockText}
         image={introductionSection.image}
       />
+
+      <div>
+        <ServiceObjectivesSection
+          heading={objectivesSection.heading}
+          image={objectivesSection.image}
+          objectives={objectivesSection.objectives}
+        />
+
+        <ParallaxBanner image={imageBanner1} />
+
+        <ServiceProcessSection heading= {processSection.heading} processSteps={processSection.processSteps} />
+      </div>
+
+      <CardsSection heading= {benefitsSection.heading} cards={benefitsSection.benefits} benefits />
+
+      <div>
+        <ParallaxBanner image={imageBanner1} />
+
+        <ContactFormSection tree="willow" treeClassName="absolute -start-20"/>
+      </div>
     </div>
   );
 };

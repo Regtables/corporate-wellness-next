@@ -6,7 +6,7 @@ import Hero from "@/components/Hero";
 import ApproachSection from "@/components/ApproachSection";
 import AboutSection from "@/components/AboutSection";
 import Values from "@/components/Values";
-import ServicesSection from "@/components/ServicesSection";
+import CardsSection from "@/components/CardsSection";
 import ParallaxBanner from "@/components/ParallaxBanner";
 import GeneralProcess from "@/components/GeneralProcess";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -54,9 +54,9 @@ const HomePage: FC = async () => {
       </div>
 
       {/* Services */}
-      <ServicesSection
+      <CardsSection
         heading={servicesSection.heading}
-        services={servicesSection.services}
+        cards={servicesSection.services}
       />
 
       {/* Process */}

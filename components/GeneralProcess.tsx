@@ -1,5 +1,7 @@
-import { SanityProcessSection } from '@/lib/sanity/types'
 import React, { FC } from 'react'
+
+import { SanityProcessSection } from '@/lib/sanity/types'
+
 import Process from './Process'
 
 const GeneralProcess:FC<SanityProcessSection> = ({ heading, processSteps }) => {

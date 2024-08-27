@@ -37,21 +37,25 @@ export type SanityFetchServiceContentOperation = {
   introductionSection: SanitySection
   imageBanner1: SanityImageType
   imageBanner2: SanityImageType
-  objectiveSection: {
+  objectivesSection: {
     heading: string,
-    objectives: {
-      title: string,
-      text: string
-    }[]
+    image: SanityImageType,
+    objectives: ServiceObjectiveType[]
   },
   processSection: SanityProcessSection,
   benefitsSection: {
     heading: string,
     benefits: {
-
+      name: string,
+      description: string
     }[]
   }
 }[]
+
+export type ServiceObjectiveType = {
+  title: string,
+  description: string
+}
 
 export type SanityTestimonialsSection = {
   heading: string,
@@ -69,6 +73,7 @@ export type SanityTestimonialType = {
 export type SanityProcessSection = {
   heading: string,
   processSteps: SanityProcessStepType[]
+  icon?: any
 }
 
 export type SanityProcessStepType = {

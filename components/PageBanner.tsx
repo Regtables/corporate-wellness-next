@@ -18,7 +18,7 @@ const PageBanner:FC<PageBannerProps> = ({ heading, subHeading, icon, image }) =>
           <h4 className='uppercase text-[23px] tracking-[-4%]'>{subHeading}</h4>
         )}
 
-        <h1 className='font-heading text-[76px] w-40'>{heading}</h1>
+        <h1 className='font-heading text-[76px] w-40 leading-[94px] font-bold'>{heading}</h1>
       </div>
 
       <div className='flex-[0.5] w-full'>

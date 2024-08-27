@@ -17,5 +17,7 @@ export const sanityFetchAllServices = async () => {
 export const sanityFetchServiceContent = async (service: string) => {
   const page = await sanityClient.fetch<SanityFetchServiceContentOperation>(fetchServiceContentQuery(service))
 
+  console.log(page)
+
   return page[0]
 }

@@ -16,5 +16,6 @@ export const SERVICES_ICONS:IconPath = {
 }
 
 export const TREE_ICONS:IconPath = {
-  'baobab': '/baobab-white.png'
+  'baobab': '/baobab-white.png',
+  'willow': '/willow-white.png'
 }

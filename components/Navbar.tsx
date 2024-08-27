@@ -2,10 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+
+import { cn } from "@/lib/utils";
 
 import LogoWithText from "./logos/LogoWithText";
 import BasicButton from "./buttons/BasicButton";
-import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
 
 const LINKS = [
   {
@@ -51,7 +54,13 @@ const LINKS = [
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hover, setHover] = useState("");
+
   const threshold = 50;
+
+  const handleLinkClick = (link: { link: string, slug: string }) => {
+    
+  }
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -85,36 +94,53 @@ const Navbar = () => {
 
       <ul className="flex gap-10 list-none" role="menubar">
         {LINKS.map((link, i) => (
-          <li key={i} role="none">
-            <a
-              href={link.slug}
-              className="capitalize font-[400] text-black tracking-[-0.04em] text-[16px]"
+          <li
+            key={i}
+            role="none"
+            onMouseEnter={() => setHover(link.link)}
+            onMouseLeave={() => setHover("")}
+            className="relative"
+            onClick={() => handleLinkClick(link)}
+          >
+            <div
+              className="capitalize font-[400] text-black tracking-[-0.04em] text-[16px] hover:font-bold cursor-pointer flex items-center gap-1 leading-0"
               role={link.pages ? "menuitem" : undefined}
               aria-haspopup={link.pages ? "true" : undefined}
               aria-expanded={link.pages ? "false" : undefined}
             >
               {link.link}
-            </a>
 
-            {link.pages && (
-              <ul
-                role="menu"
-                aria-label={`${link.link} submenu`}
-                className="hidden"
-              >
-                {link.pages.map((sublink, j) => (
-                  <li key={j} role="none">
-                    <a
-                      href={sublink.slug}
-                      className="capitalize font-[400] text-black tracking-[-0.04em] font-body"
-                      role="menuitem"
-                    >
-                      {sublink.link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
+
+              {link.pages && (
+                <ChevronDown size={18}/>
+              )}
+            </div>
+
+            <AnimatePresence>
+              {link.pages && hover === "services" && (
+                <motion.div
+                  role="menu"
+                  aria-label={`${link.link} submenu`}
+                  className="absolute w-full min-w-[200px] -start-4 z-10 bg-white flex flex-col p-4 gap-2 rounded-xl pt-6"
+                  whileInView={{ opacity: [0, 1] }}
+                  initial={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  exit={{ opacity: [1, 0] }}
+                >
+                  {link.pages.map((sublink, j) => (
+                      <Link
+                        href={sublink.slug}
+                        className="capitalize font-[400] text-black tracking-[-0.04em] font-body hover:font-bold transition-all duration-300"
+                        role="menuitem"
+                      >
+                        <div key={j} role="none">
+                          {sublink.link}
+                        </div>
+                      </Link>
+                    ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </li>
         ))}
       </ul>

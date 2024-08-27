@@ -9,18 +9,18 @@ interface ProcessStepTasksProps {
 
 const ProcessStepTasksList:FC<ProcessStepTasksProps> = ({ tasks, className }) => {
   return (
-    <ul className= {cn('flex flex-col gap-4', className && className)}>
+    <div className= {cn('flex flex-col gap-6 w-full', className && className)}>
       {tasks.map((task, i) => (
-        <li className='text-white text-[13px]'>
+        <div className={cn(`text-white font-normal text-[13px] leading-none flex flex-col gap-6 ${className}`)}>
           <>
             {i !== 0 && (
-              <div className='h-1 bg-black w-full' />
+              <div className='h-[1px] bg-black w-full' />
             )}
             {task}
           </>
-        </li>
+        </div>
       ))}
-    </ul>
+    </div>
   )
 }
 
