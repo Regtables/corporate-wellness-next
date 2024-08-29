@@ -25,7 +25,7 @@ const CardsSection: FC<CardsSectionProps> = ({
   linkage
 }) => {
   return (
-    <section className="px-section py-10" id={id}>
+    <section className="px-section py-32" id={id}>
       <div className="flex justify-between items-center pb-12">
         <h2 className="font-heading heading">{heading}</h2>
 

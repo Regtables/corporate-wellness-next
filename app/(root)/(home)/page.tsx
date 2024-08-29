@@ -25,7 +25,7 @@ const HomePage: FC = async () => {
   } = await sanityFetchHomePageContent();
 
   return (
-    <div className="flex flex-col gap-32">
+    <div className="flex flex-col">
       {/* Hero */}
       <Hero
         image={heroSection.backgroundImages[0]}

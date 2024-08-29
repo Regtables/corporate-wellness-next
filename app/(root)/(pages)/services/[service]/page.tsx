@@ -41,7 +41,7 @@ const ServicePage = async ({ params }: { params: Params }) => {
   } = await sanityFetchServiceContent(service);
 
   return (
-    <div className="flex flex-col gap-[100px]">
+    <div className="flex flex-col">
       <PageBanner
         heading={name}
         subHeading="services"

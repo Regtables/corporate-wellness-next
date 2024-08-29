@@ -10,7 +10,7 @@ interface ProcessStepTasksProps {
 
 const ProcessStepTasksList:FC<ProcessStepTasksProps> = ({ tasks, className, contained }) => {
   return (
-    <div className= {cn('flex flex-col w-full', className && className)}>
+    <div className= {cn('flex flex-col w-full', className && className, !contained && 'mt-8')}>
       {tasks.map((task, i) => (
         <div className={cn(`text-white text-[13px] leading-none flex flex-col ${className}`)}>
           <>
@@ -18,8 +18,8 @@ const ProcessStepTasksList:FC<ProcessStepTasksProps> = ({ tasks, className, cont
               <div className={cn('h-[1px] bg-black w-full', !contained && 'bg-duckEgg')} />
             )}
 
-            <div className={cn('min-h-[30px] font-[300]', contained && 'min-h-0')}>
-             {task}
+            <div className={cn('min-h-[30px] font-[300]', contained && 'min-h-0', !contained && 'min-h-[30px] gap-[20px]')}>
+              {task}
             </div>
           </>
         </div>

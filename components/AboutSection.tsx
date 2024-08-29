@@ -21,7 +21,7 @@ const AboutSection: FC<AboutSectionProps> = ({
   const { text, heading } = headingWithBlockText;
 
   return (
-    <section className="flex gap-20 pr-section" id = 'about'>
+    <section className="flex gap-20 pr-section py-32" id = 'about'>
       <div className="flex-[0.5]">
         <SanityImage image={image} className="rounded-[12px]" />
       </div>
