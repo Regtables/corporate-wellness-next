@@ -29,7 +29,16 @@ export const generateMetaData = async ({}) => {};
 const ServicePage = async ({ params }: { params: Params }) => {
   const { service } = params;
 
-  const { name, introductionSection, bannerImage, objectivesSection, imageBanner1, imageBanner2, processSection, benefitsSection } = await sanityFetchServiceContent(service);
+  const {
+    name,
+    introductionSection,
+    bannerImage,
+    objectivesSection,
+    imageBanner1,
+    imageBanner2,
+    processSection,
+    benefitsSection,
+  } = await sanityFetchServiceContent(service);
 
   return (
     <div className="flex flex-col gap-[100px]">
@@ -54,15 +63,23 @@ const ServicePage = async ({ params }: { params: Params }) => {
 
         <ParallaxBanner image={imageBanner1} />
 
-        <ServiceProcessSection heading= {processSection.heading} processSteps={processSection.processSteps} />
+        <ServiceProcessSection
+          heading={processSection.heading}
+          processSteps={processSection.processSteps}
+          service= {name}
+        />
       </div>
 
-      <CardsSection heading= {benefitsSection.heading} cards={benefitsSection.benefits} benefits />
+      <CardsSection
+        heading={benefitsSection.heading}
+        cards={benefitsSection.benefits}
+        benefits
+      />
 
       <div>
         <ParallaxBanner image={imageBanner1} />
 
-        <ContactFormSection tree="willow" treeClassName="absolute -start-20"/>
+        <ContactFormSection tree="willow" treeClassName="absolute -start-20" />
       </div>
     </div>
   );

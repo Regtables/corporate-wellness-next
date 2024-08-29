@@ -1,9 +1,10 @@
+import React, { FC } from "react";
 import {
   SanityHeadingWithBlockText,
   SanityImageType,
   SanitySection,
 } from "@/lib/sanity/types";
-import React, { FC } from "react";
+
 import SanityImage from "./SanityImage";
 import BlockText from "./BlockText";
 import BasicButton from "./buttons/BasicButton";
@@ -20,7 +21,7 @@ const AboutSection: FC<AboutSectionProps> = ({
   const { text, heading } = headingWithBlockText;
 
   return (
-    <div className="flex gap-20 pr-section">
+    <section className="flex gap-20 pr-section" id = 'about'>
       <div className="flex-[0.5]">
         <SanityImage image={image} className="rounded-[12px]" />
       </div>
@@ -45,7 +46,7 @@ const AboutSection: FC<AboutSectionProps> = ({
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

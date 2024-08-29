@@ -5,7 +5,7 @@ import TestimonialCard from './cards/TestimonialCard'
 
 const TestimonialsSection:FC<SanityTestimonialsSection> = ({ heading, testimonials }) => {
   return (
-    <div className='px-section'>
+    <section className='px-section' id = 'testimonials'>
       <h2 className='font-heading heading'>{heading}</h2>
       
       <div className='grid grid-cols-3 gap-8 pt-10'>
@@ -17,7 +17,7 @@ const TestimonialsSection:FC<SanityTestimonialsSection> = ({ heading, testimonia
           />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
 

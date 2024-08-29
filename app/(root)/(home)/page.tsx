@@ -57,6 +57,8 @@ const HomePage: FC = async () => {
       <CardsSection
         heading={servicesSection.heading}
         cards={servicesSection.services}
+        id = 'services'
+        
       />
 
       {/* Process */}

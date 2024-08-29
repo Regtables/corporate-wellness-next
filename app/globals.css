@@ -43,6 +43,10 @@
   }
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-white);
   color: var(--color-black);

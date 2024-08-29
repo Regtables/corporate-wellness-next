@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { ArrowUpRight, MoveUpRight } from "lucide-react";
 import React, { FC, ButtonHTMLAttributes } from "react";
 
 interface BasicButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -27,7 +28,7 @@ const BasicButton: FC<BasicButtonProps> = ({
       onClick={handleClick}
       style={{ backgroundColor: bgColor, color, borderColor: color }}
       className={cn(
-        "rounded-[12px] px-[24px] h-[40px] leading-none",
+        "rounded-[12px] px-[24px] h-[40px] leading-none capitalize flex items-center gap-2",
         pill && "rounded-full",
         outline && "border-2 border-[var(--color-black)]",
         className
@@ -35,8 +36,8 @@ const BasicButton: FC<BasicButtonProps> = ({
       aria-label={props['aria-label'] || text}
       {...props}
     >
-      {icon && <span className="mr-2" aria-hidden="true">{icon}</span>}
       <span>{text}</span>
+      {icon ? (<span className="mr-2" aria-hidden="true">{icon}</span>) : (<ArrowUpRight size={20} />)}
     </button>
   );
 };

@@ -31,6 +31,10 @@ const config: Config = {
         section: '195px',
         sectionY: '96px'
       },
+      margin: {
+        section: '195px',
+        sectionY: '96px'
+      },
       fontFamily: {
         body: 'var(--font-nunito-sans)',
         heading: 'var(--font-libre-baskerville)'

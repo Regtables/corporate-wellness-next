@@ -35,9 +35,9 @@ const ViewMotionWrapper = ({
   return (
     <motion.div
       key={animationKey}
-      whileInView={{ y: [y, 0], x: [x, 0], opacity: [0, 1], scale: [scale, 1] }}
+      whileInView={{ y: [10, -10, 0], x: [x, 0], opacity: [0, 1], scale: [scale, 1] }}
       transition={{ duration: duration, delay: delay }}
-      initial={{ y: y, x: x, opacity: 0 }}
+      initial={{ y: -10, x: x, opacity: 0 }}
       viewport={{ once: once }}
       className={className}
       exit={exit}

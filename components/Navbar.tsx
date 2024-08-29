@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 import LogoWithText from "./logos/LogoWithText";
 import BasicButton from "./buttons/BasicButton";
-import { ChevronDown } from "lucide-react";
 
 const LINKS = [
   {
@@ -21,7 +22,7 @@ const LINKS = [
   },
   {
     link: "our approach",
-    slug: "#about",
+    slug: "#approach",
   },
   {
     link: "services",
@@ -55,12 +56,15 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hover, setHover] = useState("");
+  const router = useRouter();
+  const pathname = usePathname();
 
   const threshold = 50;
 
-  const handleLinkClick = (link: { link: string, slug: string }) => {
-    
-  }
+  const handleLinkClick = (link: { link: string; slug: string }) => {
+    router.push(`/${link.slug}`);
+    setShowNavbar(false)
+  };
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -100,7 +104,6 @@ const Navbar = () => {
             onMouseEnter={() => setHover(link.link)}
             onMouseLeave={() => setHover("")}
             className="relative"
-            onClick={() => handleLinkClick(link)}
           >
             <div
               className="capitalize font-[400] text-black tracking-[-0.04em] text-[16px] hover:font-bold cursor-pointer flex items-center gap-1 leading-0"
@@ -108,12 +111,9 @@ const Navbar = () => {
               aria-haspopup={link.pages ? "true" : undefined}
               aria-expanded={link.pages ? "false" : undefined}
             >
-              {link.link}
+              <div onClick={() => handleLinkClick(link)}>{link.link}</div>
 
-
-              {link.pages && (
-                <ChevronDown size={18}/>
-              )}
+              {link.pages && <ChevronDown size={18} />}
             </div>
 
             <AnimatePresence>
@@ -128,16 +128,16 @@ const Navbar = () => {
                   exit={{ opacity: [1, 0] }}
                 >
                   {link.pages.map((sublink, j) => (
-                      <Link
-                        href={sublink.slug}
-                        className="capitalize font-[400] text-black tracking-[-0.04em] font-body hover:font-bold transition-all duration-300"
-                        role="menuitem"
-                      >
-                        <div key={j} role="none">
-                          {sublink.link}
-                        </div>
-                      </Link>
-                    ))}
+                    <Link
+                      href={sublink.slug}
+                      className="capitalize font-[400] text-black tracking-[-0.04em] font-body hover:font-bold transition-all duration-300"
+                      role="menuitem"
+                    >
+                      <div key={j} role="none">
+                        {sublink.link}
+                      </div>
+                    </Link>
+                  ))}
                 </motion.div>
               )}
             </AnimatePresence>

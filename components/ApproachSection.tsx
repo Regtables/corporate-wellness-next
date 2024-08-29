@@ -1,12 +1,13 @@
+import React, { FC } from "react";
+
 import {
   SanityHeadingWithBlockText,
   SanityImageType,
 } from "@/lib/sanity/types";
-import React, { FC } from "react";
+
 import BlockText from "./BlockText";
 import Accordion from "./Accordion";
 import SanityImage from "./SanityImage";
-import Image from "next/image";
 import RippleBg from "./RippleBg";
 
 interface ApproachSectionProps {
@@ -26,7 +27,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
   const { heading, text } = headingWithText;
 
   return (
-    <div className="flex pl-section py-24 pb-40 bg-duckEgg gap-24 relative">
+    <section className="flex pl-section py-24 pb-40 bg-duckEgg gap-24 relative" id = 'approach'>
       <RippleBg />
 
       <div className="flex-[0.5] flex flex-col gap-[12px] relative z-10">
@@ -49,7 +50,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
       <div className="flex-[0.5] w-full">
         <SanityImage image={image} className="rounded-l-xl" />
       </div>
-    </div>
+    </section>
   );
 };
 

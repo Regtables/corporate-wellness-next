@@ -12,7 +12,7 @@ interface ProcessProps {
   className?: string;
 }
 
-const   Process: FC<ProcessProps> = ({
+const Process: FC<ProcessProps> = ({
   processSteps,
   contained,
   col,
@@ -28,7 +28,7 @@ const   Process: FC<ProcessProps> = ({
     >
       {processSteps.map((step, i) => (
         <div className="">
-          <div className={cn("flex items-center", col && 'flex-col items-start')}>
+          <div className={cn("flex relative ", col && "flex-col items-start")}>
             <ProcessStepCard
               name={step.name}
               tasks={step.tasks}
@@ -38,7 +38,12 @@ const   Process: FC<ProcessProps> = ({
 
             {/* Partition */}
             {i !== processSteps.length - 1 && (
-              <div className={cn("h-1 bg-duckEgg w-8", col && 'ml-8 h-8 w-1')} />
+              <div
+                className={cn(
+                  "h-1 bg-duckEgg w-8 mt-[60px]",
+                  col && "ml-8 h-8 w-1 mt-[0px]"
+                )}
+              />
             )}
           </div>
         </div>

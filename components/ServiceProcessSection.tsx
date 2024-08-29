@@ -1,15 +1,22 @@
 import { SanityProcessSection } from '@/lib/sanity/types'
 import React, { FC } from 'react'
 import Icon from './logos/Icon'
-import { TREE_ICONS } from '@/lib/icons'
+import { SERVICE_PROCESS_ICONS, TREE_ICONS } from '@/lib/icons'
 import ProcessStepTasksList from './ProcessStepTasksList'
 import Process from './Process'
 
-const ServiceProcessSection:FC<SanityProcessSection> = ({ heading, processSteps, icon }) => {
+interface ServiceProcessSectionProps {
+  service: string,
+  heading: string,
+  processSteps: any,
+  // icon?: any
+}
+
+const ServiceProcessSection:FC<ServiceProcessSectionProps> = ({ heading, processSteps, service }) => {
   return (
     <div className='bg-black px-section py-sectionY flex gap-16'>
       <div className='w-full flex-[0.6]'>
-        <Icon path={TREE_ICONS['baobab']} className="h-full w-full"/>
+        <Icon path={SERVICE_PROCESS_ICONS[service]} className="h-full w-full"/>
       </div>
 
       <div className='flex-[0.4]'>

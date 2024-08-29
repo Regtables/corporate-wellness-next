@@ -5,14 +5,18 @@ interface IconProps {
   className?: string;
   width?: number;
   height?: number;
-  path: string
+  path: {
+    src: string,
+    height?: number,
+    width?: number
+  }
 }
 
 const Icon: React.FC<IconProps> = ({ className = '', width = 0, height = 0, path }) => {
   return (
     <div className={`relative ${className}`}>
       <Image 
-        src = {path} 
+        src = {path.src} 
         fill
         // width={width || undefined}
         // height={height || undefined}
