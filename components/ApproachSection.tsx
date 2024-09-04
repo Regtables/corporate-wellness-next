@@ -31,7 +31,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
       <RippleBg />
 
       <div className="flex-[0.5] flex flex-col gap-[12px] relative z-10">
-        <h2 className="font-heading heading">{heading}</h2>
+        <h2 className="heading">{heading}</h2>
 
         <BlockText text={text} className="gap-4 bodyText" />
 

@@ -24,7 +24,7 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export const generateMetaData = async ({}) => {};
+// export const generateMetaData = async ({}) => {};
 
 const ServicePage = async ({ params }: { params: Params }) => {
   const { service } = params;

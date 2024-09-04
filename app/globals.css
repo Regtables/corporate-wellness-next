@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Avenir';
-  src: url('/fonts/AvenirLTStd-Roman.otf') format('opentype');
+  src: url('/fonts/AvenirLTStd-Medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -20,8 +20,7 @@
 
 @font-face {
   font-family: 'Baskerville';
-  src: url('/fonts/Baskerville.ttc') format('truetype-collections'),
-       url('/fonts/Baskerville.ttc') format('collection');
+  src: url('/fonts/Baskervi.ttc') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -68,8 +67,9 @@ body {
   font-weight: 600;
   font-family: 'Baskersville';
   font-family: Baskerville; */
-  font-family: Baskerville;
-  font-size: 45px;
+  font-family: var(--font-libre-baskerville);
+  font-size: 40px;
+  /* font-family: 'Baskersville'; */
   font-weight: 900;
   line-height: 45px;
   text-align: left;
