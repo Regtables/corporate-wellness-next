@@ -1,25 +1,28 @@
-'use client'
+import React, { FC } from "react";
 
-import React, { FC } from 'react'
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { sanityFetchAccreditationsLogos } from "@/lib/sanity/actions";
+import { Metadata } from "next";
 
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
-import { ParallaxProvider } from 'react-scroll-parallax'
+export const metadata: Metadata = {
+  title: "Corporate Wellness",
+  description: "Corporate Wellness webpage",
+};
 
-const Layout:FC<{ children: React.ReactNode }> = ({ children }) => {
+const Layout: FC<{ children: React.ReactNode }> = async ({ children }) => {
+  const accreditations = await sanityFetchAccreditationsLogos();
+
   return (
-    <ParallaxProvider>
-      <div>
-        <Navbar />
+    <div>
+      <Navbar />
 
-        <main className='pt-[120px]'>
-          {children}
-        </main>
+      <main className="pt-[120px]">{children}</main>
 
-        <Footer />
-      </div>
-    </ParallaxProvider>
-  )
-}
+      <Footer accreditations={accreditations} />
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

@@ -51,6 +51,7 @@ body {
   background-color: var(--color-white);
   color: var(--color-black);
   font-family: 'Avenir';
+  overflow-x: hidden;
 }
 
 .hide-scrollbar{

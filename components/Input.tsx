@@ -8,7 +8,7 @@ interface InputProps {
   name: string;
   value: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  required?: boolean;
+  required?: boolean
 }
 
 const Input: FC<InputProps> = ({
@@ -20,18 +20,20 @@ const Input: FC<InputProps> = ({
   handleChange,
 }) => {
   return (
-    <input
-      className={cn(
-        "bg-lightEgg text-black py-[10px] px-[16px] rounded-xl focus:outline-white",
-        type !== "email" && "capitalize"
-      )}
-      name={name}
-      placeholder={placeholder}
-      value={value}
-      onChange={handleChange}
-      type={type}
-      required={required}
-    />
+    <div className="w-full">
+      <input
+        className={cn(
+          "bg-lightEgg text-black w-full py-[10px] px-[16px] rounded-xl focus:outline-white",
+          type !== "email" && "capitalize"
+        )}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={handleChange}
+        type={type}
+        required={required}
+      />
+    </div>
   );
 };
 

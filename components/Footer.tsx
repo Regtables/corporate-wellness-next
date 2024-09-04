@@ -1,11 +1,10 @@
-import React from "react";
-import Accreditations from "./Accreditations";
-import Logo from "./logos/Logo";
-import LogoWithText from "./logos/LogoWithText";
-import { Facebook, Instagram, Linkedin, Phone } from "lucide-react";
+import React, { FC } from "react";
 import Link from "next/link";
-import { sanityFetchAccreditationsLogos } from "@/lib/sanity/actions";
 import Image from "next/image";
+
+import { SanityImageType } from "@/lib/sanity/types";
+
+import Accreditations from "./Accreditations";
 
 const QUICK_LINKS = [
   {
@@ -88,9 +87,7 @@ const FooterLinks = ({ heading, links }: { heading: string; links: any[] }) => {
   );
 };
 
-const Footer = async () => {
-  const accreditations = await sanityFetchAccreditationsLogos();
-
+const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditations }) => {
   return (
     <footer className="bg-black px-[195px] py-[100px] flex flex-col gap-10">
       <div>

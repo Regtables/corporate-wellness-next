@@ -38,3 +38,13 @@ export const SERVICE_PROCESS_ICONS:IconPath = {
   "Team Coaching": { src: "/team-process.png", width: 100, height: 50 },
   "HR Consultance": { src: "/hr-process.png", width: 60, height: 50 },
 }
+
+export const TIMELINE_ICONS:IconPath = {
+  "1998": { src: "/1998.svg", width: 50, height: 80 },
+  "2004": { src: "/2004.svg", width: 50, height: 50 },
+  "2006": { src: "/2006.svg", width: 60, height: 50 },
+  "2009": { src: "/2009.svg", width: 50, height: 50 },
+  "2015": { src: "/2015.svg", width: 50, height: 50 },
+  "2024": { src: "/2024.svg", width: 40, height: 50 },
+  "2025": { src: "/2025.svg", width: 40, height: 50 },
+}

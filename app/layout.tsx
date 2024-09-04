@@ -1,13 +1,11 @@
+"use client";
+
 import type { Metadata } from "next";
 
 import "./globals.css";
 import { combineFontClasses, libreBaskerville, nunitoSans } from "@/lib/fonts";
-
-
-export const metadata: Metadata = {
-  title: "Corporate Wellness",
-  description: "Corporate Wellness webpage",
-};
+import { ParallaxProvider } from "react-scroll-parallax";
+import { FormProvider } from "@/context/FormContext";
 
 export default function RootLayout({
   children,
@@ -22,7 +20,9 @@ export default function RootLayout({
         nunitoSans.variable
       )}
     >
-      <body>{children}</body>
+      <body>
+        <ParallaxProvider>{children}</ParallaxProvider>
+      </body>
     </html>
   );
 }

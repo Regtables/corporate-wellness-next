@@ -9,7 +9,7 @@ interface BasicButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   pill?: boolean;
   bgColor?: string;
   color?: string;
-  outline?: boolean;
+  outline?: boolean
 }
 
 const BasicButton: FC<BasicButtonProps> = ({
@@ -21,6 +21,7 @@ const BasicButton: FC<BasicButtonProps> = ({
   pill,
   outline,
   className,
+  type,
   ...props
 }) => {
   return (
@@ -33,6 +34,7 @@ const BasicButton: FC<BasicButtonProps> = ({
         outline && "border-2 border-[var(--color-black)]",
         className
       )}
+      type= {type}
       aria-label={props['aria-label'] || text}
       {...props}
     >

@@ -62,6 +62,7 @@ const Navbar = () => {
   const threshold = 50;
 
   const handleLinkClick = (link: { link: string; slug: string }) => {
+    console.log('clicking')
     router.push(`/${link.slug}`);
     setShowNavbar(false)
   };

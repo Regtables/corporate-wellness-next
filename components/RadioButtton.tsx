@@ -1,12 +1,12 @@
 import { AnimatePresence } from "framer-motion";
-import React, { FC } from "react";
+import React, { Dispatch, FC, SetStateAction } from "react";
 
 import ViewMotionWrapper from "./ViewMotionWrapper";
 
 interface RadioButtonProps {
   isChecked: boolean;
   text: string;
-  handleCheck: () => void;
+  handleCheck: Dispatch<SetStateAction<boolean>>;
 }
 
 const RadioButton: FC<RadioButtonProps> = ({
@@ -16,7 +16,7 @@ const RadioButton: FC<RadioButtonProps> = ({
 }) => {
   return (
     <button
-      onClick={handleCheck}
+      onClick={() => handleCheck(!isChecked)}
       className="flex items-center text-start gap-4"
       type="button"
     >

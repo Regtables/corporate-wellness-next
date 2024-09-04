@@ -8,8 +8,8 @@ import RadioButton from "./RadioButtton";
 import BasicButton from "./buttons/BasicButton";
 
 const FORM_DATA = {
-  firstname: "",
-  lastname: "",
+  firstName: "",
+  lastName: "",
   email: "",
   contact: "",
   service: "",
@@ -22,31 +22,37 @@ const SERVICE_OPTIONS = [
   "HR consultance",
 ];
 
-const ContactForm = () => {
+const ContactForm = ({ defaultService } : { defaultService?: string }) => {
   const [formData, setFormData] = useState(FORM_DATA);
   const [agreed, setAgreed] = useState(false)
-
-  const rowStyles = "flex";
 
   const handleFormChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleServiceSelect = (service: string) => {
+    setFormData({ ...formData, service })
+  }
 
   return (
     <form className="mt-10 flex flex-col items-start gap-5">
       <div className="grid grid-cols-2 gap-5 w-full">
         <Input
           placeholder="First name"
-          value={formData.firstname}
+          value={formData.firstName}
           name="firstName"
           handleChange={handleFormChange}
+          type="text"
+          required
         />
 
         <Input
           placeholder="Surname"
-          value={formData.lastname}
+          value={formData.lastName}
           name="lastName"
           handleChange={handleFormChange}
+          type="text"
+          required
         />
 
         <Input
@@ -54,6 +60,8 @@ const ContactForm = () => {
           value={formData.email}
           name="email"
           handleChange={handleFormChange}
+          type="email"
+          required
         />
 
         <Input
@@ -61,13 +69,15 @@ const ContactForm = () => {
           value={formData.contact}
           name="contact"
           handleChange={handleFormChange}
+          type="text"
         />
       </div>
 
       <Dropdown
         heading="Services"
         options={SERVICE_OPTIONS}
-        defaultValue="Individual Coaching"
+        handleOptionSelect={handleServiceSelect}
+        selectedOption= {defaultService || formData.service}
         
       />
 
@@ -83,7 +93,7 @@ const ContactForm = () => {
         handleCheck={setAgreed}
       />
 
-      <BasicButton text="Send Message" bgColor="var(--color-black)" color="white"/>
+      <BasicButton text="Send Message" bgColor="var(--color-black)" color="white" type="submit"/>
     </form> 
   );
 };

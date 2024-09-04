@@ -5,7 +5,7 @@ import React, { FC, useRef, useState } from "react";
 
 interface DropdownProps {
   heading: string;
-  defaultValue: string;
+  defaultValue?: string;
   options: string[];
   handleOptionSelect: (option: string) => void;
   selectedOption?: string;
@@ -39,11 +39,13 @@ const Dropdown: FC<DropdownProps> = ({
   };
 
   return (
-    <div className="bg-lightEgg text-black py-[10px] px-[16px] rounded-xl relative w-full">
-      <div className="flex justify-between items-center h-full" onClick={handleOpen}>
-        <div className="">{heading}</div>
+    <div className="bg-lightEgg text-black py-[10px] px-[16px] rounded-xl relative w-full z-20">
+      <div className="flex justify-between items-center h-full w-full" onClick={handleOpen}>
+        <div className="cursor-pointer h-full w-full">
+          {selectedOption ? selectedOption : heading}
+        </div>
 
-        <div className="flex justify-between items-center" >
+        <div className="flex justify-between items-center cursor-pointer" >
           <ChevronDown size={20} />
         </div>
       </div>
