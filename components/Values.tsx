@@ -11,7 +11,7 @@ const Values = () => {
         <>
           <div className='flex gap-10'>
             <div className='text-white font-heading  flex items-center text-[28px] capitalize gap-6'>
-              <Image src={VALUES_ICONS[value]} height={50} width={50} alt = {value}/>
+              <Image src={VALUES_ICONS[value].src} height={50} width={50} alt = {value}/>
               {value}
             </div>
 
