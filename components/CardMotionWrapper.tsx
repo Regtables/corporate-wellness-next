@@ -3,7 +3,7 @@
 import React, { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-interface ViewMotionWrapperProps {
+interface CardMotionWrapperProps {
   children: ReactNode;
   y?: number;
   x?: number;
@@ -18,7 +18,7 @@ interface ViewMotionWrapperProps {
   animationKey?: string | number; // Add this line
 }
 
-const ViewMotionWrapper = ({
+const CardMotionWrapper = ({
   children,
   y = 20,
   x = 0,
@@ -31,13 +31,13 @@ const ViewMotionWrapper = ({
   exit = { opacity: [1, 0], duration: 0.5 },
   ref,
   animationKey,
-}: ViewMotionWrapperProps) => {
+}: CardMotionWrapperProps) => {
   return (
     <motion.div
       key={animationKey}
-      whileInView={{ y: [y, 0], x: [x, 0], opacity: [0, 1], scale: [scale, 1] }}
+      whileInView={{ y: [10, -10, 0], x: [x, 0], opacity: [0, 1], scale: [scale, 1] }}
       transition={{ duration: duration, delay: delay }}
-      initial={{ y: y, x: x, opacity: 0 }}
+      initial={{ y: -10, x: x, opacity: 0 }}
       viewport={{ once: once }}
       className={className}
       exit={exit}
@@ -50,4 +50,4 @@ const ViewMotionWrapper = ({
   );
 };
 
-export default ViewMotionWrapper;
+export default CardMotionWrapper;

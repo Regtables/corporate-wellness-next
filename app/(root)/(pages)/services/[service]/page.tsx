@@ -77,7 +77,7 @@ const ServicePage = async ({ params }: { params: Params }) => {
       />
 
       <div>
-        <ParallaxBanner image={imageBanner1} />
+        <ParallaxBanner image={imageBanner2} />
 
         <ContactFormSection tree="willow" treeClassName="absolute -start-20" />
       </div>

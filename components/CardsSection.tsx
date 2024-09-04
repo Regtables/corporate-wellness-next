@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import ServiceCard from "./cards/ServiceCard";
 import BasicButton from "./buttons/BasicButton";
 import { SERVICES_ICONS } from "@/lib/icons";
-import ViewMotionWrapper from "./ViewMotionWrapper";
+import ViewMotionWrapper from "./CardMotionWrapper";
 
 interface CardsSectionProps {
   heading: string;

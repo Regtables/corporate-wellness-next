@@ -1,28 +1,31 @@
-"use client";
+'use client'
 
-import { SanityImageType } from "@/lib/sanity/types";
 import React, { FC } from "react";
-import SanityImage from "./SanityImage";
 import { ParallaxBanner as Parallax } from "react-scroll-parallax";
-import { sanityClient, urlFor } from "@/lib/sanity/client";
+import { sanityClient } from "@/lib/sanity/client";
 import { useNextSanityImage } from "next-sanity-image";
+import { SanityImageType } from "@/lib/sanity/types";
 
 interface ParallaxBannerProps {
   image: SanityImageType;
-  initialPosition?: number;
+  initialYPosition?: number;
 }
 
-const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialPosition }) => {
-  const { src, loader } = useNextSanityImage(sanityClient, image.image)
+const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }) => {
+  const { src } = useNextSanityImage(sanityClient, image.image);
 
   return (
     <div className="w-full">
       <Parallax
-        layers={[{ image: src, speed: -15 }]}
+        layers={[
+          {
+            image: src,
+            speed: -15,
+            shouldAlwaysCompleteAnimation: true,
+          },
+        ]}
         className="w-full h-[282px]"
-        style={{ objectPosition: '100% 100%'}}
       />
-      {/* <SanityImage image={image} /> */}
     </div>
   );
 };

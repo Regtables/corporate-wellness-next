@@ -1,5 +1,16 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
+type ValidationRule = (value: string) => string | undefined;
+
+interface FieldConfig {
+  validationRules?: ValidationRule[];
+  required?: boolean;
+}
+
+interface FormConfig {
+  [key: string]: FieldConfig;
+}
+
 interface FormContextType {
   formData: { [key: string]: string };
   errors: { [key: string]: string };
@@ -21,32 +32,53 @@ export const useForm = () => {
 interface FormProviderProps {
   children: ReactNode;
   initialState: { [key: string]: string };
+  formConfig: FormConfig;
 }
 
-export const FormProvider: React.FC<FormProviderProps> = ({ children, initialState }) => {
+export const FormProvider: React.FC<FormProviderProps> = ({ children, initialState, formConfig }) => {
   const [formData, setFormData] = useState(initialState);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  const validateField = (name: string, value: string): string | undefined => {
+    const fieldConfig = formConfig[name];
+    if (!fieldConfig) return undefined;
+
+    if (fieldConfig.required && !value) {
+      return `This field is required*`;
+    }
+
+    if (fieldConfig.validationRules) {
+      for (const rule of fieldConfig.validationRules) {
+        const error = rule(value);
+        if (error) return error;
+      }
+    }
+
+    return undefined;
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: '' }));
-    }
+    
+    const error = validateField(name, value);
+    setErrors(prev => ({ ...prev, [name]: error || '' }));
   };
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
+    let isValid = true;
+
     Object.entries(formData).forEach(([key, value]) => {
-      if (!value && key !== 'service') {
-        newErrors[key] = `${key.charAt(0).toUpperCase() + key.slice(1)} is required`;
+      const error = validateField(key, value);
+      if (error) {
+        newErrors[key] = error;
+        isValid = false;
       }
     });
-    if (formData.email && !/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'Invalid email format';
-    }
+
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return isValid;
   };
 
   return (

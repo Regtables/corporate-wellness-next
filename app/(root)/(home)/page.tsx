@@ -102,7 +102,7 @@ const HomePage: FC = async () => {
 
       {/* Process */}
       <div>
-        <ParallaxBanner image={imageBanner1} />
+        <ParallaxBanner image={imageBanner1} initialYPosition={0} />
 
         <GeneralProcess
           heading={generalProcess.heading}
@@ -117,7 +117,7 @@ const HomePage: FC = async () => {
       />
 
       <div>
-        <ParallaxBanner image={imageBanner2} />
+        <ParallaxBanner image={imageBanner2} initialYPosition={50} />
 
         <ContactFormSection tree="baobab" />
       </div>

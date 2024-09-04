@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import React, { Dispatch, FC, SetStateAction } from "react";
 
-import ViewMotionWrapper from "./ViewMotionWrapper";
+import ViewMotionWrapper from "./CardMotionWrapper";
 
 interface RadioButtonProps {
   isChecked: boolean;
