@@ -22,6 +22,15 @@ export const SERVICES_ICONS: IconPath = {
   "Holistic Perspective": { src: "/hr.svg", width: 60, height: 50 },
 };
 
+export const SERVICES_ICONS_WHITE: IconPath = {
+  "Individual Coaching": { src: "/individual-white.svg", width: 80, height: 50 },
+  "Team Coaching": { src: "/team-white.svg", width: 364, height: 218 },
+  "HR Consultance": { src: "/hr-white.svg", width: 364, height: 218 },
+  "Customised Solutions": { src: "/individual.svg", width: 80, height: 50 },
+  "Business-Centric Approach": { src: "/team.svg", width: 100, height: 50 },
+  "Holistic Perspective": { src: "/hr.svg", width: 60, height: 50 },
+};
+
 export const TREE_ICONS: IconPath = {
   'baobab': { src: "/baobab-white.png" },
   'willow': { src: "/willow-white.png" },

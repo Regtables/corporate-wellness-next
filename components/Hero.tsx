@@ -6,6 +6,7 @@ import { SanityImageType } from "@/lib/sanity/types";
 import Overlay from "./Overlay";
 import BasicButton from "./buttons/BasicButton";
 import Logo from "./logos/Logo";
+import Icon from "./logos/Icon";
 
 interface HeroProps {
   title: string;
@@ -78,6 +79,10 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
           aria-label="Contact us"
         />
       </div>
+
+      
+        <Icon path={{src: '/baobab-sml.png'}} className="h-[330px] w-[157px] absolute z-[20] bottom-[-350px]"/>
+    
     </section>
   );
 };
