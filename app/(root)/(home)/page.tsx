@@ -39,10 +39,10 @@ const TIMELINE = [
     date: "2024",
     text: "Corporate Wellness expanded its operations to the UK.",
   },
-  {
-    date: "2025",
-    text: "Corporate Wellness celebrates years of success in Coaching and HR Consulting with global clients.",
-  },
+  // {
+  //   date: "2025",
+  //   text: "Corporate Wellness celebrates years of success in Coaching and HR Consulting with global clients.",
+  // },
 ];
 
 const HomePage: FC = async () => {
@@ -85,8 +85,8 @@ const HomePage: FC = async () => {
 
       {/* Services */}
       <div className="relative ">
-        <div className="h-[300px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
-          <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[300px] w-[300px] absolute end-0 top-0 z-10" />
+        <div className="h-[310px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
+          <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[310px] w-[300px] absolute end-0 top-0 z-10" />
         </div>
 
         <CardsSection
