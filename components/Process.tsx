@@ -21,7 +21,7 @@ const Process: FC<ProcessProps> = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-4",
+        "lg:grid grid-cols-4",
         col && "grid-cols-1",
         className && className
       )}

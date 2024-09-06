@@ -29,17 +29,17 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
   return (
     <Link href={linkage ? `/services/${slugify(name)}` : ""}>
-      <article className="bg-[white] p-[30px] rounded-xl flex flex-col gap-6 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[40px]">
+      <article className="bg-[white] lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[40px]">
         <div
           className={cn(
-            "flex gap-6 items-center",
+            "flex lg:flex-row flex-col lg:gap-6 gap-4 items-center",
             col &&
               "flex-col text-center items-center justify-center w-64 mx-auto"
           )}
         >
           <Image src={src} alt={name} height={height} width={width} />
 
-          <h3 className="font-heading text-[26px] font-bold leading-[32px]">
+          <h3 className="font-heading lg:text-[26px] text-[20px] font-bold leading-[32px]">
             {name}
           </h3>
         </div>
@@ -47,7 +47,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
         <p className="bodyText">{description}</p>
 
         {buttons && (
-          <div className="font-medium flex items-center gap-4">
+          <div className="font-medium flex items-center lg:justify-start justify-center gap-4">
             Read More
             <ArrowUpRight />
           </div>

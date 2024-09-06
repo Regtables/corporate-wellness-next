@@ -13,6 +13,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactFormSection from "@/components/ContactFormSection";
 import Timeline from "@/components/timeline/Timeline";
 import Icon from "@/components/logos/Icon";
+import TimelineMobile from "@/components/timeline/TimelineMobile";
 
 const TIMELINE = [
   {
@@ -74,6 +75,8 @@ const HomePage: FC = async () => {
 
       <Timeline timeline={TIMELINE} />
 
+      <TimelineMobile timeline={TIMELINE} />
+
       {/* Approach & Values */}
       <div className="relative">
         <ApproachSection
@@ -84,18 +87,20 @@ const HomePage: FC = async () => {
       </div>
 
       {/* Services */}
-      <div className="relative ">
-        <div className="h-[310px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
+      <div className="relative">
+        <div className="lg:block hidden h-[310px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
           <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[310px] w-[300px] absolute end-0 top-0 z-10" />
         </div>
+        
+        <div className="lg:mt-0 mt-72">
+          <CardsSection
+            heading={servicesSection.heading}
+            cards={servicesSection.services}
+            id="services"
+          />
+        </div>
 
-        <CardsSection
-          heading={servicesSection.heading}
-          cards={servicesSection.services}
-          id="services"
-        />
-
-        <div className="absolute w-full flex justify-center top-[-65px]">
+        <div className="absolute w-full flex justify-center lg:top-[-65px] top-[-100px]">
           <Values />
         </div>
       </div>

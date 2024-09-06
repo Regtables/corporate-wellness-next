@@ -25,17 +25,17 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
   treeClassName,
 }) => {
   return (
-    <section className="bg-duckEgg py-sectionY pr-section flex relative">
-      <div className={`flex-[0.5] w-full`}>
+    <section className="bg-duckEgg lg:py-sectionY lg:pr-section px-[20px] py-[30px] flex relative">
+      <div className={`flex-[0.5] w-full lg:block hidden`}>
         <Icon
           path={TREE_ICONS[tree]}
           className={`h-full w-full ${treeClassName}`}
         />
       </div>
 
-      <div className="flex-[0.5] w-full">
+      <div className="lg:flex-[0.5] w-full">
         <h2 className="font-heading heading">Contact Me</h2>
-        <p className="text-[14px]">Let's get in touch to make it happen</p>
+        <p className="text-[14px] lg:text-start text-center">Let's get in touch to make it happen</p>
 
         <ContactForm />
       </div>

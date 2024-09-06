@@ -89,14 +89,14 @@ const FooterLinks = ({ heading, links }: { heading: string; links: any[] }) => {
 
 const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditations }) => {
   return (
-    <footer className="bg-black px-[195px] py-[100px] flex flex-col gap-10">
+    <footer className="bg-black section-padding flex flex-col gap-10">
       <div>
         <Accreditations accreditations={accreditations} />
       </div>
 
       <div className="h-[1px] bg-duckEgg w-full" />
 
-      <div className="flex">
+      <div className="flex lg:flex-row flex-col gap-8">
         <div className="flex-[0.3] flex flex-col gap-10">
           {/* <LogoWithText /> */}
           <Image src={"/logo-blue.svg"} height={70} width={250} alt="Corporate Wellness Logo"/>
@@ -124,12 +124,12 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
           </div>
         </div>
 
-        <div className="flex-[0.7] grid grid-cols-3 relative">
+        <div className="flex-[0.7] lg:flex-row grid lg:grid-cols-3 grid-cols-2 gap-6 relative">
           <FooterLinks heading={"Quick Links"} links={QUICK_LINKS} />
           <FooterLinks heading={"Services"} links={SERVICES_LINKS} />
           <FooterLinks heading={"Legal"} links={LEGAL_LINKS} />
 
-          <div className="text-white absolute end-0 bottom-0 font-[300]">
+          <div className="text-white lg:absolute end-0 bottom-0 font-[300] mt-8  ">
             © 2024
             <span className="font-[600]"> Corporate Wellness.</span> All Rights
             Reserved

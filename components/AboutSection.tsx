@@ -21,12 +21,12 @@ const AboutSection: FC<AboutSectionProps> = ({
   const { text, heading } = headingWithBlockText;
 
   return (
-    <section className="flex gap-20 pr-section pt-32 pb-24" id = 'about'>
-      <div className="flex-[0.5]">
+    <section className="flex lg:flex-row flex-col-reverse lg:gap-20 lg:pr-section px-[var(--section-x-xs)] lg:pt-32 pt-[var(--section-y-xs)] lg:pb-24 pb-16" id = 'about'>
+      <div className="lg:flex-[0.5] lg:h-[unset] h-[300px] lg:mt-0 mt-8">
         <SanityImage image={image} className="rounded-[12px]" />
       </div>
 
-      <div className="flex-[0.5] flex gap-[12px] flex-col">
+      <div className="flex-[0.5] flex gap-[12px] flex-col lg:text-left text-center">
         <h2 className="heading font-heading">{heading}</h2>
 
         <BlockText

@@ -1,14 +1,16 @@
 "use client";
 
+import axios from "axios";
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
 import { FormProvider, useForm } from "@/context/FormContext";
+
 import Input from "./Input";
 import Dropdown from "./Dropdown";
 import RadioButton from "./RadioButtton";
 import BasicButton from "./buttons/BasicButton";
 import FormErrorMessage from "./FormErrorMessage";
-import { AnimatePresence } from "framer-motion";
-import axios from "axios";
 
 const INITIAL_FORM_DATA = {
   firstname: "",
@@ -73,8 +75,6 @@ const ContactFormContent = () => {
         } finally {
           setIsLoading(false)
         }
-        
-        // Here you would typically send the data to your backend
       } else {
         console.log("Form has errors or agreement not checked");
         setError('Please agree to the terms and conditions before sending your message')
@@ -110,7 +110,7 @@ const ContactFormContent = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-10 flex flex-col items-start gap-5"
+      className="lg:mt-10 mt-6 flex flex-col items-start gap-5"
     >
       <div className="grid grid-cols-2 gap-5 w-full">
         <Input placeholder="First name" name="firstname" type="text" required />
@@ -159,13 +159,15 @@ const ContactFormContent = () => {
           handleCheck={handleAgree}
         />
       </div>
-
-      <BasicButton
-        text= {renderButtonText()}
-        bgColor="var(--color-black)"
-        color="white"
-        type="submit"
-      />
+      
+      <div className="flex w-full lg:justify-start justify-center">
+        <BasicButton
+          text= {renderButtonText()}
+          bgColor="var(--color-black)"
+          color="white"
+          type="submit"
+        />
+      </div>
     </form>
   );
 };

@@ -11,7 +11,7 @@ const TestimonialCard:FC<SanityTestimonialType> = ({ name, country, text }) => {
       <div className='font-heading font-bold text-[28px] leading-none flex items-end justify-between'>
         {name}
 
-        <div className='text-[12px] font-body font-light tracking-wide text-[var(--color-duckEgg)] leading-none'>
+        <div className='text-[12px] font-body font-light tracking-wide text-[var(--color-duckEgg)] leading-none text-right'>
           {country}
         </div>
       </div>

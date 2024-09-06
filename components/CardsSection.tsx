@@ -25,14 +25,14 @@ const CardsSection: FC<CardsSectionProps> = ({
   linkage
 }) => {
   return (
-    <section className="px-section py-32" id={id}>
-      <div className="flex justify-between items-center pb-12">
+    <section className="section-padding" id={id}>
+      <div className="flex lg:justify-between justify-center items-center lg:pb-12 pb-6">
         <h2 className="font-heading heading">{heading}</h2>
 
-        <BasicButton text="Contact Us" bgColor="var(--color-duckEgg)" />
+        <BasicButton text="Contact Us" bgColor="var(--color-duckEgg)" className="lg:block hidden" />
       </div>
 
-      <div className="grid grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
         {cards.map((card, i) => (
           <ViewMotionWrapper delay={i*-0.1} duration={1}>
             <ServiceCard

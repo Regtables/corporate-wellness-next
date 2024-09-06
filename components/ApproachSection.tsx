@@ -27,7 +27,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
   const { heading, text } = headingWithText;
 
   return (
-    <section className="flex pl-section py-24 pb-40 bg-duckEgg gap-24 relative" id = 'approach'>
+    <section className="flex lg:flex-row flex-col lg:pl-section lg:py-24 px-[var(--section-x-xs)] py-[var(--section-y-xs)] pb-40 bg-duckEgg lg:gap-24 gap-6 relative" id = 'approach'>
       <RippleBg />
 
       <div className="flex-[0.5] flex flex-col gap-[12px] relative z-10">
@@ -35,7 +35,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
 
         <BlockText text={text} className="gap-4 bodyText" />
 
-        <div className="flex flex-col gap-8 mt-4">
+        <div className="flex flex-col lg:gap-8 gap-6 mt-4">
           {appproaches.map((approach, i) => (
             <Accordion
               name={approach.name}
@@ -47,8 +47,8 @@ const ApproachSection: FC<ApproachSectionProps> = ({
         </div>
       </div>
 
-      <div className="flex-[0.5] w-full">
-        <SanityImage image={image} className="rounded-l-xl" />
+      <div className="lg:flex-[0.5] lg:h-[unset] h-[300px] w-full">
+        <SanityImage image={image} className="lg:rounded-l-xl rounded-xl" />
       </div>
     </section>
   );

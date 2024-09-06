@@ -21,6 +21,7 @@
     "react-dom": "^18",
     "react-scroll-parallax": "^3.4.5",
     "resend": "^4.0.0",
+    "sass": "^1.78.0",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {

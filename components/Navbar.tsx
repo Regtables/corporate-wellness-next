@@ -89,7 +89,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "flex w-full py-[30px] items-center justify-between px-section bg-white fixed top-0 left-0 z-20 transition-transform duration-500",
+        "flex w-full py-[30px] items-center justify-between section-padding-x bg-white fixed top-0 start-0 end-0 z-20 transition-transform duration-500",
         !showNavbar && "-translate-y-[120px]"
       )}
       role="navigation"
@@ -97,7 +97,7 @@ const Navbar = () => {
     >
       <LogoWithText />
 
-      <ul className="flex gap-10 list-none" role="menubar">
+      <ul className="lg:flex md:hidden sm:hidden xs:hidden hidden gap-10 list-none" role="menubar">
         {LINKS.map((link, i) => (
           <li
             key={i}
@@ -122,7 +122,7 @@ const Navbar = () => {
                 <motion.div
                   role="menu"
                   aria-label={`${link.link} submenu`}
-                  className="absolute w-full min-w-[200px] -start-4 z-10 bg-white flex flex-col p-4 gap-2 rounded-xl pt-6"
+                  className="absolute w-full lg:min-w-[200px] -start-4 z-10 bg-white flex flex-col p-4 gap-2 rounded-xl pt-6"
                   whileInView={{ opacity: [0, 1] }}
                   initial={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
@@ -146,7 +146,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      <Link href={"#contact"} passHref>
+      <Link href={"#contact"} passHref className="lg:block md:hidden sm:hidden xs:hidden hidden">
         <BasicButton
           text="contact us"
           bgColor="var(--color-duckEgg)"

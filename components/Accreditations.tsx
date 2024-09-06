@@ -12,7 +12,7 @@ interface AccreditationsProps {
 const Accreditations:FC<AccreditationsProps> = ({ accreditations }) => {
   
   return (
-    <div className='flex w-full gap-24'>
+    <div className='flex lg:flex-row flex-col w-full lg:gap-24 gap-8'>
       <h2 className='font-heading font-bold text-duckEgg text-[24px]'>Accreditations</h2>
 
       <div className='flex items-center justify-between w-full'>

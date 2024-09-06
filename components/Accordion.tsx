@@ -20,7 +20,7 @@ const Accordion: FC<AccordionProps> = ({ name, description, className }) => {
 
   return (
     <div
-      className={`bg-white p-[24px] rounded-xl border-[3px] border-[#00000000] hover:border-[var(--color-black)] transition-all duration-500 ${className}`}
+      className={`bg-white lg:p-[24px] p-[16px] rounded-xl border-[3px] border-[#00000000] hover:border-[var(--color-black)] transition-all duration-500 ${className}`}
     >
       <button
         className="w-full text-left"
@@ -29,7 +29,7 @@ const Accordion: FC<AccordionProps> = ({ name, description, className }) => {
         aria-controls={`content-${name.replace(/\s+/g, "-").toLowerCase()}`}
       >
         <div className="flex justify-between items-center">
-          <h3 className="font-heading font-bold text-[28px]">{name}</h3>
+          <h3 className="font-heading font-bold lg:text-[28px] text-[16px] w-full">{name}</h3>
           <div
             className="h-10 w-10 rounded-full border-2 border-[var(--color-black)] flex items-center justify-center"
             aria-hidden="true"

@@ -35,7 +35,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       className="h-screen relative"
       style={{ height: "calc(100vh - 120px)" }}
       aria-label="Hero section"
-      id = 'home'
+      id="home"
     >
       <div
         className="absolute top-0 left-0 w-full h-full"
@@ -54,35 +54,40 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         <Logo />
       </div> */}
 
-      <div 
-        className="absolute top-0 left-0 h-full flex flex-col justify-center items-start z-10 px-section w-full"
+      <div
+        className="absolute top-0 left-0 h-full flex flex-col gap-2 justify-center lg:items-start items-center z-10 lg:px-[var(--section-x-lg)] px-[var(--section-x-xs)] w-full"
         role="region"
         aria-labelledby="hero-title"
       >
         <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
-        <h1 id="hero-title" className="font-heading text-white text-[76px] font-bold w-40">
+        <h1
+          id="hero-title"
+          className="font-heading text-white lg:text-[76px] text-[56px] text-center font-bold lg:w-40"
+        >
           {title}
         </h1>
-        <div 
-          className="w-[40%] text-white font-[400] leading-[34px]"
+        <div
+          className="lg:w-[40%] text-center text-white font-[400] leading-[34px]"
           aria-label="Hero description"
         >
           {text}
         </div>
-        
+
         <BasicButton
           text="contact us"
           bgColor="transparent"
           pill
           color="white"
           outline
+          className="lg:mt-0 mt-4"
           aria-label="Contact us"
         />
       </div>
 
-      
-        <Icon path={{src: '/baobab-sml.png'}} className="h-[330px] w-[157px] absolute z-[20] bottom-[-350px]"/>
-    
+      <Icon
+        path={{ src: "/baobab-sml.png" }}
+        className="lg:block hidden h-[330px] w-[157px] absolute z-[20] bottom-[-350px]"
+      />
     </section>
   );
 };

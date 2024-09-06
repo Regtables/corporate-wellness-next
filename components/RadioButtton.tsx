@@ -34,7 +34,7 @@ const RadioButton: FC<RadioButtonProps> = ({
         </AnimatePresence>
       </div>
 
-      <div className="bodyText leading-[16px]">{text}</div> 
+      <div className="lg:text-[14px] text-[12px] font-[400] lg:leading-[16px]">{text}</div> 
     </button>
   );
 };

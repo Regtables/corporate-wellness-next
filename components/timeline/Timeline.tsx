@@ -11,7 +11,7 @@ interface TimelineProps {
 
 const Timeline:FC<TimelineProps> = ({ timeline }) => {
   return (
-    <div className='px-section pb-32'>
+    <div className='lg:block hidden section-padding-x pb-32'>
       <div className='w-full grid grid-cols-6'>
         {timeline.map((miletone, i) => (
           <TimelineTile

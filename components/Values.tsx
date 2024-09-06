@@ -6,7 +6,7 @@ const VALUES = ['trust', 'respect','authenticity', 'heart']
 
 const Values = () => {
   return (
-    <div className='bg-[var(--color-black)] flex justify-between p-10 rounded-xl gap-10 w-full mx-section'>
+    <div className='bg-[var(--color-black)] flex lg:flex-row flex-col justify-between  p-10 rounded-xl lg:gap-10 gap-4 w-full lg:mx-section mx-[20px]'>
       {VALUES.map((value, i) => (
         <>
           <div className='flex gap-10'>

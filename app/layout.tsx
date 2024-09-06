@@ -2,7 +2,7 @@
 
 import type { Metadata } from "next";
 
-import "./globals.css";
+import "./globals.scss";
 import { combineFontClasses, libreBaskerville, nunitoSans } from "@/lib/fonts";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { FormProvider } from "@/context/FormContext";
