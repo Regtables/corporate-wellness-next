@@ -59,10 +59,10 @@ const LEGAL_LINKS = [
   },
 ];
 
-const ContactDetail = ({ text, icon }: { text: string; icon: any }) => {
+export const ContactDetail = ({ text, icon, className }: { text: string; icon: any, className?:string }) => {
   return (
-    <div className="flex text-white gap-2">
-      <Image src={icon} height={20} width={20} alt="icon" />
+    <div className={`flex text-white gap-2 ${className}`}>
+      <Image src={icon} height={20} width={20} alt="icon" className="invert-[1]"/>
 
       {text}
     </div>
