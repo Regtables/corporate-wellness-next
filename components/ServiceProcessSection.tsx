@@ -14,7 +14,7 @@ interface ServiceProcessSectionProps {
 
 const ServiceProcessSection:FC<ServiceProcessSectionProps> = ({ heading, processSteps, service }) => {
   return (
-    <div className='bg-black px-section py-sectionY flex gap-16'>
+    <div className='bg-black px-section py-sectionY flex gap-16 lg:flex-row flex-col'>
       <div className='w-full flex-[0.6]'>
         <Icon path={SERVICE_PROCESS_ICONS[service]} className="h-full w-full"/>
       </div>

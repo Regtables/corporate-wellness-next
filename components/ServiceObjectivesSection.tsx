@@ -13,10 +13,10 @@ interface ServiceObjectivesSectionProps {
 
 const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, image, objectives }) => {
   return (
-    <div className='bg-duckEgg pl-section py-sectionY relative'>
+    <div className='bg-duckEgg lg:pl-section pl-[var(--section-x-xs)] py-sectionY relative'>
       <RippleBg />
 
-      <div className='flex gap-24 relative z-10'>
+      <div className='flex lg:flex-row flex-col gap-24 relative z-10'>
         <div className='flex-[0.55]'>
           <h2 className='font-heading heading mb-4'>{heading}</h2>
 
