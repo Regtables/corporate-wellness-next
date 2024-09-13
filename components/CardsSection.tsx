@@ -40,7 +40,7 @@ const CardsSection: FC<CardsSectionProps> = ({
           duration={0.5}
           staggerDelay={0.1}
         >
-          <div className="grid lg:grid-flow-col lg:grid-auto-cols-auto grid-cols-1 gap-8">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
             {cards.map((card, i) => (
               <ServiceCard
                 key={i}

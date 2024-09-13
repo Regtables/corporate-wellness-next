@@ -103,7 +103,7 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
           <Image src={"/logo-blue.svg"} height={70} width={250} alt="Corporate Wellness Logo"/>
 
           <div className="flex flex-col gap-6">
-            <ContactDetail text={`021 456 789`} icon={"/phone.svg"} />
+            <ContactDetail text={`021 456 789`} icon={"/phone.svg"} className="invert-[unset]" />
             <ContactDetail
               text={`info@corporatewellness.co.za`}
               icon={"/email.svg"}
@@ -130,12 +130,17 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
           <FooterLinks heading={"Services"} links={SERVICES_LINKS} />
           <FooterLinks heading={"Legal"} links={LEGAL_LINKS} />
 
-          <div className="text-white lg:absolute end-0 bottom-0 font-[300] mt-8  ">
+          <div className="text-white lg:absolute end-0 bottom-0 font-[300] mt-8 lg:block hidden">
             © 2024
             <span className="font-[600]"> Corporate Wellness.</span> All Rights
             Reserved
           </div>
         </div>
+        <div className="text-white lg:absolute end-0 bottom-0 font-[300] mt-4 lg:hidden block font-body">
+            © 2024
+            <span className="font-[600]"> Corporate Wellness.</span> All Rights
+            Reserved
+          </div>
       </ViewMotionWrapper>
     </footer>
   );

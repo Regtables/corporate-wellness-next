@@ -23,7 +23,7 @@ const ServiceProcessSection:FC<ServiceProcessSectionProps> = ({ heading, process
 
       <div className='flex-[0.4]'>
         {/* <h3 className='font-heading heading text-white mb-4'>{heading}</h3> */}
-        <AnimatedTitle text= {heading} className='font-heading heading text-white mb-4' />
+        <AnimatedTitle text= {heading} className='font-heading heading text-white mb-8 my-8' />
 
         <div className='h-[500px] overflow-y-scroll scrollbar-hide hide-scrollbar'>
           <Process processSteps={processSteps} contained col />

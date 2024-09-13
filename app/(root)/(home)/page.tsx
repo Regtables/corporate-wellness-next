@@ -98,6 +98,7 @@ const HomePage: FC = async () => {
             heading={servicesSection.heading}
             cards={servicesSection.services}
             id="services"
+            linkage
           />
         </div>
 
