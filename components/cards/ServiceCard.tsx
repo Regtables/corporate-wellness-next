@@ -29,25 +29,27 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
   return (
     <Link href={linkage ? `/services/${slugify(name)}` : ""}>
-      <article className="bg-[white] lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[40px]">
+      <article 
+        className={cn("bg-[white] lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col items-center lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[40px]", col && 'lg:p-4')}
+        >
         <div
           className={cn(
             "flex lg:flex-row flex-col lg:gap-6 gap-4 items-center",
             col &&
-              "flex-col text-center items-center justify-center w-64 mx-auto"
+              "lg:flex-col text-center items-center justify-center lg:w-[unset] w-64 mx-auto"
           )}
         >
           <Image src={src} alt={name} height={height} width={width} />
 
-          <h3 className="font-heading lg:text-[26px] text-[20px] font-bold leading-[32px]">
+          <h3 className={cn("font-heading lg:text-[26px] text-[20px] font-bold leading-[32px]", col && 'lg:text-[20px] tex-center')}>
             {name}
           </h3>
         </div>
 
-        <p className="bodyText">{description}</p>
+        <p className={cn("bodyText", col && 'text-center')}>{description}</p>
 
         {buttons && (
-          <div className="font-medium flex items-center lg:justify-start justify-center gap-4">
+          <div className="font-medium flex items-center lg:justify-start justify-center gap-4 mt-auto">
             Read More
             <ArrowUpRight />
           </div>

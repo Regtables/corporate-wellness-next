@@ -42,17 +42,17 @@ const ServicePage = async ({ params }: { params: Params }) => {
 
   return (
     <div className="flex flex-col">
-      {/* <PageBanner
+      <PageBanner
         heading={name}
         subHeading="services"
         image={bannerImage}
         icon=""
-      /> */}
+      />
 
-      {/* <ServiceIntroductionSection
+      <ServiceIntroductionSection
         headingWithBlockText={introductionSection.headingWithBlockText}
         image={introductionSection.image}
-      /> */}
+      />
 
       <div>
         <ServiceObjectivesSection
@@ -63,17 +63,18 @@ const ServicePage = async ({ params }: { params: Params }) => {
 
         <ParallaxBanner image={imageBanner1} />
 
-        {/* <ServiceProcessSection
+        <ServiceProcessSection
           heading={processSection.heading}
           processSteps={processSection.processSteps}
           service= {name}
-        /> */}
+        />
       </div>
 
       <CardsSection
         heading={benefitsSection.heading}
         cards={benefitsSection.benefits}
         benefits
+        
       />
 
       <div>

@@ -4,6 +4,7 @@ import RippleBg from './RippleBg'
 import SanityImage from './SanityImage'
 import ServiceObjective from './ServiceObjective'
 import BasicButton from './buttons/BasicButton'
+import StaggeredMotionWrapper from './motion/StaggerChildrenMotionWrapper'
 
 interface ServiceObjectivesSectionProps {
   heading: string,
@@ -13,25 +14,25 @@ interface ServiceObjectivesSectionProps {
 
 const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, image, objectives }) => {
   return (
-    <div className='bg-duckEgg lg:pl-section pl-[var(--section-x-xs)] py-sectionY relative'>
+    <div className='bg-duckEgg lg:pl-section lg:pr-0 px-[var(--section-x-xs)] section-padding-y relative'>
       <RippleBg />
 
-      <div className='flex lg:flex-row flex-col gap-24 relative z-10'>
-        <div className='flex-[0.55]'>
+      <div className='flex lg:flex-row flex-col lg:gap-24 gap-8 relative z-10'>
+        <div className='flex-[0.4]'>
           <h2 className='font-heading heading mb-4'>{heading}</h2>
 
-          <div className='flex flex-col gap-6 mb-6'>
+          <StaggeredMotionWrapper className='flex flex-col gap-6 mb-6' staggerDelay={0.2}>
             {objectives.map((objective, i) => (
               <ServiceObjective description= {objective.description} title= {objective.title} />
             ))}
-          </div>
+          </StaggeredMotionWrapper>
 
           <BasicButton bgColor='white' color='black' text='contact us'/>
         </div>
 
 
-        <div className='w-full flex-[0.45]'>
-          <SanityImage image={image} className='rounded-l-xl'/>
+        <div className='w-full lg:flex-[0.6] lg:h-[unset] h-[300px]'>
+          <SanityImage image={image} className='lg:rounded-l-xl rounded-xl'/>
         </div>
       </div>
     </div>

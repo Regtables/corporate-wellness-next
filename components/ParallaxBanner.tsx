@@ -5,6 +5,7 @@ import { ParallaxBanner as Parallax } from "react-scroll-parallax";
 import { sanityClient } from "@/lib/sanity/client";
 import { useNextSanityImage } from "next-sanity-image";
 import { SanityImageType } from "@/lib/sanity/types";
+import ViewMotionWrapper from "./ViewMotionWrapper";
 
 interface ParallaxBannerProps {
   image: SanityImageType;
@@ -15,7 +16,7 @@ const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }
   const { src } = useNextSanityImage(sanityClient, image.image);
 
   return (
-    <div className="w-full">
+    <ViewMotionWrapper className="w-full" duration={1} y = {0}>
       <Parallax
         layers={[
           {
@@ -26,7 +27,7 @@ const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }
         ]}
         className="w-full h-[282px]"
       />
-    </div>
+    </ViewMotionWrapper>
   );
 };
 

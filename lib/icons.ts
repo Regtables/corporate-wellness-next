@@ -16,19 +16,35 @@ export const VALUES_ICONS: IconPath = {
 export const SERVICES_ICONS: IconPath = {
   "Individual Coaching": { src: "/individual.svg", width: 80, height: 50 },
   "Team Coaching": { src: "/team.svg", width: 100, height: 50 },
-  "HR Consultance": { src: "/hr.svg", width: 60, height: 50 },
+  "HR Consultancy": { src: "/hr.svg", width: 60, height: 50 },
   "Customised Solutions": { src: "/individual.svg", width: 80, height: 50 },
   "Business-Centric Approach": { src: "/team.svg", width: 100, height: 50 },
   "Holistic Perspective": { src: "/hr.svg", width: 60, height: 50 },
+  "Increased Self-Awareness": { src: '/self-awareness.svg', height: 50, width: 50 },
+  "Improved Decision-Making": { src: '/decision.svg', height: 50, width: 50 },
+  "Enhanced Productivity": { src: '/productivity.svg', height: 50, width: 50 },
+  "Greater Resilience": { src: '/resilience.svg', height: 50, width: 50 },
+  "Live with Purpose": { src: '/purpose.svg', height: 50, width: 50 },
+  "Improved Talent Acquisition": { src: '/talent.svg', height: 50, width: 50 },
+  "Enhanced Employee Engagement": { src: '/engagement.svg', height: 50, width: 50 },
+  "Strategic Agility": { src: '/strategic.svg', height: 50, width: 50 }
 };
 
 export const SERVICES_ICONS_WHITE: IconPath = {
-  "Individual Coaching": { src: "/individual-white.svg", width: 80, height: 50 },
+  "Individual Coaching": { src: "/individual-white.svg", width: 266, height: 218 },
   "Team Coaching": { src: "/team-white.svg", width: 364, height: 218 },
-  "HR Consultance": { src: "/hr-white.svg", width: 364, height: 218 },
+  "HR Consultancy": { src: "/hr-white.svg", width: 364, height: 218 },
   "Customised Solutions": { src: "/individual.svg", width: 80, height: 50 },
   "Business-Centric Approach": { src: "/team.svg", width: 100, height: 50 },
   "Holistic Perspective": { src: "/hr.svg", width: 60, height: 50 },
+  // "Customised Solutions": { src: "/individual.svg", width: 80, height: 50 },
+  // "Business-Centric Approach": { src: "/team.svg", width: 100, height: 50 },
+  // "Holistic Perspective": { src: "/hr.svg", width: 60, height: 50 },
+  "Increased Self-Awareness": { src: '/self-awareness.svg', height: 50, width: 50 },
+  "Improved Decision-Making": { src: '/decision.svg', height: 50, width: 50 },
+  "Enhanced Productivity": { src: '/productivity.svg', height: 50, width: 50 },
+  "Greater Resilience": { src: '/resilience.svg', height: 50, width: 50 },
+  "Live with Purpose": { src: '/purpose.svg', height: 50, width: 50 }
 };
 
 export const TREE_ICONS: IconPath = {
@@ -36,16 +52,21 @@ export const TREE_ICONS: IconPath = {
   'willow': { src: "/willow-white.png" },
 };
 
-export const SERVICE_BENEFITS_ICONS = {
+export const SERVICE_BENEFITS_ICONS: IconPath = {
   "Customised Solutions": { src: "/individual.svg", width: 80, height: 50 },
   "Business-Centric Approach": { src: "/team.svg", width: 100, height: 50 },
   "Holistic Perspective": { src: "/hr.svg", width: 60, height: 50 },
+  "Increased Self-Awareness": { src: '/self-awareness.svg', height: 50, width: 50 },
+  "Improved Decision-Making": { src: '/decision.svg', height: 50, width: 50 },
+  "Enhanced Productivity": { src: '/productivity.svg', height: 50, width: 50 },
+  "Greater Resilience": { src: '/resilience.svg', height: 50, width: 50 },
+  "Live with Purpose": { src: '/purpose.svg', height: 50, width: 50 }
 }
 
 export const SERVICE_PROCESS_ICONS:IconPath = {
   "Individual Coaching": { src: "/individual-process.png", width: 80, height: 50 },
   "Team Coaching": { src: "/team-process.png", width: 100, height: 50 },
-  "HR Consultance": { src: "/hr-process.png", width: 60, height: 50 },
+  "HR Consultancy": { src: "/hr-process.png", width: 60, height: 50 },
 }
 
 export const TIMELINE_ICONS:IconPath = {

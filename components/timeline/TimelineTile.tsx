@@ -1,7 +1,7 @@
 "use client";
 
 import { TIMELINE_ICONS } from "@/lib/icons";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence } from "framer-motion";
 
@@ -14,6 +14,12 @@ interface TimelineTileProps {
 const TimelineTile: FC<TimelineTileProps> = ({ date, text, last }) => {
   const [hoverDate, setHoverDate] = useState("");
   const { src, height, width } = TIMELINE_ICONS[date];
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setHoverDate('1998')
+  //   }, 1500);
+  // }, [])
 
   return (
     <div className="flex items-center relative">

@@ -4,6 +4,7 @@ import { SanityProcessStepType } from "@/lib/sanity/types";
 
 import ProcessStepCard from "./ProcessStepCard";
 import { cn } from "@/lib/utils";
+import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 
 interface ProcessProps {
   processSteps: SanityProcessStepType[];
@@ -19,12 +20,13 @@ const Process: FC<ProcessProps> = ({
   className,
 }) => {
   return (
-    <div
+    <StaggeredMotionWrapper
       className={cn(
         "lg:grid grid-cols-4",
         col && "grid-cols-1",
         className && className
       )}
+      staggerDelay={0.2}
     >
       {processSteps.map((step, i) => (
         <div className="">
@@ -48,7 +50,7 @@ const Process: FC<ProcessProps> = ({
           </div>
         </div>
       ))}
-    </div>
+    </StaggeredMotionWrapper>
   );
 };
 

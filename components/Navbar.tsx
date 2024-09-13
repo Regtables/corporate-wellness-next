@@ -11,6 +11,7 @@
   import LogoWithText from "./logos/LogoWithText";
   import BasicButton from "./buttons/BasicButton";
   import MobileNavMenu from "./MobileNavMenu";
+import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 
   const LINKS = [
     {
@@ -38,8 +39,8 @@
           slug: "/services/team-coaching",
         },
         {
-          link: "HR Consulting",
-          slug: "/services/hr-consulting",
+          link: "HR Consultancy",
+          slug: "/services/hr-consultancy",
         },
       ],
     },
@@ -107,9 +108,11 @@
       >
         <LogoWithText />
 
-        <ul
+        <StaggeredMotionWrapper
           className="lg:flex md:hidden sm:hidden xs:hidden hidden gap-10 list-none"
-          role="menubar"
+          duration={0.3}
+          y = {-10}
+          // role="menubar"
         >
           {LINKS.map((link, i) => (
             <li
@@ -157,7 +160,7 @@
               </AnimatePresence>
             </li>
           ))}
-        </ul>
+        </StaggeredMotionWrapper>
 
         <Link
           href={"#contact"}

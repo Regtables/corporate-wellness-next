@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React, { FC } from 'react'
 import TimelineTile from './TimelineTile'
+import StaggeredMotionWrapper from '../motion/StaggerChildrenMotionWrapper'
 
 interface TimelineProps {
   timeline: {
@@ -12,7 +13,7 @@ interface TimelineProps {
 const Timeline:FC<TimelineProps> = ({ timeline }) => {
   return (
     <div className='lg:block hidden section-padding-x pb-32'>
-      <div className='w-full grid grid-cols-6'>
+      <StaggeredMotionWrapper className='w-full grid grid-cols-6' duration={1}>
         {timeline.map((miletone, i) => (
           <TimelineTile
             date= {miletone.date}
@@ -20,7 +21,7 @@ const Timeline:FC<TimelineProps> = ({ timeline }) => {
             last = {i === timeline.length - 1}
           />
         ))}
-      </div>
+      </StaggeredMotionWrapper>
     </div>
   )
 }

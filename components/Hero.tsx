@@ -7,6 +7,8 @@ import Overlay from "./Overlay";
 import BasicButton from "./buttons/BasicButton";
 import Logo from "./logos/Logo";
 import Icon from "./logos/Icon";
+import AnimatedTitle from "./motion/AnimatedTitle";
+import ViewMotionWrapper from "./ViewMotionWrapper";
 
 interface HeroProps {
   title: string;
@@ -37,15 +39,16 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       aria-label="Hero section"
       id="home"
     >
-      <div
+      <ViewMotionWrapper
         className="absolute top-0 left-0 w-full h-full"
-        style={{ transform: "rotateY(180deg)" }}
+        // style={{ transform: "rotateY(180deg)" }}
+        y={0}
         aria-hidden="true"
       >
         <Overlay opacity={40}>
           <SanityImage image={image} />
         </Overlay>
-      </div>
+      </ViewMotionWrapper>
 
       {/* <div 
         className="h-[150%] w-[800px] end-0 absolute top-[0px] z-10"
@@ -60,14 +63,18 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         aria-labelledby="hero-title"
       >
         <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
-        <h1
+        <AnimatedTitle
+          text={title}
+          className="font-heading text-white lg:text-[76px] text-[56px] text-center font-bold lg:w-40 leading-[100px]"
+        />
+        {/* <h1
           id="hero-title"
-          className="font-heading text-white lg:text-[76px] text-[56px] text-center font-bold lg:w-40"
+         
         >
           {title}
-        </h1>
+        </h1> */}
         <div
-          className="lg:w-[40%] text-center text-white font-[400] leading-[34px]"
+          className="lg:w-[40%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
           aria-label="Hero description"
         >
           {text}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { SanityImageType } from "@/lib/sanity/types";
 
 import Accreditations from "./Accreditations";
+import ViewMotionWrapper from "./ViewMotionWrapper";
 
 const QUICK_LINKS = [
   {
@@ -96,7 +97,7 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
 
       <div className="h-[1px] bg-duckEgg w-full" />
 
-      <div className="flex lg:flex-row flex-col gap-8">
+      <ViewMotionWrapper className="flex lg:flex-row flex-col gap-8" duration={1}>
         <div className="flex-[0.3] flex flex-col gap-10">
           {/* <LogoWithText /> */}
           <Image src={"/logo-blue.svg"} height={70} width={250} alt="Corporate Wellness Logo"/>
@@ -135,7 +136,7 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
             Reserved
           </div>
         </div>
-      </div>
+      </ViewMotionWrapper>
     </footer>
   );
 };

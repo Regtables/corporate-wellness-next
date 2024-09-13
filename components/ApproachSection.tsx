@@ -9,6 +9,8 @@ import BlockText from "./BlockText";
 import Accordion from "./Accordion";
 import SanityImage from "./SanityImage";
 import RippleBg from "./RippleBg";
+import AnimatedTitle from "./motion/AnimatedTitle";
+import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 
 interface ApproachSectionProps {
   headingWithText: SanityHeadingWithBlockText;
@@ -27,15 +29,18 @@ const ApproachSection: FC<ApproachSectionProps> = ({
   const { heading, text } = headingWithText;
 
   return (
-    <section className="flex lg:flex-row flex-col lg:pl-section lg:py-24 px-[var(--section-x-xs)] py-[var(--section-y-xs)] pb-40 bg-duckEgg lg:gap-24 gap-6 relative" id = 'approach'>
+    <section
+      className="flex lg:flex-row flex-col lg:pl-section lg:pt-24 lg:pr-0 lg:pb-[200px] px-[var(--section-x-xs)] py-[var(--section-y-xs)] pb-40 bg-duckEgg lg:gap-24 gap-6 relative"
+      id="approach"
+    >
       <RippleBg />
 
       <div className="flex-[0.5] flex flex-col gap-[12px] relative z-10">
-        <h2 className="heading">{heading}</h2>
+        <AnimatedTitle text={heading} />
 
         <BlockText text={text} className="gap-4 bodyText" />
 
-        <div className="flex flex-col lg:gap-8 gap-6 mt-4">
+        <StaggeredMotionWrapper className="flex flex-col lg:gap-8 gap-6 mt-4" y = {0} x = {-20} duration={1}>
           {appproaches.map((approach, i) => (
             <Accordion
               name={approach.name}
@@ -44,11 +49,11 @@ const ApproachSection: FC<ApproachSectionProps> = ({
               className="hover:bg-[var(--color-black)] hover:text-white"
             />
           ))}
-        </div>
+        </StaggeredMotionWrapper>
       </div>
 
       <div className="lg:flex-[0.5] lg:h-[unset] h-[300px] w-full">
-        <SanityImage image={image} className="lg:rounded-l-xl rounded-xl" />
+        <SanityImage image={image} className="lg:rounded-l-xl lg:rounded-r-none rounded-xl" />
       </div>
     </section>
   );

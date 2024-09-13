@@ -57,6 +57,7 @@ const HomePage: FC = async () => {
     testimonialSection,
     imageBanner2,
   } = await sanityFetchHomePageContent();
+  console.log(servicesSection)
   return (
     <div className="flex flex-col">
       {/* Hero */}
@@ -109,10 +110,10 @@ const HomePage: FC = async () => {
       <div>
         <ParallaxBanner image={imageBanner1} initialYPosition={0} />
 
-        <GeneralProcess
+        {/* <GeneralProcess
           heading={generalProcess.heading}
           processSteps={generalProcess.processSteps}
-        />
+        /> */}
       </div>
 
       {/* Testimonials */}

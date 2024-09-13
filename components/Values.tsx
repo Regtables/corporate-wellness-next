@@ -1,12 +1,16 @@
 import { VALUES_ICONS } from '@/lib/icons'
 import Image from 'next/image'
 import React from 'react'
+import StaggeredMotionWrapper from './motion/StaggerChildrenMotionWrapper'
 
 const VALUES = ['trust', 'respect','authenticity', 'heart']
 
 const Values = () => {
   return (
-    <div className='bg-[var(--color-black)] flex lg:flex-row flex-col justify-between  p-10 rounded-xl lg:gap-10 gap-4 w-full lg:mx-section mx-[20px]'>
+    <StaggeredMotionWrapper 
+      className='bg-[var(--color-black)] flex lg:flex-row flex-col justify-between  p-10 rounded-xl lg:gap-10 gap-4 w-full lg:mx-section mx-[20px]'
+      duration={0.5}
+    >
       {VALUES.map((value, i) => (
         <>
           <div className='flex gap-10'>
@@ -17,11 +21,11 @@ const Values = () => {
 
           </div>
             {i < VALUES.length-1 && (
-              <div className='w-[2px] bg-[var(--color-white)]'/>
+              <div className='w-[2px] h-[50px] bg-[var(--color-white)] lg:block hidden'/>
             )}
         </>
       ))}
-    </div>
+    </StaggeredMotionWrapper>
   )
 }
 

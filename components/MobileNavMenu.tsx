@@ -42,7 +42,7 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
     >
       <div className="p-4">
         <nav>
-
+          {/* <h2 className="">Corporate Wellness</h2> */}
           <ul>
             {links.map((link, index) => (
               <li key={index} className="mb-4">

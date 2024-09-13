@@ -71,6 +71,16 @@ body {
   }
 }
 
+.section-padding-y{
+  padding-top: 96px;
+  padding-bottom: 96px;
+
+  @media screen and (max-width: 450px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
 .section-padding{
   padding: 96px 195px;
 
@@ -119,6 +129,7 @@ body {
   font-weight: 900;
   line-height: 45px;
   text-align: left;
+  margin-bottom: 16px;
 
   @media screen and (max-width: 450px) {
     text-align: center;

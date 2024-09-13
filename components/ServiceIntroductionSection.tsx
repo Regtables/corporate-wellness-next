@@ -20,12 +20,12 @@ const ServiceIntroductionSection: FC<ServiceIntroductionSectionProps> = ({
   const { heading, text } = headingWithBlockText;
 
   return (
-    <div className="flex gap-20 pr-section py-32">
-      <div className="flex-[0.5]">
-        <SanityImage image={image} className="rounded-r-[12px]" />
+    <div className="flex lg:flex-row flex-col-reverse lg:gap-20 gap-8 lg:pr-section section-padding-y lg:px-[unset] px-[var(--section-x-xs)]">
+      <div className="lg:flex-[0.5] lg:h-[unset] h-[250px]">
+        <SanityImage image={image} className="lg:rounded-r-[12px] lg:rounded-l-none rounded-xl" />
       </div>
 
-      <div className="flex-[0.5] flex gap-[12px] flex-col py-sectionY">
+      <div className="flex-[0.5] flex gap-[12px] flex-col lg:py-sectionY lg:text-left text-center">
         <h2 className="heading font-heading">{heading}</h2>
 
         <BlockText text={text} className="gap-4 bodyText" />
