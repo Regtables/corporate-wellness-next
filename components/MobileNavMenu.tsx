@@ -33,11 +33,12 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
 
   return (
     <motion.div
-      className="fixed inset-y-0 right-0 w-72 bg-white shadow-sm z-50 overflow-y-auto flex flex-col"
+      className="fixed top-[80px] bottom-0 right-0 w-72 bg-white shadow-sm z-50 overflow-y-auto flex flex-col border-t-[1px] border-[#d1cdcd]"
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       variants={menuVariants}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      // transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      transition={{ duration: 0.3 }}
       exit={"closed"}
     >
       <div className="p-4">
@@ -100,7 +101,7 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
             </div>
 
             <div className="flex items-center justify-center flex-grow-[1]">
-              <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[170px] w-[150px]" />
+              <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[170px] w-[150px] relative " />
             </div>
         </nav>
       </div>

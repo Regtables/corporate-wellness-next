@@ -14,7 +14,7 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ className = '', width = 0, height = 0, path }) => {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`${className}`}>
       <Image 
         src = {path.src} 
         fill

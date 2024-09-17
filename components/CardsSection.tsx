@@ -27,10 +27,11 @@ const CardsSection: FC<CardsSectionProps> = ({
     <section className="section-padding" id={id}>
       <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:pb-12 pb-6">
         <h2 className="font-heading heading mb-4 lg:mb-0">{heading}</h2>
+
         <BasicButton 
           text="Contact Us" 
           bgColor="var(--color-duckEgg)" 
-          className="lg:block hidden"
+          className="lg:flex hidden"
         />
       </div>
 
@@ -59,4 +60,4 @@ const CardsSection: FC<CardsSectionProps> = ({
   );
 };
 
-export default CardsSection;
+export default CardsSection;  

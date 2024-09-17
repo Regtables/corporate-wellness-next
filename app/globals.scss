@@ -65,15 +65,37 @@ body {
   padding-left: 195px;
   padding-right: 195px;
 
+  @media screen and (max-width: 1355px) {
+    padding-left: var(--section-x-md);
+    padding-right: var(--section-x-md);
+  }
+
+  @media screen and (max-width: 1025px) {
+    padding-left: var(--section-x-md);
+    padding-right: var(--section-x-md);
+  }
+
+
   @media screen and (max-width: 450px) {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 }
 
 .section-padding-y{
   padding-top: 96px;
   padding-bottom: 96px;
+
+  @media screen and (max-width: 1355px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @media screen and (max-width: 1025px) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
 
   @media screen and (max-width: 450px) {
     padding-top: 40px;
@@ -84,8 +106,16 @@ body {
 .section-padding{
   padding: 96px 195px;
 
+  @media screen and (max-width: 1355px) {
+    padding: 80px var(--section-x-lg) !important;
+  }
+
+  @media screen and (max-width: 1025px) {
+    padding: 60px var(--section-x-md) !important;
+  }
+
   @media screen and (max-width: 450px) {
-    padding: 40px 20px;
+    padding: 40px 20px !important;
   }
 }
 
@@ -162,7 +192,7 @@ input::placeholder, textarea::placeholder{
   --color-lightDuckEgg: #c6d5da;
 
   --section-x-lg: 195px;
-  --section-x-md: 100px;
+  --section-x-md: 80px;
   --section-x-xs: 20px;
 
   --section-y-lg: 128px;

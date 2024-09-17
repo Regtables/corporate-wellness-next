@@ -47,7 +47,7 @@ const AnimatedTitle:FC<AnimatedTitleProps> = ({ text, isRandom = true, className
 
   return (
     <motion.h2
-      className={`text-3xl font-bold ${className}`}
+      className={`text-3xl font-bold heading font-heading ${className}`}
       variants={container}
       initial="hidden"
       animate="visible"

@@ -14,20 +14,22 @@ interface ServiceObjectivesSectionProps {
 
 const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, image, objectives }) => {
   return (
-    <div className='bg-duckEgg lg:pl-section lg:pr-0 px-[var(--section-x-xs)] section-padding-y relative'>
+    <div className='bg-duckEgg xl:pl-section lg:pl-[var(--section-x-md)] lg:pr-0 md:px-[var(--section-x-md)] px-[var(--section-x-xs)] section-padding-y relative'>
       <RippleBg />
 
       <div className='flex lg:flex-row flex-col lg:gap-24 gap-8 relative z-10'>
-        <div className='flex-[0.4]'>
-          <h2 className='font-heading heading mb-4'>{heading}</h2>
+        <div className='flex-[0.4] '>
+          <h2 className='font-heading heading mb-6 lg:text-left md:text-center'>{heading}</h2>
 
           <StaggeredMotionWrapper className='flex flex-col gap-6 mb-6' staggerDelay={0.2}>
             {objectives.map((objective, i) => (
               <ServiceObjective description= {objective.description} title= {objective.title} />
             ))}
           </StaggeredMotionWrapper>
-
-          <BasicButton bgColor='white' color='black' text='contact us'/>
+          
+          <div className='flex lg:justify-start md:justify-center justify-center w-full'>
+            <BasicButton bgColor='white' color='black' text='contact us'/>
+          </div>
         </div>
 
 

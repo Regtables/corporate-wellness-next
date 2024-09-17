@@ -7,6 +7,7 @@ import {
   SanityHeadingWithBlockText,
   SanityImageType,
 } from "@/lib/sanity/types";
+import AnimatedTitle from "./motion/AnimatedTitle";
 
 interface ServiceIntroductionSectionProps {
   headingWithBlockText: SanityHeadingWithBlockText;
@@ -26,11 +27,11 @@ const ServiceIntroductionSection: FC<ServiceIntroductionSectionProps> = ({
       </div>
 
       <div className="flex-[0.5] flex gap-[12px] flex-col lg:py-sectionY lg:text-left text-center">
-        <h2 className="heading font-heading">{heading}</h2>
+        <AnimatedTitle text= {heading} className="heading font-heading lg:text-left md:text-center" />
 
         <BlockText text={text} className="gap-4 bodyText" />
 
-        <div className="flex gap-6 mt-6">
+        <div className="flex gap-6 mt-6 lg:justify-start md:justify-center">
           <BasicButton text="Our Services" bgColor="var(--color-duckEgg)" />
 
           <BasicButton

@@ -18,7 +18,7 @@ const Layout: FC<{ children: React.ReactNode }> = async ({ children }) => {
     <div>
       <Navbar />
 
-      <main className="pt-[120px]">{children}</main>
+      <main className="lg:pt-[120px] pt-[80px]">{children}</main>
 
       <Footer accreditations={accreditations} />
     </div>

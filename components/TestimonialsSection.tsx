@@ -19,7 +19,7 @@ const TestimonialsSection:FC<SanityTestimonialsSection> = ({ heading, testimonia
 
       <AnimatedTitle text= {heading} isRandom />
       
-      <div className='grid lg:grid-cols-3 grid-cols-1 gap-8 pt-10 relative' style = {toggleMore ? { maxHeight: 'unset' } : { maxHeight: '130vh' }}>
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 pt-10 relative' style = {toggleMore ? { maxHeight: 'unset' } : { maxHeight: '130vh' }}>
         {testimonials.map((testimonial, i) => (
           <CardMotionWrapper delay={i*0.1} duration={1}>
             <TestimonialCard 

@@ -9,6 +9,7 @@ import Logo from "./logos/Logo";
 import Icon from "./logos/Icon";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import ViewMotionWrapper from "./ViewMotionWrapper";
+import { useMediaQuery } from "react-responsive";
 
 interface HeroProps {
   title: string;
@@ -19,6 +20,9 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
   const [offset, setOffset] = useState(0);
+  const isMobile = useMediaQuery({ maxWidth: "676px" });
+
+  const heroHeight = !isMobile ? "calc(100vh - 120px)" : "calc(100vh - 80px)";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +39,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
   return (
     <section
       className="h-screen relative"
-      style={{ height: "calc(100vh - 120px)" }}
+      style={{ height: heroHeight }}
       aria-label="Hero section"
       id="home"
     >
@@ -65,7 +69,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
         <AnimatedTitle
           text={title}
-          className="font-heading text-white lg:text-[76px] text-[56px] text-center font-bold lg:w-40 leading-[100px]"
+          className="font-heading text-white lg:text-[76px] text-[56px] text-center font-bold lg:w-40 lg:leading-[100px]"
         />
         {/* <h1
           id="hero-title"
@@ -93,8 +97,27 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
 
       <Icon
         path={{ src: "/baobab-sml.png" }}
-        className="lg:block hidden h-[330px] w-[157px] absolute z-[20] bottom-[-350px]"
+        className="lg:block hidden h-[330px] w-[157px] absolute z-[20] bottom-[-50px]"
       />
+
+      <Icon
+        path={{ src: "/baobab-sml.png" }}
+        className="xl:hidden lg:hidden block h-[200px] w-[60px] left-0 absolute z-[10] -bottom-[80px]"
+      />
+
+      <div
+        style={{ transform: "rotateY(180deg)" }}
+        className="xl:hidden right-0 absolute z-[10] -bottom-[80px]"
+      >
+        <Icon
+          path={{ src: "/baobab-sml.png" }}
+          className="xl:hidden lg:hidden block h-[200px] w-[60px]"
+        />
+      </div>
+      {/* <Icon
+        path={{ src: "/baobab-sml.png" }}
+        className="xl:hidden block h-[230px] w-[100px] right-0 absolute z-[20] bottom-[-350px]"
+      /> */}
     </section>
   );
 };

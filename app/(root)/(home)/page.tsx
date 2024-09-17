@@ -89,11 +89,11 @@ const HomePage: FC = async () => {
 
       {/* Services */}
       <div className="relative">
-        <div className="lg:block hidden h-[310px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
+        <div className="xl:block lg:hidden md:hidden hidden h-[310px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
           <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[310px] w-[300px] absolute end-0 top-0 z-10" />
         </div>
         
-        <div className="lg:mt-0 mt-72">
+        <div className="lg:mt-0 md:mt-20 mt-72">
           <CardsSection
             heading={servicesSection.heading}
             cards={servicesSection.services}

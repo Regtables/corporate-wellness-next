@@ -32,16 +32,16 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
   text = 'Lets get in touch to and make it happen'
 }) => {
   return (
-    <section className="bg-duckEgg lg:py-sectionY lg:pb-0 lg:pr-section px-[20px] py-[30px] flex relative">
+    <section className="bg-duckEgg lg:py-sectionY lg:pb-0 lg:pr-[var(--section-x-md)] md:px-[var(--section-x-md)] px-[20px] md:py-[40] pt-[40px] flex relative gap-10">
       <ViewMotionWrapper className={`flex-[0.5] w-full lg:block hidden`} x = {-20} y = {0} duration={2}>
         <Icon
           path={TREE_ICONS[tree]}
-          className={`h-full w-full ${treeClassName}`}
+          className={`h-full w-full relative ${treeClassName}`}
         />
       </ViewMotionWrapper>
 
       <StaggeredMotionWrapper className="lg:flex-[0.5] w-full">
-        <AnimatedTitle text= {heading} />
+        <AnimatedTitle text= {heading} className="lg:text-left md:text-center" />
         <p className="text-[14px] lg:text-start text-center">{text}</p>
 
         <ContactForm />
