@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, MenuIcon } from "lucide-react";
+import { useMediaQuery } from "react-responsive";
 
 import { cn } from "@/lib/utils";
 
@@ -13,7 +14,7 @@ import BasicButton from "./buttons/BasicButton";
 import MobileNavMenu from "./MobileNavMenu";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 import ViewMotionWrapper from "./ViewMotionWrapper";
-import { useMediaQuery } from "react-responsive";
+import MenuCross from "./icons/MenuCross";
 
 const LINKS = [
   {
@@ -181,7 +182,7 @@ const Navbar = () => {
       </Link>
 
       <div className="xl:hidden lg:block md:block" onClick={handleMenuToggle}>
-        <MenuIcon />
+        <MenuCross isOpen = {toggleMenu} />
       </div>
 
       <AnimatePresence>
