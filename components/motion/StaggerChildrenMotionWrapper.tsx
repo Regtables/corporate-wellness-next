@@ -15,6 +15,7 @@ interface StaggeredMotionWrapperProps {
   scale?: number;
   exit?: {};
   animationKey?: string | number;
+  style?: any
 }
 
 const StaggeredMotionWrapper = ({
@@ -27,6 +28,7 @@ const StaggeredMotionWrapper = ({
   once = false,
   className,
   scale = 1,
+  style,
   exit = { opacity: 0, transition: { duration: 0.5 } },
   animationKey,
 }: StaggeredMotionWrapperProps) => {
@@ -61,6 +63,7 @@ const StaggeredMotionWrapper = ({
       viewport={{ once }}
       exit={exit}
       className={className}
+      style={style}
     >
       {React.Children.map(children, (child, index) => (
         <motion.div key={index} variants={itemVariants}>

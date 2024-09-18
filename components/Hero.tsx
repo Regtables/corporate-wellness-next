@@ -96,23 +96,23 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         />
       </StaggeredMotionWrapper>
 
-      {/* <Icon
+      <Icon
         path={{ src: "/baobab-sml.png" }}
         className="lg:block hidden h-[330px] w-[157px] absolute z-10 bottom-[-50px]"
-      /> */}
+      />
 
       <Icon
         path={{ src: "/baobab-sml.png" }}
-        className="xl:hidden lg:hidden block h-[200px] w-[60px] left-0 absolute z-[10] -bottom-[80px]"
+        className="xl:hidden lg:hidden block h-[250px] w-[80px] left-0 absolute z-[10] -bottom-[65px]"
       />
 
       <div
         style={{ transform: "rotateY(180deg)" }}
-        className="xl:hidden right-0 absolute z-[10] -bottom-[80px]"
+        className="xl:hidden right-0 absolute z-[10] -bottom-[65px]"
       >
         <Icon
           path={{ src: "/baobab-sml.png" }}
-          className="xl:hidden lg:hidden block h-[200px] w-[60px]"
+          className="xl:hidden lg:hidden block h-[250px] w-[80px]"
         />
       </div>
       {/* <Icon
