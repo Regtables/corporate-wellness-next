@@ -19,7 +19,7 @@ import MenuCross from "./icons/MenuCross";
 const LINKS = [
   {
     link: "home",
-    slug: "#top",
+    slug: "#home",
   },
   {
     link: "about us",
@@ -67,7 +67,10 @@ const Navbar = () => {
 
   const handleLinkClick = (link: { link: string; slug: string }) => {
     router.push(`/${link.slug}`);
-    setShowNavbar(false);
+
+    if(link.slug !== '#home'){
+      setShowNavbar(false);
+    }
   };
 
   const handleScroll = () => {

@@ -38,7 +38,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
       <div className="flex-[0.5] flex flex-col gap-[12px] relative z-10">
         <AnimatedTitle text={heading} className="heading" />
 
-        <BlockText text={text} className="gap-4 bodyText" />
+        <BlockText text={text} className="gap-4 bodyText xl:text-left text-center" />
 
         <StaggeredMotionWrapper className="flex flex-col lg:gap-8 gap-6 mt-4" y = {0} x = {-20} duration={1}>
           {appproaches.map((approach, i) => (

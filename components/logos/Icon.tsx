@@ -24,6 +24,7 @@ const Icon: React.FC<IconProps> = ({ className = '', width = 0, height = 0, path
         className="object-cover"
         priority
         quality={100}
+      
       />
     </div>
   )

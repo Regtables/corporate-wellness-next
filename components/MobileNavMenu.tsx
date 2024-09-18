@@ -35,7 +35,7 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
 
   return (
     <motion.div
-      className="fixed top-[80px] bottom-0 right-0 w-72 bg-white shadow-sm z-50 overflow-y-auto flex flex-col border-t-[1px] border-[#d1cdcd]"
+      className="fixed z-[100] top-[80px] bottom-0 right-0 w-72 bg-white shadow-sm overflow-y-auto flex flex-col border-t-[1px] border-[#d1cdcd]"
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       variants={menuVariants}
@@ -95,7 +95,7 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
                   alt="icon"
                   className="invert-[1]"
                 />
-                +44 7554 198103
+                +44 (0) 7554 198103
               </div>
               <div className={`flex text-black gap-2`}>
                 <Image

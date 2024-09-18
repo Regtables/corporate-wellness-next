@@ -16,7 +16,7 @@ const Layout: FC<{ children: React.ReactNode }> = async ({ children }) => {
 
   return (
     <div>
-      <div id = 'top' className="absolute top-0"/>
+      <div id = 'home' className="absolute top-0"/>
       <Navbar />
 
       <main className="lg:pt-[120px] pt-[80px]">{children}</main>

@@ -63,14 +63,14 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       </div> */}
 
       <StaggeredMotionWrapper
-        className="absolute top-0 left-0 h-full flex flex-col gap-2 justify-center lg:items-start items-center z-10 lg:px-[var(--section-x-lg)] px-[var(--section-x-xs)] w-full"
+        className="absolute top-0 left-0 right-0 h-full w-full flex flex-col text-center xl:items-center gap-2 justify-center lg:items-start items-center z-10 lg:px-[var(--section-x-lg)] px-[var(--section-x-xs)] w-full"
         // role="region"
         // aria-labelledby="hero-title"
       >
         <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
         <AnimatedTitle
           text={title}
-          className="font-heading text-white lg:text-[76px] text-[56px] text-center font-bold lg:w-40 lg:leading-[100px]"
+          className="font-heading text-white lg:text-[70px] text-[56px] text-center font-bold lg:mx-auto lg:leading-[100px]"
         />
         {/* <h1
           id="hero-title"
@@ -100,6 +100,16 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         path={{ src: "/baobab-sml.png" }}
         className="lg:block hidden h-[330px] w-[157px] absolute z-10 bottom-[-50px]"
       />
+
+      <div
+        style={{ transform: "rotateY(180deg)" }}
+        className="right-0 absolute z-10 bottom-[-50px]"
+      >
+        <Icon
+          path={{ src: "/baobab-sml.png" }}
+          className="lg:block hidden h-[330px] w-[157px]"
+        />
+      </div>
 
       <Icon
         path={{ src: "/baobab-sml.png" }}

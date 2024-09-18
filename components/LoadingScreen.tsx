@@ -20,7 +20,7 @@ const LoadingScreen = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          whileHover={{ opacity: [ 0, 1 ]}}
+          // whileHover={{ opacity: [ 1 ]}}
           transition={{ duration: 1 }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
       >

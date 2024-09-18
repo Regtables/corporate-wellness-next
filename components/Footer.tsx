@@ -128,7 +128,7 @@ const Footer: FC<{ accreditations: { logo: SanityImageType }[] }> = ({
 
           <div className="flex flex-col gap-6">
             <ContactDetail
-              text={`021 456 789`}
+              text={`+44 (0) 7554198103`}
               icon={"/phone.svg"}
               className="invert-[unset]"
             />

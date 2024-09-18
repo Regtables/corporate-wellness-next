@@ -23,11 +23,11 @@ const SanityImage: FC<SanityImageProps> = ({ image, priority = false, className 
         src={src}
         loader={loader}
         fill
-        sizes="100vw"
+        // sizes="100vw"
         alt={image.alt || ""}
         className={`object-cover ${className}`}
         priority={priority}
-        quality = {quality}
+        quality = {100}
         aria-hidden={image.alt ? "false" : "true"}
       />
     </div>
