@@ -22,7 +22,7 @@ const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }
           {
             image: src,
             speed: -7,
-            shouldAlwaysCompleteAnimation: true,
+            // shouldAlwaysCompleteAnimation: true,
           },
         ]}
         className="w-full h-[282px]"

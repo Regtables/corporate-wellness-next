@@ -16,15 +16,6 @@ interface ContactFormSectionProps {
   text?: string
 }
 
-const FORM_DATA = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  contact: "",
-  service: "",
-  message: "",
-};
-
 const ContactFormSection: FC<ContactFormSectionProps> = ({
   tree,
   treeClassName,
@@ -41,7 +32,7 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
       </ViewMotionWrapper>
 
       <StaggeredMotionWrapper className="lg:flex-[0.5] w-full">
-        <AnimatedTitle text= {heading} className="lg:text-left md:text-center" />
+        <AnimatedTitle text= {heading} className="lg:text-left md:text-center heading" />
         <p className="text-[14px] lg:text-start text-center">{text}</p>
 
         <ContactForm />

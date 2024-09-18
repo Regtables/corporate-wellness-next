@@ -46,7 +46,7 @@ const ServicePage = async ({ params }: { params: Params }) => {
         heading={name}
         subHeading="services"
         image={bannerImage}
-        icon=""
+        icon
       />
 
       <ServiceIntroductionSection
@@ -66,7 +66,7 @@ const ServicePage = async ({ params }: { params: Params }) => {
         <ServiceProcessSection
           heading={processSection.heading}
           processSteps={processSection.processSteps}
-          service= {name}
+          service={name}
         />
       </div>
 
@@ -74,14 +74,11 @@ const ServicePage = async ({ params }: { params: Params }) => {
         heading={benefitsSection.heading}
         cards={benefitsSection.benefits}
         benefits
-        
       />
 
-      <div>
-        <ParallaxBanner image={imageBanner2} />
+      <ParallaxBanner image={imageBanner2} />
 
-        <ContactFormSection tree="willow" treeClassName="absolute -start-20" />
-      </div>
+      <ContactFormSection tree="willow" treeClassName="absolute -start-20" />
     </div>
   );
 };

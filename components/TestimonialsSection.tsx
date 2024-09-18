@@ -17,7 +17,7 @@ const TestimonialsSection:FC<SanityTestimonialsSection> = ({ heading, testimonia
   return (
     <section className='section-padding py-32 relative max-h-[200vh] overflow-hidden' id = 'testimonials'>
 
-      <AnimatedTitle text= {heading} isRandom />
+      <AnimatedTitle text= {heading} className='heading' />
       
       <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 pt-10 relative' style = {toggleMore ? { maxHeight: 'unset' } : { maxHeight: '100vh' }}>
         {testimonials.map((testimonial, i) => (

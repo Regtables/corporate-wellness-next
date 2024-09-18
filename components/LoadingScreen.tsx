@@ -20,9 +20,10 @@ const LoadingScreen = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          whileHover={{ opacity: [ 0, 1 ]}}
+          transition={{ duration: 1 }}
           className="fixed inset-0 z-[100] flex items-center justify-center bg-white"
-        >
+      >
           <img
             src="/loading.webp" // Replace with your actual loading GIF
             alt="Loading..."

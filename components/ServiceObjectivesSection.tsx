@@ -1,10 +1,13 @@
-import { SanityImageType, ServiceObjectiveType } from '@/lib/sanity/types'
 import React, { FC } from 'react'
+
+import { SanityImageType, ServiceObjectiveType } from '@/lib/sanity/types'
+
 import RippleBg from './RippleBg'
 import SanityImage from './SanityImage'
 import ServiceObjective from './ServiceObjective'
 import BasicButton from './buttons/BasicButton'
 import StaggeredMotionWrapper from './motion/StaggerChildrenMotionWrapper'
+import AnimatedTitle from './motion/AnimatedTitle'
 
 interface ServiceObjectivesSectionProps {
   heading: string,
@@ -19,7 +22,7 @@ const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, i
 
       <div className='flex lg:flex-row flex-col lg:gap-24 gap-8 relative z-10'>
         <div className='flex-[0.4] '>
-          <h2 className='font-heading heading mb-6 lg:text-left md:text-center'>{heading}</h2>
+          <AnimatedTitle className='heading mb-6 lg:text-left md:text-center text-center' text= {heading} />
 
           <StaggeredMotionWrapper className='flex flex-col gap-6 mb-6' staggerDelay={0.2}>
             {objectives.map((objective, i) => (

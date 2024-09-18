@@ -8,6 +8,8 @@ import {
   SanityImageType,
 } from "@/lib/sanity/types";
 import AnimatedTitle from "./motion/AnimatedTitle";
+import Link from "next/link";
+import AnimatedChildrenTitle from "./motion/AnimatedChildrenTitle";
 
 interface ServiceIntroductionSectionProps {
   headingWithBlockText: SanityHeadingWithBlockText;
@@ -28,19 +30,24 @@ const ServiceIntroductionSection: FC<ServiceIntroductionSectionProps> = ({
 
       <div className="flex-[0.5] flex gap-[12px] flex-col lg:py-sectionY lg:text-left text-center">
         <AnimatedTitle text= {heading} className="heading font-heading lg:text-left md:text-center" />
+        {/* <AnimatedChildrenTitle className="heading">{heading}</AnimatedChildrenTitle> */}
 
         <BlockText text={text} className="gap-4 bodyText" />
 
         <div className="flex gap-6 mt-6 lg:justify-start md:justify-center">
-          <BasicButton text="Our Services" bgColor="var(--color-duckEgg)" />
+          <Link href={'/#services'}>
+            <BasicButton text="Our Services" bgColor="var(--color-duckEgg)" />
+          </Link>
 
-          <BasicButton
-            text="contact us"
-            bgColor="transparent"
-            color="black"
-            outline
-            aria-label="Contact us"
-          />
+          <Link href={'#contact'}>
+            <BasicButton
+              text="contact us"
+              bgColor="transparent"
+              color="black"
+              outline
+              aria-label="Contact us"
+            />
+          </Link>
         </div>
       </div>
     </div>

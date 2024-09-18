@@ -1,0 +1,17 @@
+.container{
+  color: var(--color-black);
+  // margin-top: 2rem;
+  padding-bottom: 2rem;
+
+  h2{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  ul{
+    li{
+      list-style: disc;
+      list-style-position: inside;
+    }
+  }
+}

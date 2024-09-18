@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 
-import { sanityFetchAccreditationsLogos, sanityFetchHomePageContent } from "@/lib/sanity/actions";
+import {
+  sanityFetchAccreditationsLogos,
+  sanityFetchHomePageContent,
+} from "@/lib/sanity/actions";
 
 import Hero from "@/components/Hero";
 import ApproachSection from "@/components/ApproachSection";
@@ -53,13 +56,11 @@ const HomePage: FC = async () => {
     approachSection,
     servicesSection,
     imageBanner1,
-    generalProcess,
     testimonialSection,
     imageBanner2,
   } = await sanityFetchHomePageContent();
-  console.log(servicesSection)
   return (
-    <div className="flex flex-col" id = 'home'>
+    <div className="flex flex-col" id="home">
       {/* Hero */}
       <Hero
         image={heroSection.backgroundImages[0]}
@@ -90,9 +91,12 @@ const HomePage: FC = async () => {
       {/* Services */}
       <div className="relative">
         <div className="xl:block lg:hidden md:hidden hidden h-[310px] w-[300px] absolute -end-28 -top-20 z-10 overflow-hidden">
-          <Icon path={{ src: '/logo-icon-blue.png' }} className="h-[310px] w-[300px] absolute end-0 top-0 z-10" />
+          <Icon
+            path={{ src: "/logo-icon-blue.png" }}
+            className="h-[310px] w-[300px] absolute end-0 top-0 z-10"
+          />
         </div>
-        
+
         <div className="lg:mt-0 md:mt-20 mt-72">
           <CardsSection
             heading={servicesSection.heading}
@@ -107,15 +111,7 @@ const HomePage: FC = async () => {
         </div>
       </div>
 
-      {/* Process */}
-      <div>
-        <ParallaxBanner image={imageBanner1} initialYPosition={0} />
-
-        {/* <GeneralProcess
-          heading={generalProcess.heading}
-          processSteps={generalProcess.processSteps}
-        /> */}
-      </div>
+      <ParallaxBanner image={imageBanner1} />
 
       {/* Testimonials */}
       <TestimonialsSection
@@ -123,11 +119,9 @@ const HomePage: FC = async () => {
         testimonials={testimonialSection.testimonials}
       />
 
-      <div>
-        <ParallaxBanner image={imageBanner2} initialYPosition={50} />
+      <ParallaxBanner image={imageBanner2} />
 
-        <ContactFormSection tree="baobab" />
-      </div>
+      <ContactFormSection tree="baobab" />
     </div>
   );
 };

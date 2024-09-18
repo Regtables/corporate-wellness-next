@@ -4,66 +4,29 @@ import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 
 interface AnimatedTitleProps {
-  text: string,
-  isRandom?: boolean,
-  className?: string,
-  children?: React.ReactNode,
-  duration?: number,
-  delay?: number
+  text: string;
+  className?: string;
+  delay?: number;
+  duration?: number;
 }
 
-const AnimatedTitle:FC<AnimatedTitleProps> = ({ text, isRandom = true, className = 'heading font-heading', children, delay = 0.06, duration = 0.5 }) => {
-  const words = text.split(" ");
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: delay * i },
-    }),
-  };
-
-  const child = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        // type: "spring",
-        // damping: 12,
-        // stiffness: 200,
-        duration,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      y: 20,
-      transition: {
-        // type: "spring",
-        // damping: 12,
-        // stiffness: 200,
-      },
-    },
-  };
+const AnimatedTitle:FC<AnimatedTitleProps> = ({ text, className, delay = 0.1, duration = 0.5 }) => {
+  const words = text.split(' ')
 
   return (
-    <motion.h2
-      className={`text-3xl font-bold heading font-heading ${className}`}
-      variants={container}
-      initial="hidden"
-      animate="visible"
-    >
-      {words.map((word, index) => (
-        <motion.span
-          key={index}
-          className="inline-block mr-2"
-          variants={child}
-          custom={isRandom ? Math.random() * 5 : index}
+    <div className={`flex xl:justify-start justify-center gap-2 flex-wrap ${className}`}>
+      {words.map((word,i) => (
+        <motion.div 
+          key = {i}
+          whileInView={{ opacity: [0, 1], y: [20, 0]}}
+          transition={{ duration: duration, delay: delay*i}}
+          initial = {{ opacity: 0, y: 20 }}
         >
-          {word}
-        </motion.span>
+            {word}
+          </motion.div>
       ))}
-    </motion.h2>
-  );
-};
+    </div>
+  )
+}
 
 export default AnimatedTitle

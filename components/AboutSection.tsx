@@ -30,8 +30,7 @@ const AboutSection: FC<AboutSectionProps> = ({
       </ViewMotionWrapper>
 
       <div className="flex-[0.5] flex gap-[12px] flex-col lg:text-left text-center">
-        {/* <h2 className="heading font-heading">{heading}</h2> */}
-        <AnimatedTitle text= {heading} className="lg:text-left md:text-center" />
+        <AnimatedTitle text= {heading} className="heading lg:text-left md:text-center" />
 
         <BlockText
           text={text}

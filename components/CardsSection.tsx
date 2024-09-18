@@ -3,6 +3,8 @@ import ServiceCard from "./cards/ServiceCard";
 import BasicButton from "./buttons/BasicButton";
 import { SERVICES_ICONS } from "@/lib/icons";
 import StaggeredMotionWrapper from "@/components/motion/StaggerChildrenMotionWrapper";
+import Link from "next/link";
+import AnimatedTitle from "./motion/AnimatedTitle";
 
 interface CardsSectionProps {
   heading: string;
@@ -26,22 +28,25 @@ const CardsSection: FC<CardsSectionProps> = ({
   return (
     <section className="section-padding" id={id}>
       <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:pb-12 pb-6">
-        <h2 className="font-heading heading mb-4 lg:mb-0">{heading}</h2>
+        {/* <h2 className="font-heading heading mb-4 lg:mb-0">{heading}</h2> */}
+        <AnimatedTitle text= {heading} className="heading" />
 
-        <BasicButton 
-          text="Contact Us" 
-          bgColor="var(--color-duckEgg)" 
-          className="lg:flex hidden"
-        />
+        <Link href={'#contact'}>
+          <BasicButton 
+            text="Contact Us" 
+            bgColor="var(--color-duckEgg)" 
+            className="lg:flex hidden"
+          />
+        </Link>
       </div>
 
-      <div className="overflow-x-auto pb-4">
+      <div className="pb-4">
         <StaggeredMotionWrapper
           // direction="left-to-right"
           duration={0.5}
           staggerDelay={0.1}
         >
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-8">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
             {cards.map((card, i) => (
               <ServiceCard
                 key={i}
@@ -51,6 +56,7 @@ const CardsSection: FC<CardsSectionProps> = ({
                 // icon={SERVICES_ICONS[card.name]}
                 buttons={!benefits}
                 linkage={linkage}
+                sml = {benefits}
               />
             ))}
           </div>

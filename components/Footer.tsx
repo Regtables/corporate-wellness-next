@@ -60,10 +60,24 @@ const LEGAL_LINKS = [
   },
 ];
 
-export const ContactDetail = ({ text, icon, className }: { text: string; icon: any, className?:string }) => {
+export const ContactDetail = ({
+  text,
+  icon,
+  className = "invert-[1]",
+}: {
+  text: string;
+  icon: any;
+  className?: string;
+}) => {
   return (
     <div className={`flex text-white gap-2 ${className}`}>
-      <Image src={icon} height={20} width={20} alt="icon" className="invert-[1]"/>
+      <Image
+        src={icon}
+        height={20}
+        width={20}
+        alt="icon"
+        className={className}
+      />
 
       {text}
     </div>
@@ -88,7 +102,9 @@ const FooterLinks = ({ heading, links }: { heading: string; links: any[] }) => {
   );
 };
 
-const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditations }) => {
+const Footer: FC<{ accreditations: { logo: SanityImageType }[] }> = ({
+  accreditations,
+}) => {
   return (
     <footer className="bg-black section-padding flex flex-col gap-10">
       <div>
@@ -97,16 +113,29 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
 
       <div className="h-[1px] bg-duckEgg w-full" />
 
-      <ViewMotionWrapper className="flex lg:flex-row flex-col gap-8" duration={1}>
+      <ViewMotionWrapper
+        className="flex lg:flex-row flex-col gap-8"
+        duration={1}
+      >
         <div className="flex-[0.3] flex flex-col gap-10">
           {/* <LogoWithText /> */}
-          <Image src={"/logo-blue.svg"} height={70} width={250} alt="Corporate Wellness Logo"/>
+          <Image
+            src={"/logo-blue.svg"}
+            height={70}
+            width={250}
+            alt="Corporate Wellness Logo"
+          />
 
           <div className="flex flex-col gap-6">
-            <ContactDetail text={`021 456 789`} icon={"/phone.svg"} className="invert-[unset]" />
+            <ContactDetail
+              text={`021 456 789`}
+              icon={"/phone.svg"}
+              className="invert-[unset]"
+            />
             <ContactDetail
               text={`info@corporatewellness.co.za`}
               icon={"/email.svg"}
+              className="invert-[unset]"
             />
 
             <div className="flex gap-3">
@@ -137,10 +166,10 @@ const Footer:FC<{ accreditations: { logo: SanityImageType }[] }> = ({ accreditat
           </div>
         </div>
         <div className="text-white lg:absolute end-0 bottom-0 font-[300] mt-4 lg:hidden block font-body">
-            © 2024
-            <span className="font-[600]"> Corporate Wellness.</span> All Rights
-            Reserved
-          </div>
+          © 2024
+          <span className="font-[600]"> Corporate Wellness.</span> All Rights
+          Reserved
+        </div>
       </ViewMotionWrapper>
     </footer>
   );

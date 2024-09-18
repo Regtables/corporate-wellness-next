@@ -36,7 +36,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
       <RippleBg />
 
       <div className="flex-[0.5] flex flex-col gap-[12px] relative z-10">
-        <AnimatedTitle text={heading} />
+        <AnimatedTitle text={heading} className="heading" />
 
         <BlockText text={text} className="gap-4 bodyText" />
 

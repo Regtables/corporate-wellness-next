@@ -32,6 +32,7 @@ export const SERVICES_ICONS: IconPath = {
 
 export const SERVICES_ICONS_WHITE: IconPath = {
   "Individual Coaching": { src: "/individual-white.svg", width: 266, height: 218 },
+  "Privacy Policy": { src: "/individual-white.svg", width: 266, height: 218 },
   "Team Coaching": { src: "/team-white.svg", width: 364, height: 218 },
   "HR Consultancy": { src: "/hr-white.svg", width: 364, height: 218 },
   "Customised Solutions": { src: "/individual.svg", width: 80, height: 50 },

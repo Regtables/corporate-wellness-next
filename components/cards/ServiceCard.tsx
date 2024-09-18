@@ -15,6 +15,7 @@ interface ServiceCardProps {
   buttons?: boolean;
   col?: boolean;
   icon?: string;
+  sml?: boolean;
 }
 
 const ServiceCard: FC<ServiceCardProps> = ({
@@ -24,14 +25,23 @@ const ServiceCard: FC<ServiceCardProps> = ({
   buttons,
   col,
   icon,
+  sml,
 }) => {
   const { src, height, width } = SERVICES_ICONS[name];
 
+  const handleClick = () => {
+    
+  }
+
   return (
     <Link href={linkage ? `/services/${slugify(name)}` : ""}>
-      <article 
-        className={cn("bg-[white] lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col items-center lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[40px]", col && 'lg:p-4')}
-        >
+      <article
+        className={cn(
+          "bg-[white] lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col items-center lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[36px] overflow-auto",
+          col && "lg:p-4",
+          !sml && 'xl:min-h-[460px]'
+        )}
+      >
         <div
           className={cn(
             "flex lg:flex-row flex-col lg:gap-6 gap-4 items-center",
@@ -41,12 +51,17 @@ const ServiceCard: FC<ServiceCardProps> = ({
         >
           <Image src={src} alt={name} height={height} width={width} />
 
-          <h3 className={cn("font-heading lg:text-[26px] text-[20px] font-bold leading-[32px]", col && 'lg:text-[20px] tex-center')}>
+          <h3
+            className={cn(
+              "font-heading lg:text-[26px] text-[20px] font-bold leading-[32px]",
+              col && "lg:text-[20px] tex-center"
+            )}
+          >
             {name}
           </h3>
         </div>
 
-        <p className={cn("bodyText", col && 'text-center')}>{description}</p>
+        <p className={cn("bodyText", col && "text-center")}>{description}</p>
 
         {buttons && (
           <div className="font-medium flex items-center lg:justify-start justify-center gap-4 mt-auto">
