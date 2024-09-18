@@ -138,19 +138,17 @@ const Footer: FC<{ accreditations: { logo: SanityImageType }[] }> = ({
               className="invert-[unset]"
             />
 
-            <div className="flex gap-3">
-              <a>
-                <Image
-                  src={"/instagram.svg"}
-                  height={20}
-                  width={20}
-                  alt="icon"
-                />
-              </a>
-              <a>
-                <Image src={"/linkdin.svg"} height={20} width={20} alt="icon" />
-              </a>
-            </div>
+            <a
+              href="https://www.instagram.com/corporatewellness_hub/?igsh=MWhvMWdkbW8wbmJ6bQ%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ContactDetail
+                text={`@corporatewellness_hub`}
+                icon={"/instagram.svg"}
+                className="invert-[unset]"
+              />
+            </a>
           </div>
         </div>
 
