@@ -29,7 +29,7 @@ export default function RootLayout({
     >
       <body>
         <ParallaxProvider>
-          {/* {!isFirstLoad && <LoadingScreen />} */}
+          {!isFirstLoad && <LoadingScreen />}
           {children}
         </ParallaxProvider>
       </body>

@@ -18,7 +18,7 @@ const ProcessStepTasksList:FC<ProcessStepTasksProps> = ({ tasks, className, cont
               <div className={cn('h-[1px] bg-black w-full', !contained && 'bg-duckEgg')} />
             )}
 
-            <div className={cn('min-h-[30px] font-[300]', contained && 'min-h-0', !contained && 'min-h-[30px] gap-[20px]')}>
+            <div className={cn('min-h-[20px] font-[300] bodyText', contained && 'min-h-0', !contained && 'min-h-[25px] gap-[20px]')}>
               {task}
             </div>
           </>
