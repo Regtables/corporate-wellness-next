@@ -99,7 +99,7 @@ const HomePage: FC = async () => {
           />
         </div>
 
-        <div className="lg:mt-0 md:mt-20 mt-72">
+        <div className="lg:mt-16 md:mt-20 mt-72">
           <CardsSection
             heading={servicesSection.heading}
             cards={servicesSection.services}
