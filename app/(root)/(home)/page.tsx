@@ -59,7 +59,7 @@ const HomePage: FC = async () => {
   } = await sanityFetchHomePageContent();
   console.log(servicesSection)
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" id = 'home'>
       {/* Hero */}
       <Hero
         image={heroSection.backgroundImages[0]}

@@ -21,7 +21,7 @@ const ServiceIntroductionSection: FC<ServiceIntroductionSectionProps> = ({
   const { heading, text } = headingWithBlockText;
 
   return (
-    <div className="flex lg:flex-row flex-col-reverse lg:gap-20 gap-8 lg:pr-section section-padding-y lg:px-[unset] px-[var(--section-x-xs)]">
+    <div className="flex lg:flex-row flex-col-reverse lg:gap-20 gap-8 lg:pr-section lg:pl-0 section-padding-y lg:mx-0 md:mx-[var(--section-x-md)] px-[var(--section-x-xs)]">
       <div className="lg:flex-[0.5] lg:h-[unset] h-[250px]">
         <SanityImage image={image} className="lg:rounded-r-[12px] lg:rounded-l-none rounded-xl" />
       </div>

@@ -18,7 +18,7 @@ import { useMediaQuery } from "react-responsive";
 const LINKS = [
   {
     link: "home",
-    slug: "#home",
+    slug: "#top",
   },
   {
     link: "about us",
@@ -45,10 +45,6 @@ const LINKS = [
         slug: "/services/hr-consultancy",
       },
     ],
-  },
-  {
-    link: "our process",
-    slug: "#process",
   },
   {
     link: "testimonials",
@@ -116,8 +112,9 @@ const Navbar = () => {
 
       <StaggeredMotionWrapper
         className="xl:flex lg:hidden items-center md:hidden sm:hidden xs:hidden hidden gap-10 list-none"
-        duration={0.3}
+        duration={0.1}
         y={-10}
+        staggerDelay={0.1}
         // role="menubar"
       >
         {LINKS.map((link, i) => (

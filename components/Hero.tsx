@@ -10,6 +10,7 @@ import Icon from "./logos/Icon";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import ViewMotionWrapper from "./ViewMotionWrapper";
 import { useMediaQuery } from "react-responsive";
+import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 
 interface HeroProps {
   title: string;
@@ -41,7 +42,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       className="h-screen relative"
       style={{ height: heroHeight }}
       aria-label="Hero section"
-      id="home"
+      // id="home"
     >
       <ViewMotionWrapper
         className="absolute top-0 left-0 w-full h-full"
@@ -61,10 +62,10 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         <Logo />
       </div> */}
 
-      <div
+      <StaggeredMotionWrapper
         className="absolute top-0 left-0 h-full flex flex-col gap-2 justify-center lg:items-start items-center z-10 lg:px-[var(--section-x-lg)] px-[var(--section-x-xs)] w-full"
-        role="region"
-        aria-labelledby="hero-title"
+        // role="region"
+        // aria-labelledby="hero-title"
       >
         <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
         <AnimatedTitle
@@ -78,7 +79,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
           {title}
         </h1> */}
         <div
-          className="lg:w-[40%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
+          className="lg:w-[100%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
           aria-label="Hero description"
         >
           {text}
@@ -93,12 +94,12 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
           className="lg:mt-0 mt-4"
           aria-label="Contact us"
         />
-      </div>
+      </StaggeredMotionWrapper>
 
-      <Icon
+      {/* <Icon
         path={{ src: "/baobab-sml.png" }}
-        className="lg:block hidden h-[330px] w-[157px] absolute z-[20] bottom-[-50px]"
-      />
+        className="lg:block hidden h-[330px] w-[157px] absolute z-10 bottom-[-50px]"
+      /> */}
 
       <Icon
         path={{ src: "/baobab-sml.png" }}

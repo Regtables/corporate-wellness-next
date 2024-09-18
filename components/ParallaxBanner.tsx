@@ -16,18 +16,18 @@ const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }
   const { src } = useNextSanityImage(sanityClient, image.image);
 
   return (
-    <ViewMotionWrapper className="w-full" duration={1} y = {0}>
+    // <ViewMotionWrapper className="w-full" duration={1} y = {0}>
       <Parallax
         layers={[
           {
             image: src,
-            speed: -15,
+            speed: -7,
             shouldAlwaysCompleteAnimation: true,
           },
         ]}
         className="w-full h-[282px]"
       />
-    </ViewMotionWrapper>
+    // {/* </ViewMotionWrapper> */}
   );
 };
 

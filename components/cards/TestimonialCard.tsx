@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 
 const TestimonialCard:FC<SanityTestimonialType> = ({ name, country, text }) => {
   return (
-    <div className='flex flex-col justify-between gap-8 bg-black text-white rounded-xl p-[30px]'>
+    <div className='flex flex-col justify-between gap-8 bg-black text-white rounded-xl p-[30px] h-full'>
       <div className='bodyText'>
         {text}
       </div>

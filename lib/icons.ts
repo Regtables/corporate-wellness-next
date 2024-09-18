@@ -63,10 +63,16 @@ export const SERVICE_BENEFITS_ICONS: IconPath = {
   "Live with Purpose": { src: '/purpose.svg', height: 50, width: 50 }
 }
 
+export const SERVICE_PROCESS_ICONS_ICONS:IconPath = {
+  "Individual Coaching": { src: "/individual-white.svg", width: 200, height: 50 },
+  "Team Coaching": { src: "/team-white.svg", width: 200, height: 50 },
+  "HR Consultancy": { src: "/hr-white.svg", width: 150, height: 50 },
+}
+
 export const SERVICE_PROCESS_ICONS:IconPath = {
-  "Individual Coaching": { src: "/individual-process.png", width: 80, height: 50 },
-  "Team Coaching": { src: "/team-process.png", width: 100, height: 50 },
-  "HR Consultancy": { src: "/hr-process.png", width: 60, height: 50 },
+  "Individual Coaching": { src: "/individual-process1.png", width: 80, height: 50 },
+  "Team Coaching": { src: "/team-process1.png", width: 100, height: 50 },
+  "HR Consultancy": { src: "/hr-process1.png", width: 60, height: 50 },
 }
 
 export const TIMELINE_ICONS:IconPath = {

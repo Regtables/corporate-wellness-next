@@ -6,12 +6,20 @@ import "./globals.scss";
 import { combineFontClasses, libreBaskerville, nunitoSans } from "@/lib/fonts";
 import { ParallaxProvider } from "react-scroll-parallax";
 import { FormProvider } from "@/context/FormContext";
+import { useEffect, useState } from "react";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [isFirstLoad, setIsFirstLoad] = useState(true)
+
+  useEffect(() => {
+    setIsFirstLoad(false)
+  }, [])
+  
   return (
     <html
       lang="en"
@@ -21,7 +29,10 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ParallaxProvider>{children}</ParallaxProvider>
+        <ParallaxProvider>
+          {!isFirstLoad && <LoadingScreen />}
+          {children}
+        </ParallaxProvider>
       </body>
     </html>
   );
