@@ -30,7 +30,7 @@ const ApproachSection: FC<ApproachSectionProps> = ({
 
   return (
     <section
-      className="flex lg:flex-row flex-col xl:pl-section xl:pb-60 lg:pt-24 xl:pr-0 lg:pr-0 lg:pl-[var(--section-x-md)] md:px-[var(--section-x-md)] px-[var(--section-x-xs)] py-[var(--section-y-xs)] pb-40 bg-duckEgg lg:gap-24 gap-6 relative"
+      className="flex lg:flex-row flex-col xl:pl-section xl:pb-48 lg:pt-24 xl:pr-0 lg:pr-0 lg:pl-[var(--section-x-md)] md:px-[var(--section-x-md)] px-[var(--section-x-xs)] py-[var(--section-y-xs)] pb-40 bg-duckEgg lg:gap-24 gap-6 relative"
       id="approach"
     >
       <RippleBg />

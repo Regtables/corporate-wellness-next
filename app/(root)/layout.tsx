@@ -8,7 +8,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Corporate Wellness",
-  description: "Corporate Wellness webpage",
+  description: "As a highly skilled and internationally experienced coach and HR leader with over 25 years of expertise across various sectors and countries (South Africa, Middle East, and UK), I understand the importance of being in right relationship with others—at home, socially, and at work. Despite my extensive experience, I travel light, bringing a focused and adaptable approach to every engagement.",
 };
 
 const Layout: FC<{ children: React.ReactNode }> = async ({ children }) => {

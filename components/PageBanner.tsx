@@ -77,7 +77,7 @@ const PageBanner: FC<PageBannerProps> = ({
           y={0}
           duration={1}
         >
-          <SanityImage image={image!} />
+          <SanityImage image={image!} priority quality={80} />
         </ViewMotionWrapper>
       )}
     </div>

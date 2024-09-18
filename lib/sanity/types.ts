@@ -33,6 +33,7 @@ export type SanityFetchServiceContentOperation = {
   slug: {
     current: string
   },
+  description: string,
   bannerImage: SanityImageType
   introductionSection: SanitySection
   imageBanner1: SanityImageType

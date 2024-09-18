@@ -49,6 +49,8 @@ const TIMELINE = [
   // },
 ];
 
+export const revalidate = 60
+
 const HomePage: FC = async () => {
   const {
     heroSection,

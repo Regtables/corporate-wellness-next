@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import { combineFontClasses, libreBaskerville, nunitoSans } from "@/lib/fonts";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { FormProvider } from "@/context/FormContext";
 import { useEffect, useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 
