@@ -103,7 +103,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
 
       <div
         style={{ transform: "rotateY(180deg)" }}
-        className="right-0 absolute z-10 bottom-[-50px]"
+        className="lg:block hidden right-0 absolute z-10 bottom-[-50px]"
       >
         <Icon
           path={{ src: "/baobab-sml.png" }}
