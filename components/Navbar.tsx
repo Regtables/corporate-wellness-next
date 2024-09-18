@@ -199,6 +199,7 @@ const Navbar = () => {
               handleClose={handleMenuToggle}
               isOpen={toggleMenu}
               links={LINKS}
+              handleLinkClick={handleLinkClick}
             />
           </>
         )}

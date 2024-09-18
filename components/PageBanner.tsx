@@ -30,7 +30,7 @@ const PageBanner: FC<PageBannerProps> = ({
   const { src, height, width } = SERVICES_ICONS_WHITE[heading];
 
   return (
-    <div className="flex xl:pl-section lg:pl-[var(--section-x-md)] xl:pt-0 md:pt-[40px] pl-0 bg-duckEgg relative lg:flex-row flex-col">
+    <div className="flex xl:pl-section lg:pl-[var(--section-x-md)] xl:pt-0 md:pt-[40px] pl-0 pt-[40px] bg-duckEgg relative lg:flex-row flex-col">
       <div className="lg:py-sectionY pt-[40px] pb-[40px] text-center lg:flex-[0.5] flex flex-col lg:items-start items-center">
         {subHeading && (
           <h4 className="uppercase lg:text-[23px] text-[18px] tracking-[-4%]">

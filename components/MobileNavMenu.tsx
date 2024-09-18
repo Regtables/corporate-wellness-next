@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ContactDetail } from "@/components/Footer";
 import BasicButton from "./buttons/BasicButton";
 import Icon from "./logos/Icon";
 import Swipeable from "./Swipable";
@@ -16,12 +15,14 @@ interface MobileNavMenuProps {
     slug: string;
     pages?: Array<{ link: string; slug: string }>;
   }>;
+  handleLinkClick: (link: { link: string; slug: string }) => void;
 }
 
 const MobileNavMenu: FC<MobileNavMenuProps> = ({
   handleClose,
   isOpen,
   links,
+  handleLinkClick
 }) => {
   const menuVariants = {
     closed: {
@@ -38,24 +39,24 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
       initial="closed"
       animate={isOpen ? "open" : "closed"}
       variants={menuVariants}
-      // transition={{ type: "spring", stiffness: 300, damping: 30 }}
       transition={{ duration: 0.3 }}
       exit={"closed"}
     >
       <Swipeable onRight={handleClose}>
         <div className="p-4">
           <nav>
-            {/* <h2 className="">Corporate Wellness</h2> */}
             <ul>
               {links.map((link, index) => (
                 <li key={index} className="mb-4">
-                  <Link
-                    href={link.slug}
-                    onClick={handleClose}
-                    className="text-lg capitalize"
+                  <div 
+                    onClick={() => {
+                      handleLinkClick(link);
+                      handleClose();
+                    }}
+                    className="text-lg capitalize cursor-pointer"
                   >
                     {link.link}
-                  </Link>
+                  </div>
                   {link.pages && (
                     <ul className="ml-4 mt-2">
                       {link.pages.map((sublink, subIndex) => (
@@ -79,6 +80,10 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
               text="contact us"
               bgColor="var(--color-duckEgg)"
               className="mt-4"
+              onClick={() => {
+                handleLinkClick({ link: "contact us", slug: "#contact" });
+                handleClose();
+              }}
             />
 
             <div className="mt-4 flex flex-col gap-2">
@@ -119,8 +124,6 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
                 </div>
               </a>
             </div>
-
-            <div className="flex gap-3 mt-4"></div>
 
             <div className="flex items-center justify-center flex-grow h-full">
               <Icon
