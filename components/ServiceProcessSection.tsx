@@ -24,7 +24,7 @@ const ServiceProcessSection:FC<ServiceProcessSectionProps> = ({ heading, process
       {/* <ViewMotionWrapper className='w-full lg:flex-[0.6] lg:h-[unset] h-[300px]' y = {0} x = {-20} duration={1.5}>
         <Icon path={SERVICE_PROCESS_ICONS[service]} className="h-full w-full relative"/>
       </ViewMotionWrapper> */}
-        <div className='w-full lg:flex-[0.6] lg:h-[unset] h-[300px]'>
+        <div className='w-full lg:flex-[0.6] lg:h-[unset] xl:max-w-[700px] h-[300px] md:h-[460px] md:mx-auto md:max-w-[400px]'>
           <ProcessIcon service={service} path={SERVICE_PROCESS_ICONS[service]}  />
         </div>
 
