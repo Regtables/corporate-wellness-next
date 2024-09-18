@@ -1,3 +1,5 @@
+'use client'
+
 import React, { FC } from "react";
 import ServiceCard from "./cards/ServiceCard";
 import BasicButton from "./buttons/BasicButton";
@@ -5,6 +7,7 @@ import { SERVICES_ICONS } from "@/lib/icons";
 import StaggeredMotionWrapper from "@/components/motion/StaggerChildrenMotionWrapper";
 import Link from "next/link";
 import AnimatedTitle from "./motion/AnimatedTitle";
+import { useMediaQuery } from "react-responsive";
 
 interface CardsSectionProps {
   heading: string;
@@ -25,6 +28,7 @@ const CardsSection: FC<CardsSectionProps> = ({
   id,
   linkage,
 }) => {
+  const isMobile = useMediaQuery({ maxWidth: "676px" });
   return (
     <section className="section-padding" id={id}>
       <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:pb-12 pb-6">
@@ -48,10 +52,15 @@ const CardsSection: FC<CardsSectionProps> = ({
         >
           <div
             className="grid gap-6"
-            style={{
-              gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-              padding: "6px",
-            }}
+            style={
+              !isMobile
+                ? {
+                    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+                  }
+                : {
+                    gridTemplateColumns: "1fr",
+                  }
+            }
           >
             {cards.map((card, i) => (
               <ServiceCard
