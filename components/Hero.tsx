@@ -48,17 +48,17 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
     >
       {/* <ParallaxBanner className="h-full w-full">
         <ParallaxBannerLayer speed={-20}> */}
-          <ViewMotionWrapper
-            className="absolute top-0 left-0 w-full h-full"
-            // style={{ transform: "rotateY(180deg)" }}
-            y={0}
-            aria-hidden="true"
-          >
-            <Overlay opacity={40}>
-              <SanityImage image={image} />
-            </Overlay>
-          </ViewMotionWrapper>
-        {/* </ParallaxBannerLayer>
+      <ViewMotionWrapper
+        className="absolute top-0 left-0 w-full h-full"
+        // style={{ transform: "rotateY(180deg)" }}
+        y={0}
+        aria-hidden="true"
+      >
+        <Overlay opacity={40}>
+          <SanityImage image={image} />
+        </Overlay>
+      </ViewMotionWrapper>
+      {/* </ParallaxBannerLayer>
       </ParallaxBanner> */}
 
       {/* <div 
@@ -104,10 +104,15 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         </Link>
       </StaggeredMotionWrapper>
 
-      <ViewMotionWrapper y={0} x={-20} duration={1}>
+      <ViewMotionWrapper
+        y={0}
+        x={-20}
+        duration={1}
+        className="absolute z-10 bottom-[-50px]"
+      >
         <Icon
           path={{ src: "/baobab-sml.png" }}
-          className="lg:block hidden h-[330px] w-[157px] absolute z-10 bottom-[-50px]"
+          className="lg:block hidden h-[330px] w-[157px]"
         />
       </ViewMotionWrapper>
 
@@ -121,18 +126,25 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         />
       </div> */}
 
-      <ViewMotionWrapper y={0} x={-20} duration={1}>
+      <ViewMotionWrapper
+        y={0}
+        x={-20}
+        duration={1}
+        className="left-0 absolute z-[10] -bottom-[65px]"
+      >
         <Icon
           path={{ src: "/baobab-sml.png" }}
-          className="xl:hidden lg:hidden block h-[250px] w-[80px] left-0 absolute z-[10] -bottom-[65px]"
+          className="xl:hidden lg:hidden block h-[250px] w-[80px] "
         />
       </ViewMotionWrapper>
-      
-      <ViewMotionWrapper y={0} x={20} duration={1}>
-        <div
-          style={{ transform: "rotateY(180deg)" }}
-          className="xl:hidden right-0 absolute z-[10] -bottom-[65px]"
-        >
+
+      <ViewMotionWrapper
+        y={0}
+        x={20}
+        duration={1}
+        className="xl:hidden right-0 absolute z-[10] -bottom-[65px]"
+      >
+        <div style={{ transform: "rotateY(180deg)" }}>
           <Icon
             path={{ src: "/baobab-sml.png" }}
             className="xl:hidden lg:hidden block h-[250px] w-[80px]"
