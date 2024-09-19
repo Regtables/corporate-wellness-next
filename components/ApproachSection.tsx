@@ -11,6 +11,7 @@ import SanityImage from "./SanityImage";
 import RippleBg from "./RippleBg";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
+import ViewMotionWrapper from "./ViewMotionWrapper";
 
 interface ApproachSectionProps {
   headingWithText: SanityHeadingWithBlockText;
@@ -52,9 +53,9 @@ const ApproachSection: FC<ApproachSectionProps> = ({
         </StaggeredMotionWrapper>
       </div>
 
-      <div className="lg:flex-[0.5] lg:h-[unset] h-[300px] w-full">
+      <ViewMotionWrapper className="lg:flex-[0.5] lg:h-[unset] h-[300px] w-full" y = {30} duration={1} delay={0.1}>
         <SanityImage image={image} className="lg:rounded-l-xl lg:rounded-r-none rounded-xl" />
-      </div>
+      </ViewMotionWrapper>
     </section>
   );
 };

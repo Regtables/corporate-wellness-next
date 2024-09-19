@@ -11,6 +11,7 @@ import Dropdown from "./Dropdown";
 import RadioButton from "./RadioButtton";
 import BasicButton from "./buttons/BasicButton";
 import FormErrorMessage from "./FormErrorMessage";
+import { useModal } from "@/context/ModalContext";
 
 const INITIAL_FORM_DATA = {
   firstname: "",
@@ -51,7 +52,11 @@ const ContactFormContent = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [success, setSuccess] = useState(false)
 
+  const { handleModalOpen } = useModal()
+
   const handleSubmit = async (e: React.FormEvent) => {
+    handleModalOpen('success')
+    
     e.preventDefault();
     if (validateForm()) {
       if (agreed) {
@@ -63,7 +68,8 @@ const ContactFormContent = () => {
     
           if(res.status === 200){
             setSuccess(true)
-
+            
+          
             setFormData(INITIAL_FORM_DATA)
     
             setTimeout(() => {

@@ -40,18 +40,19 @@ const ServiceCard: FC<ServiceCardProps> = ({
   return (
     <article
       className={cn(
-        "bg-[white] lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col items-center lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500 hover:pl-[36px] overflow-auto",
+        "bg-[white] group lg:p-[30px] p-[16px] rounded-xl flex lg:text-left text-center flex-col lg:items-start items-center lg:gap-6 gap-4 h-full hover:bg-black hover:text-duckEgg hover:border-duckEgg transition-all duration-500",
         col && "lg:p-4",
-        !sml && "xl:min-h-[460px]",
+        // !sml && "xl:min-h-[460px]",
         linkage && 'cursor-pointer'
       )}
       onClick={handleClick}
     >
       <div
         className={cn(
-          "flex lg:flex-row flex-col lg:gap-6 gap-4 items-center",
+          "flex lg:flex-row flex-col lg:gap-6 gap-4 items-center transition-transform duration-500",
           col &&
-            "lg:flex-col text-center items-center justify-center lg:w-[unset] w-64 mx-auto"
+            "lg:flex-col text-center items-center justify-center lg:w-[unset] w-64 mx-auto",
+          !col && "group-hover:translate-x-5"
         )}
       >
         <Image src={src} alt={name} height={height} width={width} />
@@ -59,7 +60,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
         <h3
           className={cn(
             "font-heading lg:text-[26px] text-[20px] font-bold leading-[32px]",
-            col && "lg:text-[20px] tex-center"
+            col && "lg:text-[20px] text-center"
           )}
         >
           {name}
@@ -69,7 +70,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
       <p className={cn("bodyText", col && "text-center")}>{description}</p>
 
       {buttons && (
-        <div className="font-medium flex items-center lg:justify-start justify-center gap-4 mt-auto">
+        <div className="group-hover:translate-x-5 transition-transform duration-500 font-medium xl:justify-start flex items-center lg:justify-start gap-4 mt-auto">
           Read More
           <ArrowUpRight />
         </div>

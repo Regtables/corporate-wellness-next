@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 
 import { cn } from '@/lib/utils'
+import StaggeredMotionWrapper from './motion/StaggerChildrenMotionWrapper'
 
 interface ProcessStepTasksProps {
   tasks: string[],
@@ -10,7 +11,7 @@ interface ProcessStepTasksProps {
 
 const ProcessStepTasksList:FC<ProcessStepTasksProps> = ({ tasks, className, contained }) => {
   return (
-    <div className= {cn('flex flex-col w-full', className && className, !contained && 'mt-8')}>
+    <StaggeredMotionWrapper className= {cn('flex flex-col w-full', className && className, !contained && 'mt-8')}>
       {tasks.map((task, i) => (
         <div className={cn(`text-white text-[13px] leading-none flex flex-col ${className}`)}>
           <>
@@ -24,7 +25,7 @@ const ProcessStepTasksList:FC<ProcessStepTasksProps> = ({ tasks, className, cont
           </>
         </div>
       ))}
-    </div>
+    </StaggeredMotionWrapper>
   )
 }
 

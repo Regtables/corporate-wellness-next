@@ -8,6 +8,7 @@ import ServiceObjective from './ServiceObjective'
 import BasicButton from './buttons/BasicButton'
 import StaggeredMotionWrapper from './motion/StaggerChildrenMotionWrapper'
 import AnimatedTitle from './motion/AnimatedTitle'
+import ViewMotionWrapper from './ViewMotionWrapper'
 
 interface ServiceObjectivesSectionProps {
   heading: string,
@@ -24,7 +25,7 @@ const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, i
         <div className='flex-[0.4] '>
           <AnimatedTitle className='heading mb-6 lg:text-left md:text-center text-center' text= {heading} />
 
-          <StaggeredMotionWrapper className='flex flex-col gap-6 mb-6' staggerDelay={0.2}>
+          <StaggeredMotionWrapper className='flex flex-col gap-6 mb-6' y = {0} x = {-20} staggerDelay={0.2}>
             {objectives.map((objective, i) => (
               <ServiceObjective description= {objective.description} title= {objective.title} />
             ))}
@@ -36,9 +37,9 @@ const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, i
         </div>
 
 
-        <div className='w-full lg:flex-[0.6] lg:h-[unset] h-[300px]'>
+        <ViewMotionWrapper className='w-full lg:flex-[0.6] lg:h-[unset] h-[300px]'>
           <SanityImage image={image} className='lg:rounded-l-xl rounded-xl'/>
-        </div>
+        </ViewMotionWrapper>
       </div>
     </div>
   )

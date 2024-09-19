@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from "react";
-import Icon from "./logos/Icon";
+import Image from "next/image";
 import { TREE_ICONS } from "@/lib/icons";
 import ContactForm from "./ContactForm";
 import { FormProvider } from "@/context/FormContext";
@@ -12,27 +12,41 @@ import ViewMotionWrapper from "./ViewMotionWrapper";
 interface ContactFormSectionProps {
   tree: "willow" | "baobab" | "acacia";
   treeClassName?: string;
-  heading?: string,
-  text?: string
+  heading?: string;
+  text?: string;
 }
 
 const ContactFormSection: FC<ContactFormSectionProps> = ({
   tree,
   treeClassName,
-  heading = 'Contact Me',
-  text = 'Lets get in touch to and make it happen'
+  heading = "Contact Me",
+  text = "Lets get in touch to and make it happen",
 }) => {
+  const { src, height, width } = TREE_ICONS[tree];
   return (
-    <section className="bg-duckEgg lg:py-sectionY lg:pb-0 lg:pr-[var(--section-x-md)] md:px-[var(--section-x-md)] px-[20px] md:py-[40] pt-[40px] flex relative gap-10">
-      <ViewMotionWrapper className={`flex-[0.5] w-full lg:block hidden`} x = {-20} y = {0} duration={2}>
-        <Icon
-          path={TREE_ICONS[tree]}
-          className={`h-full w-full relative ${treeClassName}`}
+    <section className="bg-duckEgg lg:pt-sectionY lg:pb-0 lg:pl-0 md:px-[var(--section-x-md)] px-[20px] md:py-[40] pt-[40px] flex relative">
+      <ViewMotionWrapper
+        className={`flex-[0.50] w-full lg:block hidden`}
+      
+        y={30}
+        duration={2}
+      >
+        <Image
+          src={src}
+          width={width || undefined}
+          height={height || undefined}
+          alt={tree}
+          className={treeClassName}
+          priority
+          quality={100}
         />
       </ViewMotionWrapper>
 
-      <StaggeredMotionWrapper className="lg:flex-[0.5] w-full">
-        <AnimatedTitle text= {heading} className="lg:text-left md:text-center heading" />
+      <StaggeredMotionWrapper className="lg:flex-[0.50] w-full">
+        <AnimatedTitle
+          text={heading}
+          className="lg:text-left md:text-center heading"
+        />
         <p className="text-[14px] lg:text-start text-center">{text}</p>
 
         <ContactForm />

@@ -49,8 +49,8 @@ export const SERVICES_ICONS_WHITE: IconPath = {
 };
 
 export const TREE_ICONS: IconPath = {
-  'baobab': { src: "/baobab-white.png" },
-  'willow': { src: "/willow-white.png" },
+  'baobab': { src: "/baobab-white.png", width: 700, height: 700 },
+  'willow': { src: "/willow-white.png", width: 800, height: 800 },
 };
 
 export const SERVICE_BENEFITS_ICONS: IconPath = {

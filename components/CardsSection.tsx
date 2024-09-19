@@ -8,6 +8,7 @@ import StaggeredMotionWrapper from "@/components/motion/StaggerChildrenMotionWra
 import Link from "next/link";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import { useMediaQuery } from "react-responsive";
+import CardMotionWrapper from "./CardMotionWrapper";
 
 interface CardsSectionProps {
   heading: string;
@@ -45,11 +46,11 @@ const CardsSection: FC<CardsSectionProps> = ({
       </div>
 
       <div className="pb-4">
-        <StaggeredMotionWrapper
+        {/* <StaggeredMotionWrapper
           // direction="left-to-right"
           duration={0.5}
           staggerDelay={0.1}
-        >
+        > */}
           <div
             className="grid gap-6"
             style={
@@ -63,19 +64,21 @@ const CardsSection: FC<CardsSectionProps> = ({
             }
           >
             {cards.map((card, i) => (
-              <ServiceCard
-                key={i}
-                name={card.name}
-                description={card.description}
-                col={benefits}
-                // icon={SERVICES_ICONS[card.name]}
-                buttons={!benefits}
-                linkage={linkage}
-                sml={benefits}
-              />
+              <CardMotionWrapper key={i} delay={i * 0.1} duration={1}>
+                <ServiceCard
+                  key={i}
+                  name={card.name}
+                  description={card.description}
+                  col={benefits}
+                  // icon={SERVICES_ICONS[card.name]}
+                  buttons={!benefits}
+                  linkage={linkage}
+                  sml={benefits}
+                />
+              </CardMotionWrapper>
             ))}
           </div>
-        </StaggeredMotionWrapper>
+        {/* </StaggeredMotionWrapper> */}
       </div>
     </section>
   );
