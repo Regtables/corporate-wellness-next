@@ -54,10 +54,10 @@ const LEGAL_LINKS = [
     link: "privacy policy",
     slug: "/privacy-policy",
   },
-  {
-    link: "terms & conditions",
-    slug: "/terms-and-conditions",
-  },
+  // {
+  //   link: "terms & conditions",
+  //   slug: "/terms-and-conditions",
+  // },
 ];
 
 export const ContactDetail = ({
