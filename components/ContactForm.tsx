@@ -165,7 +165,7 @@ const ContactFormContent = () => {
         />
       </div>
       
-      <div className="flex w-full lg:justify-start justify-center">
+      <div className="flex w-full lg:justify-start justify-center lg:mt-0 mt-2">
         <BasicButton
           text= {renderButtonText()}
           bgColor="var(--color-black)"
