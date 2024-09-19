@@ -6,6 +6,7 @@ import Image from "next/image";
 import BasicButton from "./buttons/BasicButton";
 import Icon from "./logos/Icon";
 import Swipeable from "./Swipable";
+import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 
 interface MobileNavMenuProps {
   handleClose: () => void;
@@ -43,11 +44,11 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
       exit={"closed"}
     >
       <Swipeable onRight={handleClose}>
-        <div className="p-4">
+        <StaggeredMotionWrapper className="p-4" y = {0} x = {20}>
           <nav>
-            <ul>
+            <StaggeredMotionWrapper y = {0} x = {5}>
               {links.map((link, index) => (
-                <li key={index} className="mb-4">
+                <div key={index} className="mb-4">
                   <div 
                     onClick={() => {
                       handleLinkClick(link);
@@ -72,9 +73,9 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
                       ))}
                     </ul>
                   )}
-                </li>
+                </div>
               ))}
-            </ul>
+            </StaggeredMotionWrapper>
 
             <BasicButton
               text="contact us"
@@ -125,14 +126,14 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
               </a>
             </div>
 
-            <div className="flex items-center justify-center flex-grow h-full">
+            <div className="flex items-center justify-center flex-grow h-full mt-6">
               <Icon
                 path={{ src: "/logo-icon-blue.png" }}
                 className="h-[170px] w-[150px] relative "
               />
             </div>
           </nav>
-        </div>
+        </StaggeredMotionWrapper>
       </Swipeable>
     </motion.div>
   );
