@@ -25,7 +25,7 @@ const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }
             shouldAlwaysCompleteAnimation: true,
           },
         ]}
-        className="w-full lg:h-[282px] h-[200px]"
+        className="w-full lg:h-[282px]"
       />
     // {/* </ViewMotionWrapper> */}
   );

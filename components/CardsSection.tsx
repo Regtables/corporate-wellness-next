@@ -32,7 +32,7 @@ const CardsSection: FC<CardsSectionProps> = ({
   const isMobile = useMediaQuery({ maxWidth: "676px" });
   return (
     <section className="section-padding" id={id}>
-      <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:pb-12 pb-6">
+      <div className="flex flex-col lg:flex-row lg:justify-between justify-center items-center lg:pb-12 pb-10">
         {/* <h2 className="font-heading heading mb-4 lg:mb-0">{heading}</h2> */}
         <AnimatedTitle text={heading} className="heading" />
 
