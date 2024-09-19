@@ -41,7 +41,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
 
   return (
     <section
-      className="h-screen relative overflow-x-hidden"
+      className="h-screen relative"
       style={{ height: heroHeight }}
       aria-label="Hero section"
       // id="home"
@@ -108,7 +108,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         y={0}
         x={-20}
         duration={1}
-        className="absolute z-10 bottom-[-50px]"
+        className="absolute z-10 bottom-[-50px] overflow-hidden"
       >
         <Icon
           path={{ src: "/baobab-sml.png" }}
@@ -127,10 +127,10 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       </div> */}
 
       <ViewMotionWrapper
-        y={0}
-        x={-20}
+        y={20}
+       
         duration={1}
-        className="left-0 absolute z-[10] -bottom-[65px]"
+        className="left-0 absolute z-[10] -bottom-[65px] overflow-hidden"
       >
         <Icon
           path={{ src: "/baobab-sml.png" }}
@@ -139,10 +139,10 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       </ViewMotionWrapper>
 
       <ViewMotionWrapper
-        y={0}
-        x={20}
+        y={20}
+        x={0}
         duration={1}
-        className="xl:hidden right-0 absolute z-[10] -bottom-[65px]"
+        className="xl:hidden right-0 absolute z-[10] -bottom-[65px] overflow-hidden"
       >
         <div style={{ transform: "rotateY(180deg)" }}>
           <Icon
