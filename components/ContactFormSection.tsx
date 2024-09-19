@@ -24,9 +24,9 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
 }) => {
   const { src, height, width } = TREE_ICONS[tree];
   return (
-    <section className="bg-duckEgg lg:pt-sectionY lg:pb-0 lg:pl-0 md:px-[var(--section-x-md)] px-[20px] md:py-[40] pt-[40px] flex relative">
+    <section className="bg-duckEgg lg:pt-sectionY lg:pb-0 lg:pl-0 md:px-[var(--section-x-md)] px-[20px] md:py-[40px] pb-16 pt-[40px] flex lg:flex-row flex-col relative">
       <ViewMotionWrapper
-        className={`flex-[0.50] w-full lg:block hidden`}
+        className={`lg:flex-[0.50] w-full lg:block h-[300px] flex-[unset]`}
       
         y={30}
         duration={2}

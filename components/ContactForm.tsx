@@ -115,7 +115,7 @@ const ContactFormContent = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="lg:mt-10 mt-6 flex flex-col items-start gap-5 pb-20"
+      className="lg:mt-10 mt-6 flex flex-col items-start gap-5"
     >
       <div className="grid grid-cols-2 gap-5 w-full">
         <Input placeholder="First name" name="firstname" type="text" required />

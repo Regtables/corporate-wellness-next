@@ -35,7 +35,7 @@ const TestimonialsSection: FC<SanityTestimonialsSection> = ({
       </div>
 
       {isMobile && testimonials.length > 3 && (
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-10">
           <BasicButton
             text={showMore ? "Show less" : "Show more"}
             bgColor="var(--color-black)"
