@@ -70,7 +70,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
       <p className={cn("bodyText", col && "text-center")}>{description}</p>
 
       {buttons && (
-        <div className="group-hover:translate-x-5 transition-transform duration-500 font-medium xl:justify-start flex items-center lg:justify-start gap-4 mt-auto">
+        <div className="font-medium xl:justify-start flex items-center lg:justify-start gap-4 mt-auto">
           Read More
           <ArrowUpRight />
         </div>
