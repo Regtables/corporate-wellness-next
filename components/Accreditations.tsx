@@ -16,11 +16,11 @@ const Accreditations:FC<AccreditationsProps> = ({ accreditations }) => {
     <div className='flex lg:flex-row flex-col w-full lg:gap-24 gap-8'>
       <h2 className='font-heading font-bold text-duckEgg text-[24px]'>Accreditations</h2>
 
-      <StaggeredMotionWrapper className='flex items-center justify-between w-full gap-4'>
+      <div className='flex items-center justify-between w-full gap-4'>
         {accreditations.map((accreditation, i) => (
           <AccreditationLogo logo={accreditation.logo} width={i === 0 ? 60 : 240}/>
         ))}
-      </StaggeredMotionWrapper>
+      </div>
     </div>
   )
 }

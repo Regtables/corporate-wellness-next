@@ -114,7 +114,7 @@ const Footer: FC<{ accreditations: { logo: SanityImageType }[] }> = ({
       <div className="h-[1px] bg-duckEgg w-full" />
 
       <ViewMotionWrapper
-        className="flex lg:flex-row flex-col gap-8"
+        className="flex lg:flex-row flex-col gap-14"
         duration={1}
       >
         <div className="flex-[0.3] flex flex-col gap-10">
@@ -152,7 +152,7 @@ const Footer: FC<{ accreditations: { logo: SanityImageType }[] }> = ({
           </div>
         </div>
 
-        <div className="flex-[0.7] lg:flex-row grid lg:grid-cols-3 grid-cols-2 gap-6 relative">
+        <div className="flex-[0.7] w-full justify-between lg:flex-row flex flex-wrap gap-6 relative">
           <FooterLinks heading={"Quick Links"} links={QUICK_LINKS} />
           <FooterLinks heading={"Services"} links={SERVICES_LINKS} />
           <FooterLinks heading={"Legal"} links={LEGAL_LINKS} />
