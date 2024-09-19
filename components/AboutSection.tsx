@@ -25,7 +25,7 @@ const AboutSection: FC<AboutSectionProps> = ({
   const { text, heading } = headingWithBlockText;
 
   return (
-    <section className="flex lg:flex-row flex-col-reverse lg:gap-20 xlg:pr-sectio lg:pr-[var(--section-x-md) lg:pl-0 md:px-[var(--section-x-md)] px-[var(--section-x-xs)] lg:pt-32 pt-[var(--section-y-xs)] md:pt-[var(--section-y-md)] lg:pb-24 pb-16" id = 'about'>
+    <section className="flex lg:flex-row flex-col-reverse lg:gap-20 xlg:pr-sectio lg:pr-[var(--section-x-md) lg:pl-0 md:px-[var(--section-x-md)] px-[var(--section-x-xs)] lg:pt-32 pt-[var(--section-y-xs)] md:pt-[var(--section-y-md)] lg:pb-24 pb-10" id = 'about'>
       <ViewMotionWrapper className="lg:flex-[0.5] lg:h-[unset] md:h-[500px] h-[300px] lg:mt-0 mt-8" y = {30} duration={1}>
         <SanityImage image={image} className="xl:object-[center_-50px] lg:rounded-r-[12px] md:rounded-xl sm:object-[center 200px] rounded-xl" />
       </ViewMotionWrapper>

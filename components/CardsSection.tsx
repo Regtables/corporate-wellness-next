@@ -52,19 +52,19 @@ const CardsSection: FC<CardsSectionProps> = ({
           staggerDelay={0.1}
         > */}
           <div
-            className="grid gap-6"
-            style={
-              !isMobile
-                ? {
-                    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
-                  }
-                : {
-                    gridTemplateColumns: "1fr",
-                  }
-            }
+            className="grid gap-6 card-grid"
+            // style={
+            //   !isMobile
+            //     ? {
+            //         gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+            //       }
+            //     : {
+            //         gridTemplateColumns: "1fr",
+            //       }
+            // }
           >
             {cards.map((card, i) => (
-              <CardMotionWrapper key={i} delay={i * 0.1} duration={1}>
+              <CardMotionWrapper key={i} delay={i * 0.1} duration={1} className="lg:min-w-[unset] min-w-full">
                 <ServiceCard
                   key={i}
                   name={card.name}

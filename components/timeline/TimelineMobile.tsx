@@ -11,7 +11,7 @@ interface TimelineMobileProps {
 
 const TimelineMobile: React.FC<TimelineMobileProps> = ({ timeline }) => {
   return (
-    <div className="lg:hidden block pl-[var(--section-x-xs)] pb-16">
+    <div className="lg:hidden block pl-[var(--section-x-xs)] pb-10">
       <Carousel>
         {timeline.map((milestone, i) => (
           <TimelineTileMobile

@@ -53,6 +53,14 @@ body {
   overflow-x: hidden;
 }
 
+.card-grid{
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  @media screen and (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .section-padding-x {
   padding-left: 195px;
   padding-right: 195px;

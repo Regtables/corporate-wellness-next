@@ -21,6 +21,7 @@ const AnimatedTitle:FC<AnimatedTitleProps> = ({ text, className, delay = 0.1, du
           whileInView={{ opacity: [0, 1], y: [20, 0]}}
           transition={{ duration: duration, delay: delay*i}}
           initial = {{ opacity: 0, y: 20 }}
+          viewport={{ once: true }}
         >
             {word}
           </motion.div>
