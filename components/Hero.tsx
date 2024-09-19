@@ -11,6 +11,7 @@ import AnimatedTitle from "./motion/AnimatedTitle";
 import ViewMotionWrapper from "./ViewMotionWrapper";
 import { useMediaQuery } from "react-responsive";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
+import Link from "next/link";
 
 interface HeroProps {
   title: string;
@@ -84,16 +85,18 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         >
           {text}
         </div>
-
-        <BasicButton
-          text="contact us"
-          bgColor="transparent"
-          pill
-          color="white"
-          outline
-          className="lg:mt-0 mt-4"
-          aria-label="Contact us"
-        />
+        
+        <Link href={'#contact'}>
+          <BasicButton
+            text="contact us"
+            bgColor="transparent"
+            pill
+            color="white"
+            outline
+            className="lg:mt-0 mt-4"
+            aria-label="Contact us"
+          />
+        </Link>
       </StaggeredMotionWrapper>
 
       <Icon
