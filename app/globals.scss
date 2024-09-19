@@ -50,7 +50,7 @@ body {
   background-color: var(--color-white);
   color: var(--color-black);
   font-family: 'Avenir';
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .section-padding-x {
@@ -156,7 +156,8 @@ body {
   @media screen and (max-width: 450px) {
     text-align: center;
     font-size: 32px;
-    margin-bottom: 0;
+
+    margin-bottom: unset;
   }
   
 }
