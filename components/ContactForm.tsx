@@ -55,8 +55,6 @@ const ContactFormContent = () => {
   const { handleModalOpen } = useModal()
 
   const handleSubmit = async (e: React.FormEvent) => {
-    handleModalOpen('success')
-    
     e.preventDefault();
     if (validateForm()) {
       if (agreed) {
@@ -69,7 +67,8 @@ const ContactFormContent = () => {
           if(res.status === 200){
             setSuccess(true)
             
-          
+            handleModalOpen('success')
+    
             setFormData(INITIAL_FORM_DATA)
     
             setTimeout(() => {
