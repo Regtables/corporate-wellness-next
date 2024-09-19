@@ -12,6 +12,7 @@ import ViewMotionWrapper from "./ViewMotionWrapper";
 import { useMediaQuery } from "react-responsive";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 import Link from "next/link";
+import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
 interface HeroProps {
   title: string;
@@ -45,16 +46,20 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       aria-label="Hero section"
       // id="home"
     >
-      <ViewMotionWrapper
-        className="absolute top-0 left-0 w-full h-full"
-        // style={{ transform: "rotateY(180deg)" }}
-        y={0}
-        aria-hidden="true"
-      >
-        <Overlay opacity={40}>
-          <SanityImage image={image} />
-        </Overlay>
-      </ViewMotionWrapper>
+      <ParallaxBanner className="h-full w-full">
+        <ParallaxBannerLayer speed={-20}>
+          <ViewMotionWrapper
+            className="absolute top-0 left-0 w-full h-full"
+            // style={{ transform: "rotateY(180deg)" }}
+            y={0}
+            aria-hidden="true"
+          >
+            <Overlay opacity={40}>
+              <SanityImage image={image} />
+            </Overlay>
+          </ViewMotionWrapper>
+        </ParallaxBannerLayer>
+      </ParallaxBanner>
 
       {/* <div 
         className="h-[150%] w-[800px] end-0 absolute top-[0px] z-10"
@@ -85,8 +90,8 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         >
           {text}
         </div>
-        
-        <Link href={'#contact'}>
+
+        <Link href={"#contact"}>
           <BasicButton
             text="contact us"
             bgColor="transparent"
@@ -99,10 +104,12 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         </Link>
       </StaggeredMotionWrapper>
 
-      <Icon
-        path={{ src: "/baobab-sml.png" }}
-        className="lg:block hidden h-[330px] w-[157px] absolute z-10 bottom-[-50px]"
-      />
+      <ViewMotionWrapper y={0} x={-20} duration={1}>
+        <Icon
+          path={{ src: "/baobab-sml.png" }}
+          className="lg:block hidden h-[330px] w-[157px] absolute z-10 bottom-[-50px]"
+        />
+      </ViewMotionWrapper>
 
       {/* <div
         style={{ transform: "rotateY(180deg)" }}
@@ -114,20 +121,24 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         />
       </div> */}
 
-      <Icon
-        path={{ src: "/baobab-sml.png" }}
-        className="xl:hidden lg:hidden block h-[250px] w-[80px] left-0 absolute z-[10] -bottom-[65px]"
-      />
-
-      <div
-        style={{ transform: "rotateY(180deg)" }}
-        className="xl:hidden right-0 absolute z-[10] -bottom-[65px]"
-      >
+      <ViewMotionWrapper y={0} x={-20} duration={1}>
         <Icon
           path={{ src: "/baobab-sml.png" }}
-          className="xl:hidden lg:hidden block h-[250px] w-[80px]"
+          className="xl:hidden lg:hidden block h-[250px] w-[80px] left-0 absolute z-[10] -bottom-[65px]"
         />
-      </div>
+      </ViewMotionWrapper>
+      
+      <ViewMotionWrapper y={0} x={20} duration={1}>
+        <div
+          style={{ transform: "rotateY(180deg)" }}
+          className="xl:hidden right-0 absolute z-[10] -bottom-[65px]"
+        >
+          <Icon
+            path={{ src: "/baobab-sml.png" }}
+            className="xl:hidden lg:hidden block h-[250px] w-[80px]"
+          />
+        </div>
+      </ViewMotionWrapper>
       {/* <Icon
         path={{ src: "/baobab-sml.png" }}
         className="xl:hidden block h-[230px] w-[100px] right-0 absolute z-[20] bottom-[-350px]"

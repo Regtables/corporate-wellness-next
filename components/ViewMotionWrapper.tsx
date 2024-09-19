@@ -15,7 +15,8 @@ interface ViewMotionWrapperProps {
   exit?: {};
   tabIndex?: number;
   ref?: any;
-  animationKey?: string | number; // Add this line
+  animationKey?: string | number;
+  style?: any
 }
 
 const ViewMotionWrapper = ({
@@ -31,6 +32,7 @@ const ViewMotionWrapper = ({
   exit = { opacity: [1, 0], duration: 0.5 },
   ref,
   animationKey,
+  style
 }: ViewMotionWrapperProps) => {
   return (
     <motion.div
@@ -42,6 +44,7 @@ const ViewMotionWrapper = ({
       className={className}
       exit={exit}
       // tabIndex={tabIndex}
+      style={style ? style : {}}
       role="region"
       aria-label="Motion View Wrapper"
     >
