@@ -46,8 +46,8 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       aria-label="Hero section"
       // id="home"
     >
-      {/* <ParallaxBanner className="h-full w-full">
-        <ParallaxBannerLayer speed={-20}> */}
+      <ParallaxBanner className="h-full w-full">
+        <ParallaxBannerLayer speed={-20}>
           <ViewMotionWrapper
             className="absolute top-0 left-0 w-full h-full"
             // style={{ transform: "rotateY(180deg)" }}
@@ -58,8 +58,8 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
               <SanityImage image={image} />
             </Overlay>
           </ViewMotionWrapper>
-        {/* </ParallaxBannerLayer>
-      </ParallaxBanner> */}
+        </ParallaxBannerLayer>
+      </ParallaxBanner>
 
       {/* <div 
         className="h-[150%] w-[800px] end-0 absolute top-[0px] z-10"
