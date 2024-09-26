@@ -65,12 +65,6 @@ const HomePage: FC = async () => {
   return (
     <div className="flex flex-col" id="home">
       {/* Hero */}
-      {/* <Hero
-        image={heroSection.backgroundImages[0]}
-        title={heroSection.title}
-        subtitle={heroSection.subtitle}
-        text={heroSection.bodyText}
-      /> */}
       <HeroContactWrapper
         heroSection={heroSection}
         contactSectionContent={{}}

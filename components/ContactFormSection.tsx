@@ -2,13 +2,14 @@
 
 import React, { FC } from "react";
 import Image from "next/image";
+
+import { cn } from "@/lib/utils";
 import { TREE_ICONS } from "@/lib/icons";
+
 import ContactForm from "./ContactForm";
-import { FormProvider } from "@/context/FormContext";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 import ViewMotionWrapper from "./ViewMotionWrapper";
-import { cn } from "@/lib/utils";
 
 interface ContactFormSectionProps {
   tree: "willow" | "baobab" | "acacia";
