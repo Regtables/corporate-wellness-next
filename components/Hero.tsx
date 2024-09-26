@@ -149,30 +149,40 @@ const Hero: FC<HeroProps> = ({
         />
       </div> */}
 
-      <ViewMotionWrapper
-        y={20}
-        duration={1}
-        className="left-0 absolute z-[10] -bottom-[65px] overflow-hidden"
-      >
-        <Icon
-          path={{ src: "/baobab-sml.png" }}
-          className="xl:hidden lg:hidden block h-[250px] w-[80px] "
-        />
-      </ViewMotionWrapper>
+      <AnimatePresence>
+        {!showContact && (
+          <>
+            <ViewMotionWrapper
+              y={20}
+              duration={1}
+              className="left-0 absolute z-[10] -bottom-[65px] overflow-hidden"
+              delay={0}
+              exit={{ y: 20, opacity: 0 }}
+            >
+              <Icon
+                path={{ src: "/baobab-sml.png" }}
+                className="xl:hidden lg:hidden block h-[250px] w-[80px] "
+              />
+            </ViewMotionWrapper>
 
-      <ViewMotionWrapper
-        y={20}
-        x={0}
-        duration={1}
-        className="xl:hidden right-0 absolute z-[10] -bottom-[65px] overflow-hidden"
-      >
-        <div style={{ transform: "rotateY(180deg)" }}>
-          <Icon
-            path={{ src: "/baobab-sml.png" }}
-            className="xl:hidden lg:hidden block h-[250px] w-[80px]"
-          />
-        </div>
-      </ViewMotionWrapper>
+            <ViewMotionWrapper
+              y={20}
+              x={0}
+              delay={0}
+              duration={1}
+              className="xl:hidden right-0 absolute z-[10] -bottom-[65px] overflow-hidden"
+              exit={{ y: 20, opacity: 0 }}
+            >
+              <div style={{ transform: "rotateY(180deg)" }}>
+                <Icon
+                  path={{ src: "/baobab-sml.png" }}
+                  className="xl:hidden lg:hidden block h-[250px] w-[80px]"
+                />
+              </div>
+            </ViewMotionWrapper>
+          </>
+        )}
+      </AnimatePresence>
       {/* <Icon
         path={{ src: "/baobab-sml.png" }}
         className="xl:hidden block h-[230px] w-[100px] right-0 absolute z-[20] bottom-[-350px]"

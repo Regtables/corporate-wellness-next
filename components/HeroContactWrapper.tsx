@@ -21,7 +21,7 @@ const HeroContactWrapper: FC<HeroContactWrapperProps> = ({
   const [showContact, setShowContact] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  const heroHeight = !showContact ? (!isMobile ? "calc(100vh - 120px)" : "calc(100vh - 80px)") : '120vh';
+  const heroHeight = !showContact ? (!isMobile ? "calc(100vh - 120px)" : "calc(100vh - 80px)") : (!isMobile ? '120vh' : '150vh');
 
   const handleBackClick = () => {
     setShowContact(false)
@@ -32,11 +32,11 @@ const HeroContactWrapper: FC<HeroContactWrapperProps> = ({
   };
 
   const slideAnimation = isMobile
-    ? { y: ["100%", "0%"] }
+    ? { y: ["-100%", "0%"] }
     : { x: ["-100%", "0%"] };
 
   const slideExitAnimation = isMobile
-    ? { y: ["0%", "100%"] }
+    ? { y: ["0%", "-100%"] }
     : { x: ["0%", "-100%"] };
 
   return (
@@ -70,7 +70,7 @@ const HeroContactWrapper: FC<HeroContactWrapperProps> = ({
               transition={{ duration: 0.3, delay: 0.5 }}
             >
               <div className="w-full h-full relative">
-                <button className="ml-20 pt-10 flex text-[14px] -tracking-widest text-white items-center gap-2" onClick={handleBackClick}>
+                <button className="lg:ml-20 ml-[var(--section-x-xs)] pt-10 flex text-[14px] -tracking-widest text-white items-center gap-2" onClick={handleBackClick}>
                   <MoveLeft color="var(--color-white)" size={20} /> {'Home'}
                 </button>
                 <ViewMotionWrapper delay={0.7} exit={{ y: 50, opacity: 0 }}>
