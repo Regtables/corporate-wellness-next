@@ -1,27 +1,37 @@
 "use client";
 
 import React, { FC, useEffect, useState } from "react";
-import SanityImage from "./SanityImage";
+import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
+import { useMediaQuery } from "react-responsive";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { SanityImageType } from "@/lib/sanity/types";
+
+import SanityImage from "./SanityImage";
 import Overlay from "./Overlay";
 import BasicButton from "./buttons/BasicButton";
-import Logo from "./logos/Logo";
 import Icon from "./logos/Icon";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import ViewMotionWrapper from "./ViewMotionWrapper";
-import { useMediaQuery } from "react-responsive";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
-import Link from "next/link";
-import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
 interface HeroProps {
   title: string;
   subtitle: string;
   image: SanityImageType;
   text: string;
+  onContactClick: () => void;
+  showContact: boolean;
 }
 
-const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
+const Hero: FC<HeroProps> = ({
+  title,
+  subtitle,
+  image,
+  text,
+  onContactClick,
+  showContact,
+}) => {
   const [offset, setOffset] = useState(0);
   const isMobile = useMediaQuery({ maxWidth: "676px" });
 
@@ -39,6 +49,10 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
     };
   }, []);
 
+  const handleContactButtonClick = () => {
+    onContactClick();
+  };
+
   return (
     <section
       className="h-screen relative"
@@ -54,7 +68,7 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
             y={0}
             aria-hidden="true"
           >
-            <Overlay opacity={40}>
+            <Overlay opacity={35}>
               <SanityImage image={image} />
             </Overlay>
           </ViewMotionWrapper>
@@ -67,42 +81,51 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
       >
         <Logo />
       </div> */}
+      <AnimatePresence>
+        {!showContact && (
+          <StaggeredMotionWrapper
+            className="absolute top-0 left-0 right-0 h-full z-30 flex flex-col text-center xl:items-start gap-2 justify-center lg:items-start items-center lg:px-[var(--section-x-lg)] px-[var(--section-x-xs)] w-full"
+            exit={{ y: 30, opacity: 0, transition: { duration: 0.5 }}}
+            delay= {0.5}
+            // role="region"
+            // aria-labelledby="hero-title"
+          >
+            <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
 
-      <StaggeredMotionWrapper
-        className="absolute top-0 left-0 right-0 h-full w-full flex flex-col text-center xl:items-start gap-2 justify-center lg:items-start items-center z-10 lg:px-[var(--section-x-lg)] px-[var(--section-x-xs)] w-full"
-        // role="region"
-        // aria-labelledby="hero-title"
-      >
-        <h2 className="uppercase text-duckEgg text-[23px]">{subtitle}</h2>
-        <AnimatedTitle
-          text={title}
-          className="font-heading text-white lg:text-[70px] text-[56px] text-center font-bold lg:mx-auto lg:leading-[100px]"
-        />
-        {/* <h1
-          id="hero-title"
-         
-        >
-          {title}
-        </h1> */}
-        <div
-          className="lg:w-[100%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
-          aria-label="Hero description"
-        >
-          {text}
-        </div>
+            <motion.div
+              animate={
+                showContact
+                  ? { y: [0, 50], opacity: [1, 0] }
+                  : { y: 0, opacity: 1 }
+              }
+              transition={{ duration: 1 }}
+            >
+              <AnimatedTitle
+                text={title}
+                className="font-heading text-white lg:text-[70px] text-[56px] text-center font-bold lg:mx-auto lg:leading-[100px]"
+              />
+            </motion.div>
+            
+            <div
+              className="lg:w-[100%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
+              aria-label="Hero description"
+            >
+              {text}
+            </div>
 
-        <Link href={"#contact"}>
-          <BasicButton
-            text="contact us"
-            bgColor="transparent"
-            pill
-            color="white"
-            outline
-            className="lg:mt-0 mt-4"
-            aria-label="Contact us"
-          />
-        </Link>
-      </StaggeredMotionWrapper>
+            <BasicButton
+              text="contact us"
+              bgColor="transparent"
+              pill
+              color="white"
+              outline
+              className="lg:mt-0 mt-4"
+              aria-label="Contact us"
+              onClick={handleContactButtonClick}
+            />
+          </StaggeredMotionWrapper>
+        )}
+      </AnimatePresence>
 
       <ViewMotionWrapper
         y={0}
@@ -128,7 +151,6 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
 
       <ViewMotionWrapper
         y={20}
-       
         duration={1}
         className="left-0 absolute z-[10] -bottom-[65px] overflow-hidden"
       >

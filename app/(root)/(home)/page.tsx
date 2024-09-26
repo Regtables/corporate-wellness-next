@@ -17,6 +17,7 @@ import ContactFormSection from "@/components/ContactFormSection";
 import Timeline from "@/components/timeline/Timeline";
 import Icon from "@/components/logos/Icon";
 import TimelineMobile from "@/components/timeline/TimelineMobile";
+import HeroContactWrapper from "@/components/HeroContactWrapper";
 
 const TIMELINE = [
   {
@@ -64,11 +65,15 @@ const HomePage: FC = async () => {
   return (
     <div className="flex flex-col" id="home">
       {/* Hero */}
-      <Hero
+      {/* <Hero
         image={heroSection.backgroundImages[0]}
         title={heroSection.title}
         subtitle={heroSection.subtitle}
         text={heroSection.bodyText}
+      /> */}
+      <HeroContactWrapper
+        heroSection={heroSection}
+        contactSectionContent={{}}
       />
 
       {/* About */}

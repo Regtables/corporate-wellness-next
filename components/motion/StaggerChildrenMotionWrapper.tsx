@@ -25,7 +25,7 @@ const StaggeredMotionWrapper = ({
   delay = 0,
   staggerDelay = 0.1,
   duration = 0.5,
-  once = false,
+  once = true,
   className,
   scale = 1,
   style,
