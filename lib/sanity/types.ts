@@ -50,6 +50,10 @@ export type SanityFetchServiceContentOperation = {
       name: string,
       description: string
     }[]
+  },
+  contactSection: {
+    heading: string,
+    subheading: string
   }
 }[]
 

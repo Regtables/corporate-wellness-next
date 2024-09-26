@@ -15,7 +15,7 @@ import ServiceProcessSection from "@/components/ServiceProcessSection";
 import CardsSection from "@/components/CardsSection";
 import ContactFormSection from "@/components/ContactFormSection";
 
-export const revalidate = 60
+export const revalidate = 60;
 
 export const generateStaticParams = async () => {
   const services = await sanityFetchAllServices();
@@ -27,7 +27,11 @@ export const generateStaticParams = async () => {
   }));
 };
 
-export const generateMetadata = async ({ params }: { params: { service: string } }): Promise<Metadata> => {
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { service: string };
+}): Promise<Metadata> => {
   const { service } = params;
   const serviceContent = await sanityFetchServiceContent(service);
 
@@ -49,7 +53,20 @@ const ServicePage = async ({ params }: { params: Params }) => {
     imageBanner2,
     processSection,
     benefitsSection,
+    contactSection,
   } = await sanityFetchServiceContent(service);
+
+  const renderTree = () => {
+    if(name === 'Individual Coaching'){
+      return 'acacia'
+    } else if (name === 'Team Coaching'){
+      return 'baobab'
+    } else if (name === 'HR Consultancy'){
+      return 'willow'
+    } else {
+      return 'acacia'
+    }
+  }
 
   return (
     <div className="flex flex-col">
@@ -89,7 +106,12 @@ const ServicePage = async ({ params }: { params: Params }) => {
 
       <ParallaxBanner image={imageBanner2} />
 
-      <ContactFormSection tree="willow" treeClassName="lg:absolute lg:-start-28" />
+      <ContactFormSection
+        tree= {renderTree()}
+        treeClassName="lg:absolute lg:-start-28 md:static"
+        heading={contactSection.heading}
+        text={contactSection.subheading}
+      />
     </div>
   );
 };

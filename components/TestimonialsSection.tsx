@@ -16,7 +16,8 @@ const TestimonialsSection: FC<SanityTestimonialsSection> = ({
   const [showMore, setShowMore] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: "676px" });
 
-  const visibleTestimonials = isMobile && !showMore ? testimonials.slice(0, 3) : testimonials;
+  const visibleTestimonials =
+    isMobile && !showMore ? testimonials.slice(0, 3) : testimonials;
 
   return (
     <section className="section-padding py-32 relative" id="testimonials">
@@ -45,10 +46,10 @@ const TestimonialsSection: FC<SanityTestimonialsSection> = ({
         </div>
       )}
 
-      <div className="lg:block hidden absolute bottom-[0px] -start-[0px]">
+      <div className="lg:block hidden absolute bottom-[-100px] -start-[80px]">
         <Icon
-          path={{ src: "/baobab-sml.png" }}
-          className="h-[330px] w-[157px]"
+          path={{ src: "/logo-icon-blue.png" }}
+          className="h-[310px] w-[300px]"
         />
       </div>
     </section>
