@@ -104,7 +104,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "flex w-full items-center gap-4 lg:h-[120px] h-[80px] justify-between section-padding-x bg-white fixed top-0 start-0 end-0 z-20 transition-transform duration-500",
+        "flex w-full items-center gap-4 lg:h-[120px] h-[80px] justify-between section-padding-x bg-white fixed top-0 start-0 end-0 z-50 transition-transform duration-500",
         !showNavbar && "-translate-y-[120px]"
       )}
       role="navigation"

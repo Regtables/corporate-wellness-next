@@ -22,9 +22,10 @@ const AnimatedTitle:FC<AnimatedTitleProps> = ({ text, className, delay = 0.1, du
           transition={{ duration: duration, delay: delay*i}}
           initial = {{ opacity: 0, y: 20 }}
           viewport={{ once: true }}
+          exit={{ opacity: [1,0], y : [0, 20 ]}}
         >
             {word}
-          </motion.div>
+        </motion.div>
       ))}
     </div>
   )

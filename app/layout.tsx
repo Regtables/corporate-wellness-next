@@ -94,7 +94,7 @@ export default function RootLayout({
       <body>
         <ParallaxProvider>
           <ModalContextProvider>
-            {isFirstLoad && <LoadingScreen />}
+            {/* {isFirstLoad && <LoadingScreen />} */}
             {children}
 
             <ModalProvider />

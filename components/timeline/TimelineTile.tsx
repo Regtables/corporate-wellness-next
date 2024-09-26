@@ -4,6 +4,7 @@ import { TIMELINE_ICONS } from "@/lib/icons";
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence } from "framer-motion";
+import ViewMotionWrapper from "../ViewMotionWrapper";
 
 interface TimelineTileProps {
   date: string;
@@ -26,9 +27,9 @@ const TimelineTile: FC<TimelineTileProps> = ({ date, text, last }) => {
       {/* <Image src={src} alt={date} height={height} width={width} /> */}
       <AnimatePresence>
         {date === hoverDate && (
-          <div className="absolute bg-duckEgg px-4 py-4 rounded-xl -top-32 min-w-[250px] bodyText">
+          <ViewMotionWrapper className="absolute bg-duckEgg px-4 py-4 rounded-xl -top-32 min-w-[250px] bodyText text-[12px]" y = {0} duration={0.5}>
             {text}
-          </div>
+          </ViewMotionWrapper>
         )}
       </AnimatePresence>
       <div
