@@ -45,7 +45,7 @@ const SERVICES_LINKS = [
   },
   {
     link: "HR Consulting",
-    slug: "/services/hr-consulting",
+    slug: "/services/hr-consultancy",
   },
 ];
 

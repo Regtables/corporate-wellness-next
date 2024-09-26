@@ -14,6 +14,8 @@ import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 import Link from "next/link";
 import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 
+import NiceButton from '@/components/buttons/NiceButton'
+
 interface HeroProps {
   title: string;
   subtitle: string;
@@ -92,13 +94,13 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
         </div>
 
         <Link href={"#contact"}>
-          <BasicButton
+          <NiceButton
             text="contact us"
             bgColor="transparent"
             pill
             color="white"
             outline
-            className="lg:mt-0 mt-4"
+            className="lg:mt-0 mt-4 hover:bg-duckEgg hover:border-[var(--color-duckEgg)] hover:text-black"
             aria-label="Contact us"
           />
         </Link>
