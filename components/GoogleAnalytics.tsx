@@ -11,7 +11,7 @@ export default function GoogleAnalytics() {
   useEffect(() => {
     const url = pathname + searchParams.toString()
     //@ts-ignore
-    window.gtag('config', 'G-TE3GQWW9L1', {
+    window.gtag('config', 'G-FL1MVF61R2', {
       page_path: url,
     })
   }, [pathname, searchParams])
@@ -20,7 +20,7 @@ export default function GoogleAnalytics() {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-TE3GQWW9L1`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-FL1MVF61R2`}
       />
       <Script
         id="gtag-init"
@@ -30,7 +30,7 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-TE3GQWW9L1', {
+            gtag('config', 'G-FL1MVF61R2', {
               page_path: window.location.pathname,
             });
           `,
