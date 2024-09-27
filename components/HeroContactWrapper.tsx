@@ -76,7 +76,7 @@ const HeroContactWrapper: FC<HeroContactWrapperProps> = ({
                 <ViewMotionWrapper delay={0.7} exit={{ y: 50, opacity: 0 }}>
                   <ContactFormSection
                     tree="baobab"
-                    containerClassName="xl:pt-0 lg:pt-0 md:pt-0 bg-[transparent]"
+                    containerClassName="xl:pt-0 lg:pt-0 md:pt-0 bg-[transparent] padding-top-zero"
                   />
                 </ViewMotionWrapper>
               </div>
