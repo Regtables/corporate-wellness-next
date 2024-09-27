@@ -72,6 +72,7 @@ export default function RootLayout({
       )}
     >
       <head>
+        <meta name="google-site-verification" content="XXcyi0daFMwkzcY0CcSIo-OkqC75fQhlcJchymktRR0" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
