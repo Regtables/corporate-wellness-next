@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import { ModalProvider as ModalContextProvider } from "@/context/ModalContext";
 import ModalProvider from "@/providers/ModalProvider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export default function RootLayout({
   children,
@@ -101,6 +102,7 @@ export default function RootLayout({
             <ModalProvider />
           </ModalContextProvider>
         </ParallaxProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   );
