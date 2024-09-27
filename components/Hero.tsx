@@ -88,22 +88,13 @@ const Hero: FC<HeroProps> = ({ title, subtitle, image, text }) => {
           {title}
         </h1> */}
         <div
-          className="lg:w-[100%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
+          className="lg:w-[100%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6 mb-2"
           aria-label="Hero description"
         >
           {text}
         </div>
 
         <Link href={"#contact"}>
-          {/* <NiceButton
-            text="contact us"
-            bgColor="transparent"
-            pill
-            color="white"
-            outline
-            className="lg:mt-0 mt-4 hover:bg-duckEgg hover:border-[var(--color-duckEgg)] hover:text-black"
-            aria-label="Contact us"
-          /> */}
           <VariantButton text="Build Together" variant={2} pill/>
         </Link>
       </StaggeredMotionWrapper>
