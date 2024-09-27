@@ -4,11 +4,6 @@ import styles from "../LegalPage.module.scss";
 import PageBanner from "@/components/PageBanner";
 import Icon from "@/components/logos/Icon";
 
-const one = {
-  heading: "Information we collect:",
-  items: [],
-};
-
 const PrivacyPolicy = () => {
   return (
     <div className={`${styles.container} relative overflow-hidden`}>

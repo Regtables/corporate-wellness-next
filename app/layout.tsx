@@ -102,7 +102,7 @@ export default function RootLayout({
             <ModalProvider />
           </ModalContextProvider>
         </ParallaxProvider>
-        <GoogleAnalytics />
+        {/* <GoogleAnalytics /> */}
       </body>
     </html>
   );
