@@ -33,7 +33,7 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
     <section
       className={cn(
         `bg-duckEgg lg:pt-sectionY lg:pb-40 lg:pl-0 md:px-[var(--section-x-md)] px-[20px] md:py-[40px] pb-10 pt-[40px] flex lg:flex-row flex-col relative`,
-        containerClassName && containerClassName
+        containerClassName && containerClassName,
       )}
     >
       <ViewMotionWrapper
