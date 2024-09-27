@@ -78,7 +78,7 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
               ))}
             </StaggeredMotionWrapper>
               
-            <ViewMotionWrapper y = {0} x = {5} delay={0.2}>
+            <ViewMotionWrapper y = {0} x = {5} delay={0.3} duration={1}>
               <BasicButton
                 text="contact us"
                 bgColor="var(--color-duckEgg)"
