@@ -111,7 +111,7 @@ const Hero: FC<HeroProps> = ({
             </motion.div>
 
             <div
-              className="lg:w-[100%] lg:text-left text-center text-white font-[400] leading-[34px] lg:mb-6"
+              className="lg:w-[100%] lg:text-left md:text-center text-white font-[400] leading-[34px] lg:mb-6"
               aria-label="Hero description"
             >
               {text}
