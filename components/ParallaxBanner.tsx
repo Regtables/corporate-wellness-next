@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { FC } from "react";
 import { ParallaxBanner as Parallax } from "react-scroll-parallax";
@@ -12,22 +12,25 @@ interface ParallaxBannerProps {
   initialYPosition?: number;
 }
 
-const ParallaxBanner: FC<ParallaxBannerProps> = ({ image, initialYPosition = 0 }) => {
+const ParallaxBanner: FC<ParallaxBannerProps> = ({
+  image,
+  initialYPosition = 0,
+}) => {
   const { src } = useNextSanityImage(sanityClient, image.image);
 
   return (
-    // <ViewMotionWrapper className="w-full" duration={1} y = {0}>
-      <Parallax
-        layers={[
-          {
-            image: src,
-            speed: -7,
-            shouldAlwaysCompleteAnimation: true,
-          },
-        ]}
-        className="w-full lg:h-[282px] h-[200px]"
-      />
-    // {/* </ViewMotionWrapper> */}
+    <Parallax
+      layers={[
+        {
+          image: src,
+          speed: 5, // Reduce speed
+          shouldAlwaysCompleteAnimation: true,
+          // expanded: false, // This might help with mobile performance
+          easing: "easeOutQuad", // Add easing for smoother motion
+        },
+      ]}
+      className="w-full lg:h-[282px] h-[200px]"
+    />
   );
 };
 
