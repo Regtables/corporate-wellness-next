@@ -12,6 +12,7 @@ import RadioButton from "./RadioButtton";
 import BasicButton from "./buttons/BasicButton";
 import FormErrorMessage from "./FormErrorMessage";
 import { useModal } from "@/context/ModalContext";
+import VariantButton from "./buttons/VariantButton";
 
 const INITIAL_FORM_DATA = {
   firstname: "",
@@ -41,48 +42,50 @@ const FORM_CONFIG = {
   contact: { required: true },
   service: { required: true },
   message: { required: true },
-  consent: { required: true }
+  consent: { required: true },
 };
 
 const ContactFormContent = () => {
   const { formData, errors, handleChange, validateForm, setFormData } =
     useForm();
   const [agreed, setAgreed] = useState(false);
-  const [error, setError] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [success, setSuccess] = useState(false)
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-  const { handleModalOpen } = useModal()
+  const { handleModalOpen } = useModal();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       if (agreed) {
         console.log("Form submitted", formData);
-        try{
-          setIsLoading(true)
-    
-          const res = await axios.post('/api/form', { formData })
-    
-          if(res.status === 200){
-            setSuccess(true)
-            
-            handleModalOpen('success')
-    
-            setFormData(INITIAL_FORM_DATA)
-    
+        try {
+          setIsLoading(true);
+
+          const res = await axios.post("/api/form", { formData });
+
+          if (res.status === 200) {
+            setSuccess(true);
+
+            handleModalOpen("success");
+
+            setFormData(INITIAL_FORM_DATA);
+
             setTimeout(() => {
-              setSuccess(false)
+              setSuccess(false);
             }, 3000);
           }
-        } catch (error){
-          console.log(error)
+        } catch (error) {
+          console.log(error);
         } finally {
-          setIsLoading(false)
+          setIsLoading(false);
         }
       } else {
         console.log("Form has errors or agreement not checked");
-        setError('Please agree to the terms and conditions before sending your message')
+        setError(
+          "Please agree to the terms and conditions before sending your message"
+        );
       }
     }
   };
@@ -92,25 +95,25 @@ const ContactFormContent = () => {
   };
 
   const handleAgree = () => {
-    if(!agreed) {
-      setAgreed(true)
-      if(error){
-        setError('')
+    if (!agreed) {
+      setAgreed(true);
+      if (error) {
+        setError("");
       }
     } else {
-      setAgreed(false)
+      setAgreed(false);
     }
-  }
+  };
 
   const renderButtonText = () => {
-    if(isLoading){
-      return 'Sending Message...'
-    } else if(success){
-      return 'Message Sent!'
+    if (isLoading) {
+      return "Sending Message...";
+    } else if (success) {
+      return "Message Sent!";
     } else {
-      return 'Send Message'
+      return "Send Message";
     }
-  }
+  };
 
   return (
     <form
@@ -154,7 +157,7 @@ const ContactFormContent = () => {
       <div className="relative">
         <AnimatePresence>
           {error && (
-            <FormErrorMessage message= {error} className="-top-5 left-4" />
+            <FormErrorMessage message={error} className="-top-5 left-4" />
           )}
         </AnimatePresence>
 
@@ -164,13 +167,13 @@ const ContactFormContent = () => {
           handleCheck={handleAgree}
         />
       </div>
-      
+
       <div className="flex w-full lg:justify-start justify-center lg:mt-0 mt-2">
-        <BasicButton
-          text= {renderButtonText()}
-          bgColor="var(--color-black)"
-          color="white"
+        <VariantButton
+          variant={4}
+          text={renderButtonText()}
           type="submit"
+          aria-label={renderButtonText()}
         />
       </div>
     </form>

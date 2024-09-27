@@ -9,6 +9,8 @@ import BasicButton from './buttons/BasicButton'
 import StaggeredMotionWrapper from './motion/StaggerChildrenMotionWrapper'
 import AnimatedTitle from './motion/AnimatedTitle'
 import ViewMotionWrapper from './ViewMotionWrapper'
+import VariantButton from './buttons/VariantButton'
+import Link from 'next/link'
 
 interface ServiceObjectivesSectionProps {
   heading: string,
@@ -32,7 +34,9 @@ const ServiceObjectivesSection:FC<ServiceObjectivesSectionProps> = ({ heading, i
           </StaggeredMotionWrapper>
           
           <div className='flex lg:justify-start md:justify-center justify-center w-full'>
-            <BasicButton bgColor='white' color='black' text='contact us'/>
+            <Link href={'#contact'}>
+              <VariantButton text='Contact Us' aria-label='Contact Us' variant={5} />
+            </Link>
           </div>
         </div>
 

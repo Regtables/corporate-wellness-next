@@ -15,6 +15,7 @@ import MobileNavMenu from "./MobileNavMenu";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 import ViewMotionWrapper from "./ViewMotionWrapper";
 import MenuCross from "./icons/MenuCross";
+import VariantButton from "./buttons/VariantButton";
 
 const LINKS = [
   {
@@ -175,12 +176,7 @@ const Navbar = () => {
         className="xl:block lg:hidden md:hidden sm:hidden xs:hidden hidden"
       >
         <ViewMotionWrapper delay={0.7}>
-          <BasicButton
-            text="contact us"
-            bgColor="var(--color-duckEgg)"
-            color="black"
-            aria-label="Contact us"
-          />
+          <VariantButton text="contact us" variant={1} />
         </ViewMotionWrapper>
       </Link>
 

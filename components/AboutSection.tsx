@@ -12,6 +12,7 @@ import AnimatedTitle from "./motion/AnimatedTitle";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
 import ViewMotionWrapper from "./ViewMotionWrapper";
 import Link from "next/link";
+import VariantButton from "./buttons/VariantButton";
 
 interface AboutSectionProps {
   headingWithBlockText: SanityHeadingWithBlockText;
@@ -40,17 +41,11 @@ const AboutSection: FC<AboutSectionProps> = ({
 
         <StaggeredMotionWrapper className="flex lg:gap-6 gap-4 mt-6 xl:justify-start md:justify-center" duration={0.5} delay={0.1}>
           <Link href={'#services'}>
-            <BasicButton text="Our Services" bgColor="var(--color-duckEgg)" />
+            <VariantButton variant={1} text="Our Services" aria-label="Our Services" />
           </Link>
 
           <Link href={'#contact'}>
-            <BasicButton
-              text="contact us"
-              bgColor="transparent"
-              color="black"
-              outline 
-              aria-label="Contact us"
-            />
+            <VariantButton variant={3} text = "Contact us" aria-label="Contact Us" />
           </Link>
         </StaggeredMotionWrapper>
       </div>

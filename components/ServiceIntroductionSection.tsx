@@ -12,6 +12,7 @@ import Link from "next/link";
 import AnimatedChildrenTitle from "./motion/AnimatedChildrenTitle";
 import ViewMotionWrapper from "./ViewMotionWrapper";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
+import VariantButton from "./buttons/VariantButton";
 
 interface ServiceIntroductionSectionProps {
   headingWithBlockText: SanityHeadingWithBlockText;
@@ -38,17 +39,11 @@ const ServiceIntroductionSection: FC<ServiceIntroductionSectionProps> = ({
 
         <StaggeredMotionWrapper className="flex gap-6 mt-6 lg:justify-start md:justify-center">
           <Link href={'/#services'}>
-            <BasicButton text="Our Services" bgColor="var(--color-duckEgg)" />
+            <VariantButton text="Our Services" variant={1} aria-label="Our Services" />
           </Link>
 
           <Link href={'#contact'}>
-            <BasicButton
-              text="contact us"
-              bgColor="transparent"
-              color="black"
-              outline
-              aria-label="Contact us"
-            />
+            <VariantButton text="Contact Us" aria-label="Contact Us" variant={3} />
           </Link>
         </StaggeredMotionWrapper>
       </StaggeredMotionWrapper>

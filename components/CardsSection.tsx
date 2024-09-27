@@ -9,6 +9,7 @@ import Link from "next/link";
 import AnimatedTitle from "./motion/AnimatedTitle";
 import { useMediaQuery } from "react-responsive";
 import CardMotionWrapper from "./CardMotionWrapper";
+import VariantButton from "./buttons/VariantButton";
 
 interface CardsSectionProps {
   heading: string;
@@ -37,11 +38,12 @@ const CardsSection: FC<CardsSectionProps> = ({
         <AnimatedTitle text={heading} className="heading" />
 
         <Link href={"#contact"}>
-          <BasicButton
+          {/* <BasicButton
             text="Contact Us"
             bgColor="var(--color-duckEgg)"
             className="lg:flex hidden"
-          />
+          /> */}
+          <VariantButton text="Contact Us" className="lg:flex hidden" aria-label="Contact Us" variant={1} />
         </Link>
       </div>
 
