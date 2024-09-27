@@ -7,6 +7,7 @@ import BasicButton from "./buttons/BasicButton";
 import Icon from "./logos/Icon";
 import Swipeable from "./Swipable";
 import StaggeredMotionWrapper from "./motion/StaggerChildrenMotionWrapper";
+import ViewMotionWrapper from "./ViewMotionWrapper";
 
 interface MobileNavMenuProps {
   handleClose: () => void;
@@ -76,18 +77,20 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
                 </div>
               ))}
             </StaggeredMotionWrapper>
+              
+            <ViewMotionWrapper y = {0} x = {5} delay={0.2}>
+              <BasicButton
+                text="contact us"
+                bgColor="var(--color-duckEgg)"
+                className="mt-4"
+                onClick={() => {
+                  handleLinkClick({ link: "contact us", slug: "#contact" });
+                  handleClose();
+                }}
+              />
+            </ViewMotionWrapper>
 
-            <BasicButton
-              text="contact us"
-              bgColor="var(--color-duckEgg)"
-              className="mt-4"
-              onClick={() => {
-                handleLinkClick({ link: "contact us", slug: "#contact" });
-                handleClose();
-              }}
-            />
-
-            <div className="mt-4 flex flex-col gap-2">
+            <StaggeredMotionWrapper className="mt-4 flex flex-col gap-2" delay={0.3} y = {0} x = {5}>
               <div className={`flex text-black gap-2`}>
                 <Image
                   src={"/phone.svg"}
@@ -124,14 +127,14 @@ const MobileNavMenu: FC<MobileNavMenuProps> = ({
                   @corporatewellness_hub
                 </div>
               </a>
-            </div>
+            </StaggeredMotionWrapper>
 
-            <div className="flex items-center justify-center flex-grow h-full mt-6">
+            <ViewMotionWrapper className="flex items-center justify-center flex-grow h-full mt-6" delay={0.4} y = {10} duration={1}>
               <Icon
                 path={{ src: "/logo-icon-blue.png" }}
                 className="h-[170px] w-[150px] relative "
               />
-            </div>
+            </ViewMotionWrapper>
           </nav>
         </StaggeredMotionWrapper>
       </Swipeable>
