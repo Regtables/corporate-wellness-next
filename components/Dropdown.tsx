@@ -1,7 +1,7 @@
 'use client'
 
 import { ChevronDown } from "lucide-react";
-import React, { FC, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 
 interface DropdownProps {
   heading: string;
@@ -21,6 +21,12 @@ const Dropdown: FC<DropdownProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [height, setHeight] = useState("0px");
   const content: any = useRef(null);
+
+  useEffect(() => {
+    if(defaultValue){
+      handleOptionSelect(defaultValue)
+    }
+  }, [defaultValue])
 
   const handleOpen = () => {
     if (!isOpen) {
@@ -42,7 +48,7 @@ const Dropdown: FC<DropdownProps> = ({
     <div className="bg-lightEgg text-black py-[10px] px-[16px] rounded-xl relative w-full z-10">
       <div className="flex justify-between items-center h-full w-full" onClick={handleOpen}>
         <div className="cursor-pointer h-full w-full">
-          {selectedOption ? selectedOption : heading}
+          {defaultValue ? defaultValue : selectedOption ? selectedOption : heading}
         </div>
 
         <div className="flex justify-between items-center cursor-pointer" >

@@ -111,6 +111,7 @@ const ServicePage = async ({ params }: { params: Params }) => {
         treeClassName="lg:absolute lg:-start-28 md:static"
         heading={contactSection.heading}
         text={contactSection.subheading}
+        initialServiceOption= {name}
       />
     </div>
   );

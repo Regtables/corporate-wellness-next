@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
 import { FormProvider, useForm } from "@/context/FormContext";
@@ -45,7 +45,11 @@ const FORM_CONFIG = {
   consent: { required: true },
 };
 
-const ContactFormContent = () => {
+interface ContactFormContentProps {
+  initialServiceOption?: string
+}
+
+const ContactFormContent:FC<ContactFormContentProps> = ({ initialServiceOption }) => {
   const { formData, errors, handleChange, validateForm, setFormData } =
     useForm();
   const [agreed, setAgreed] = useState(false);
@@ -137,6 +141,7 @@ const ContactFormContent = () => {
         options={SERVICE_OPTIONS}
         selectedOption={formData.service}
         handleOptionSelect={handleServiceSelect}
+        defaultValue= {initialServiceOption}
       />
 
       <div className="relative w-full">
@@ -180,9 +185,9 @@ const ContactFormContent = () => {
   );
 };
 
-const ContactForm = () => (
+const ContactForm:FC<ContactFormContentProps> = ({ initialServiceOption }) => (
   <FormProvider initialState={INITIAL_FORM_DATA} formConfig={FORM_CONFIG}>
-    <ContactFormContent />
+    <ContactFormContent initialServiceOption= {initialServiceOption} />
   </FormProvider>
 );
 

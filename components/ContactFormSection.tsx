@@ -14,6 +14,7 @@ interface ContactFormSectionProps {
   treeClassName?: string;
   heading?: string;
   text?: string;
+  initialServiceOption?: string
 }
 
 const ContactFormSection: FC<ContactFormSectionProps> = ({
@@ -21,6 +22,7 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
   treeClassName,
   heading = "Contact",
   text = "Get in touch to make it happen",
+  initialServiceOption
 }) => {
   const { src, height, width } = TREE_ICONS[tree];
   return (
@@ -48,9 +50,9 @@ const ContactFormSection: FC<ContactFormSectionProps> = ({
           text={heading}
           className="lg:text-left md:text-center heading"
         />
-        <p className="text-[14px] lg:text-start text-center">{text}</p>
+        <p className="text-[14px] lg:text-start text-center lg:mt-[unset] mt-2">{text}</p>
 
-        <ContactForm />
+        <ContactForm initialServiceOption= {initialServiceOption} />
       </StaggeredMotionWrapper>
     </section>
   );
