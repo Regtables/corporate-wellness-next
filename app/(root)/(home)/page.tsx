@@ -44,10 +44,10 @@ const TIMELINE = [
     date: "2024",
     text: "Corporate Wellness expanded its operations to the UK.",
   },
-  // {
-  //   date: "2025",
-  //   text: "Corporate Wellness celebrates years of success in Coaching and HR Consulting with global clients.",
-  // },
+  {
+    date: "2025",
+    text: "Corporate Wellness celebrates years of success in Coaching and HR Consulting with global clients.",
+  },
 ];
 
 export const revalidate = 60
